@@ -2,17 +2,18 @@ export const companyState = {
   name: "Sagar Sync",
   location: "Makroniya, Sagar, Madhya Pradesh, India",
   team: {
-    aman: {
-      id: "aman",
-      name: "Aman Patel",
-      role: "Lead Full-Stack Developer",
-      bio: "Aman manages complex full-stack workflows. He builds Student Portals, scalable business directories, handles API configurations and maintains cloud deployment frameworks.",
-      skills: ["React", "NodeJS", "Google Cloud", "MongoDB", "Express", "REST APIs"],
+    prathvi: {
+      id: "prathvi",
+      name: "Prathvi Singh Thakur",
+      role: "Team Leader",
+      bio: "Prathvi leads technical operations and full-stack development. He directs system integration, custom deployments, client management, and architectural designs.",
+      skills: ["Team Leadership", "React", "NodeJS", "Google Cloud", "MongoDB", "REST APIs"],
       projects: [
         { name: "Sagar E-Mart Directory", desc: "A directory scaling organic digital visibility for retail outlets." },
         { name: "JEE coaching tracking node", desc: "Dynamic student information logging backend with mock test schedules." }
       ],
-      initials: "AP"
+      initials: "PT",
+      image: "/Prathvi.png"
     },
     rohan: {
       id: "rohan",
@@ -160,7 +161,7 @@ export const blogPosts = [
     category: "Development",
     date: "June 2026",
     summary: "A deep-dive exploration of how light static sites with high SEO compliance rank faster than sluggish platforms.",
-    author: "Aman Patel",
+    author: "Prathvi Singh Thakur",
     icon: "fa-book-open"
   },
   {
@@ -185,9 +186,9 @@ export const blogPosts = [
 
 export const offlineChatBotResponses = [
   { keywords: ["bundle", "price", "pack", "charge"], answer: "We offer 3 specialized bundles: Coaching Institute Pack (₹19,999), Builder Elevation Bundle (₹16,499), and Local Business Kickstart (₹11,999). Specific custom services are priced on request. Select your target on our Contact form!" },
-  { keywords: ["team", "aman", "rohan", "priya", "sameer", "member", "people"], answer: "Our 4-person elite squad includes Aman & Rohan (Developers), Priya (Civil CAD Engineer), and Sameer (Creative Video Editor). You can view their full project history directly in our Portfolio section!" },
+  { keywords: ["team", "prathvi", "rohan", "priya", "sameer", "member", "people"], answer: "Our 4-person elite squad includes Prathvi (Team Leader), Rohan (Developer), Priya (Civil CAD Engineer), and Sameer (Creative Video Editor). You can view their full project history directly in our Portfolio section!" },
   { keywords: ["where", "location", "sagar", "makroniya", "address"], answer: "We are physically based in Makroniya, Sagar, Madhya Pradesh (470004). This enables us to visit sites for civil CAD mapping and shoot physical promotional footage." },
-  { keywords: ["web", "site", "app", "flutter", "react", "code"], answer: "Aman Patel and Rohan Mishra code custom, high-speed static websites, dynamic student portals, and fluid Flutter cross-platform mobile apps. Head to our Services page to book them!" },
+  { keywords: ["web", "site", "app", "flutter", "react", "code"], answer: "Prathvi Singh Thakur and Rohan Mishra code custom, high-speed static websites, dynamic student portals, and fluid Flutter cross-platform mobile apps. Head to our Services page to book them!" },
   { keywords: ["house", "map", "elevation", "civil", "cad"], answer: "Priya Sharma is our CAD expert. She drafts professional 2D blueprints, structural elevations, and modern 3D front elevations. View her works under our Portfolio tab." },
   { keywords: ["video", "ad", "reel", "shoot", "edit"], answer: "Sameer Khan scripts and edits retention-driven short-form reels and commercial ads. We capture high-quality footage right here in Sagar to drive client growth." }
 ];

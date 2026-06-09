@@ -19,8 +19,12 @@ export default function PortfolioModal({ activeMember, onClose }) {
         <div className="p-6 sm:p-8">
           {/* Header */}
           <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 mb-6 pb-6 border-b border-pebble">
-            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-pebble bg-forest text-pebble flex items-center justify-center font-extrabold text-2xl shrink-0 shadow">
-              {activeMember.initials}
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-pebble bg-forest text-pebble flex items-center justify-center overflow-hidden font-extrabold text-2xl shrink-0 shadow">
+              {activeMember.image ? (
+                <img src={activeMember.image} alt={activeMember.name} className="w-full h-full object-cover scale-110" />
+              ) : (
+                activeMember.initials
+              )}
             </div>
             <div className="text-center sm:text-left">
               <h3 className="text-2xl font-extrabold text-forest">{activeMember.name}</h3>
