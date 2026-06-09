@@ -98,7 +98,7 @@ export default function App() {
   };
 
   // Handle Contact Form Submission
-  const handleFormSubmission = (e) => {
+  const handleFormSubmission = async (e) => {
     e.preventDefault();
     
     const clientLead = {
@@ -106,17 +106,28 @@ export default function App() {
       phone: formPhone,
       email: formEmail,
       service: formService,
-      brief: formBrief,
-      submittedAt: new Date().toISOString()
+      brief: formBrief
     };
 
-    // Save lead in localStorage
+    // Save lead in localStorage as an offline fallback
     const existingLeads = JSON.parse(localStorage.getItem('sagar_sync_leads') || '[]');
-    existingLeads.push(clientLead);
+    existingLeads.push({ ...clientLead, submittedAt: new Date().toISOString() });
     localStorage.setItem('sagar_sync_leads', JSON.stringify(existingLeads));
 
-    // Show success state
+    // Show success state optimistically
     setFormSubmitted(true);
+
+    try {
+      await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(clientLead)
+      });
+    } catch {
+      // Fail silently - since it is already saved in localStorage, the client won't lose their data
+    }
 
     // Reset after some time
     setTimeout(() => {
