@@ -7,7 +7,7 @@ export default function PortfolioModal({ activeMember, onClose }) {
     <div className="fixed inset-0 bg-forest/80 z-50 flex items-center justify-center p-4 sm:p-6 backdrop-blur-sm">
       <div 
         id="portfolio-modal-container"
-        className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto relative border border-pebble flex flex-col custom-scrollbar text-left"
+        className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[85vh] overflow-y-auto relative border border-pebble flex flex-col custom-scrollbar text-left"
       >
         <button 
           onClick={onClose}
@@ -42,11 +42,64 @@ export default function PortfolioModal({ activeMember, onClose }) {
             </div>
             
             <h4 className="font-extrabold text-forest text-sm sm:text-base mb-3">Direct Verification Projects</h4>
-            <div className="grid grid-cols-1 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {activeMember.projects.map((proj, index) => (
-                <div key={index} className="bg-pebbleLight/50 p-4 rounded-xl border border-pebble">
-                  <h5 className="font-extrabold text-forest text-sm sm:text-base mb-1">{proj.name}</h5>
-                  <p className="text-xs text-slateTeal leading-relaxed">{proj.desc}</p>
+                <div key={index} className="bg-pebbleLight/50 p-5 rounded-2xl border border-pebble flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="font-extrabold text-forest text-sm sm:text-base">{proj.name}</h5>
+                      {proj.link && (
+                        <a 
+                          href={proj.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-sage hover:underline text-[11px] font-bold flex items-center space-x-1 shrink-0"
+                        >
+                          <span>Live Demo</span>
+                          <i className="fas fa-external-link-alt text-[9px]"></i>
+                        </a>
+                      )}
+                    </div>
+                    
+                    {proj.tech && (
+                      <div className="flex flex-wrap gap-1 mb-3">
+                        {proj.tech.map((t, idx) => (
+                          <span key={idx} className="bg-pebble text-forest/80 text-[9px] font-bold px-2 py-0.5 rounded-full">{t}</span>
+                        ))}
+                      </div>
+                    )}
+                    
+                    <p className="text-xs text-slateTeal leading-relaxed mb-3">{proj.desc}</p>
+                    
+                    {proj.details && (
+                      <div className="space-y-3 mt-3 pt-3 border-t border-pebble">
+                        {proj.details.did && (
+                          <div>
+                            <span className="block text-[9px] font-bold text-forest uppercase tracking-wider mb-0.5">What I Did</span>
+                            <p className="text-[11px] text-slateTeal leading-relaxed">{proj.details.did}</p>
+                          </div>
+                        )}
+                        {proj.details.approach && (
+                          <div>
+                            <span className="block text-[9px] font-bold text-forest uppercase tracking-wider mb-0.5">My Approach</span>
+                            <p className="text-[11px] text-slateTeal leading-relaxed">{proj.details.approach}</p>
+                          </div>
+                        )}
+                        {proj.details.vision && (
+                          <div>
+                            <span className="block text-[9px] font-bold text-forest uppercase tracking-wider mb-0.5">Vision Behind It</span>
+                            <p className="text-[11px] text-slateTeal leading-relaxed">{proj.details.vision}</p>
+                          </div>
+                        )}
+                        {proj.details.solved && (
+                          <div>
+                            <span className="block text-[9px] font-bold text-forest uppercase tracking-wider mb-0.5">Problem Solved</span>
+                            <p className="text-[11px] text-slateTeal leading-relaxed">{proj.details.solved}</p>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>

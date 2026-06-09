@@ -9,8 +9,66 @@ export const companyState = {
       bio: "Prathvi leads technical operations and full-stack development. He directs system integration, custom deployments, client management, and architectural designs.",
       skills: ["Team Leadership", "React", "NodeJS", "Google Cloud", "MongoDB", "REST APIs"],
       projects: [
-        { name: "Sagar E-Mart Directory", desc: "A directory scaling organic digital visibility for retail outlets." },
-        { name: "JEE coaching tracking node", desc: "Dynamic student information logging backend with mock test schedules." }
+        {
+          name: "Personal Portfolio Website",
+          desc: "Designed and developed a complete personal portfolio using React and Tailwind CSS from scratch.",
+          tech: ["React", "Tailwind CSS", "JavaScript", "GitHub"],
+          link: "https://polymathengineering.tech/",
+          details: {
+            did: "Designed and developed a complete personal portfolio using React and Tailwind CSS from scratch.",
+            approach: "Focused on a clean, modern glassmorphism aesthetic with smooth scroll animations to create a premium feel.",
+            vision: "To build a digital resume that not only lists my skills but actively demonstrates my front-end capabilities.",
+            solved: "Created a centralized hub for all my projects, certifications, and contact info, making it easy for recruiters to evaluate my profile."
+          }
+        },
+        {
+          name: "CodeHub: A Learning Platform",
+          desc: "Built a fully functional e-learning platform frontend with course catalog, video player, and user dashboard.",
+          tech: ["React", "Tailwind CSS", "JavaScript", "GitHub"],
+          link: "https://codehub321.netlify.app/",
+          details: {
+            did: "Built a fully functional e-learning platform frontend with course catalog, video player, and user dashboard.",
+            approach: "Utilized React Router for seamless navigation and a state management system to track user progress.",
+            vision: "To democratize coding education by providing an accessible, intuitive platform for learners of all levels.",
+            solved: "Solved the problem of scattered learning resources by aggregating tutorials, exercises, and progress tracking in one place."
+          }
+        },
+        {
+          name: "Git Bridge: Tool to use Git",
+          desc: "Developed a desktop GUI application using Python and Tkinter that acts as a wrapper around Git CLI commands.",
+          tech: ["Python", "Tkinter", "Git", "Automation", "GitHub"],
+          link: "https://gitbridge.netlify.app/",
+          details: {
+            did: "Developed a desktop GUI application using Python and Tkinter that acts as a wrapper around Git CLI commands.",
+            approach: "Automated the execution of shell commands through Python's subprocess module, parsing the output into a user-friendly interface.",
+            vision: "To lower the barrier to entry for version control, helping beginners use Git without the steep command-line learning curve.",
+            solved: "Eliminated the friction of memorizing Git commands for simple tasks like committing, pushing, and pulling, reducing workflow errors."
+          }
+        },
+        {
+          name: "HVEV - Client Production Website",
+          desc: "Collaborated on the frontend initially, then took full ownership of the backend logic, automated email responses, and deployment.",
+          tech: ["React", "Vercel", "Google Apps Script", "Resend", "Git", "GitHub"],
+          link: "https://www.hvev.in/",
+          details: {
+            did: "Collaborated on the frontend initially, then took full ownership of the backend logic, automated email responses, and deployment. Managed the complete GitHub workflow and connected the custom domain.",
+            approach: "Architected a system using free tiers of modern serverless tools instead of traditional paid hosting to meet the client's zero-cost constraint.",
+            vision: "To deliver a highly functional, scalable, and professional website without the overhead of monthly database and hosting subscriptions, focusing on real-world constraints.",
+            solved: "Used Google Sheets + Apps Script as a lightweight, zero-cost database. Managed user form data efficiently and switched from Zapier to the Resend API for a more scalable, free email automation solution."
+          }
+        },
+        {
+          name: "Utility Box: AI-Powered Multi-Tool",
+          desc: "Built a multi-utility AI-powered tool by integrating Gemini API for intelligent responses and remove.bg API for background removal.",
+          tech: ["React", "Gemini API", "remove.bg API", "JavaScript", "GitHub"],
+          link: "https://utilityboxy.netlify.app/",
+          details: {
+            did: "Built a multi-utility AI-powered tool by integrating Gemini API for intelligent responses and remove.bg API for background removal, combining different features into a single cohesive platform.",
+            approach: "Started as an experiment with AI tools but evolved into a real engineering challenge. Debugged AI-generated errors, refactored and optimized code, handled API failures and edge cases, and made everything work together smoothly.",
+            vision: "To move beyond just 'using AI' to actually engineering with AI — understanding how to build reliable systems that leverage AI capabilities while handling the real-world complexity AI alone can't solve.",
+            solved: "AI can generate code, but it doesn't always work correctly. This project tackled the gap between AI-generated output and production-ready software by debugging, refactoring, and building robust error handling around multiple API integrations."
+          }
+        }
       ],
       initials: "PT",
       image: "/Prathvi.png"
