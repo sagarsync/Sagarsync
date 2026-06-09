@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Sagar Sync - Local Digital & CAD Agency</title>
+  <!-- Loading Tailwind CSS, Google Fonts, and FontAwesome securely -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage: '#7B9669',
+            pebble: '#E6E6E6',
+            forest: '#404E3B',
+            slateTeal: '#6C8480',
+            mintGrey: '#BAC8B1',
+            forestDark: '#2F3A2C',
+            pebbleLight: '#F3F4F6'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #F3F4F6;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #7B9669;
+      border-radius: 99px;
+    }
+
+    .page-transition {
+      transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+    }
+
+    /* Mobile Active Tap Highlighting fix */
+    button,
+    a,
+    select,
+    input,
+    textarea {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Prevent background scroll when modal is active */
+    .modal-open {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-pebbleLight text-forest font-sans flex flex-col min-h-screen relative overflow-x-hidden antialiased select-none">
+
+  <header class="bg-forest/95 text-pebble sticky top-0 z-40 shadow-md backdrop-blur-md border-b border-sage/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo with safe navigation handler -->
+        <div class="flex items-center space-x-3 cursor-pointer select-none" onclick="navigateTo('home')">
+          <div
+            class="w-10 h-10 bg-sage rounded-full flex items-center justify-center text-forest font-extrabold text-xl shadow-md transform active:scale-95 transition-transform">
+            S
+          </div>
+          <div>
+            <span class="text-lg sm:text-xl font-extrabold tracking-wide text-white block">SAGAR SYNC</span>
+            <span class="text-[10px] text-mintGrey tracking-widest block -mt-1 uppercase">Local Digital Force</span>
+          </div>
+        </div>
+
+        <!-- Desktop Nav Links (Hidden on small mobile screens) -->
+        <nav class="hidden md:flex space-x-1 lg:space-x-4">
+          <button onclick="navigateTo('home')" id="nav-home"
+            class="px-3 py-2 rounded-lg text-sm font-semibold hover:bg-forestDark transition-all text-mintGrey">Home</button>
+          <button onclick="navigateTo('about')" id="nav-about"
+            class="px-3 py-2 rounded-lg text-sm font-semibold hover:bg-forestDark transition-all text-mintGrey">About</button>
+          <button onclick="navigateTo('services')" id="nav-services"
+            class="px-3 py-2 rounded-lg text-sm font-semibold hover:bg-forestDark transition-all text-mintGrey">Services</button>
+          <button onclick="navigateTo('portfolio')" id="nav-portfolio"
+            class="px-3 py-2 rounded-lg text-sm font-semibold hover:bg-forestDark transition-all text-mintGrey">Portfolio</button>
+          <button onclick="navigateTo('blog')" id="nav-blog"
+            class="px-3 py-2 rounded-lg text-sm font-semibold hover:bg-forestDark transition-all text-mintGrey">Blog</button>
+          <button onclick="navigateTo('contact')" id="nav-contact"
+            class="px-3 py-2 rounded-lg text-sm font-semibold hover:bg-forestDark transition-all text-mintGrey">Contact</button>
+        </nav>
+
+        <!-- Free Consultation Desktop Action Button -->
+        <div class="hidden md:block">
+          <button onclick="navigateTo('contact')"
+            class="bg-sage hover:bg-opacity-90 active:scale-95 text-forestDark px-5 py-2.5 rounded-xl font-bold shadow-md transition-all text-sm flex items-center space-x-2">
+            <span>Get Consultation</span>
+            <i class="fas fa-arrow-right text-xs"></i>
+          </button>
+        </div>
+
+        <!-- Touch-optimized Mobile Menu Burger Button -->
+        <div class="md:hidden">
+          <button onclick="toggleMobileMenu()"
+            class="text-mintGrey hover:text-white focus:outline-none p-3 rounded-xl hover:bg-forestDark/50 transition-colors"
+            aria-label="Toggle Menu">
+            <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dynamic Slide-Down Navigation Overlay -->
+    <div id="mobile-menu"
+      class="hidden md:hidden bg-forestDark border-t border-forest border-opacity-40 transition-all duration-300">
+      <div class="px-4 pt-2 pb-6 space-y-2 text-center">
+        <button onclick="navigateTo('home'); toggleMobileMenu()"
+          class="block w-full py-3 px-4 rounded-xl text-base font-semibold text-pebble hover:bg-forest/50 transition-colors">Home</button>
+        <button onclick="navigateTo('about'); toggleMobileMenu()"
+          class="block w-full py-3 px-4 rounded-xl text-base font-semibold text-pebble hover:bg-forest/50 transition-colors">About</button>
+        <button onclick="navigateTo('services'); toggleMobileMenu()"
+          class="block w-full py-3 px-4 rounded-xl text-base font-semibold text-pebble hover:bg-forest/50 transition-colors">Services</button>
+        <button onclick="navigateTo('portfolio'); toggleMobileMenu()"
+          class="block w-full py-3 px-4 rounded-xl text-base font-semibold text-pebble hover:bg-forest/50 transition-colors">Portfolio</button>
+        <button onclick="navigateTo('blog'); toggleMobileMenu()"
+          class="block w-full py-3 px-4 rounded-xl text-base font-semibold text-pebble hover:bg-forest/50 transition-colors">Blog</button>
+        <button onclick="navigateTo('contact'); toggleMobileMenu()"
+          class="block w-full py-3 px-4 rounded-xl text-base font-semibold text-pebble hover:bg-forest/50 transition-colors">Contact</button>
+        <button onclick="navigateTo('contact'); toggleMobileMenu()"
+          class="w-full bg-sage active:scale-95 text-forest font-bold py-4 mt-4 rounded-xl shadow-md transition-transform">Get
+          Free Consultation</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+
+    <section id="page-home" class="page-transition block">
+      <!-- Hero / Pitch Section optimized for both touch displays and desktops -->
+      <div
+        class="relative bg-gradient-to-br from-forest to-forestDark text-pebble py-12 sm:py-20 lg:py-28 overflow-hidden px-4">
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-slateTeal/20 via-transparent to-transparent pointer-events-none">
+        </div>
+        <div class="max-w-7xl mx-auto relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div class="text-center lg:text-left">
+              <span
+                class="bg-sage/20 text-mintGrey px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider border border-sage/30 inline-flex items-center mb-6">
+                <i class="fas fa-map-marker-alt text-sage mr-2"></i>Serving Sagar, MP Locally & Digitally
+              </span>
+              <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                Syncing Local Trust with <span class="text-sage">Digital Mastery</span>
+              </h1>
+              <p class="text-sm sm:text-base text-mintGrey mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                We are a dedicated, highly synchronized 4-person professional squad in Sagar. We build lightning-fast
+                web directories, responsive mobile applications, compliant structural 2D/3D civil blueprints, and
+                dynamic promotional marketing campaigns.
+              </p>
+              <div
+                class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start">
+                <button onclick="navigateTo('services')"
+                  class="w-full sm:w-auto bg-sage hover:bg-opacity-90 active:scale-95 text-forestDark px-8 py-4 rounded-xl font-bold shadow-lg transition-all text-center">
+                  Explore Bundle Services
+                </button>
+                <button onclick="navigateTo('portfolio')"
+                  class="w-full sm:w-auto border border-mintGrey hover:bg-white hover:text-forestDark px-8 py-4 rounded-xl font-bold transition-all text-center text-pebble">
+                  Meet the Team Portfolio
+                </button>
+              </div>
+            </div>
+            <div class="relative flex justify-center w-full mt-6 lg:mt-0">
+              <!-- Visual core service distribution structure -->
+              <div
+                class="w-full max-w-md bg-forestDark/60 border border-sage/25 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-md">
+                <div class="space-y-5">
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-11 h-11 rounded-xl bg-sage/10 border border-sage/40 flex items-center justify-center text-sage text-lg shrink-0">
+                      <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-pebble text-sm sm:text-base">2 Lead Full-Stack Developers</h3>
+                      <p class="text-xs text-mintGrey">Websites, Apps, Domain, Fast SEO Routing</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-11 h-11 rounded-xl bg-slateTeal/10 border border-slateTeal/40 flex items-center justify-center text-slateTeal text-lg shrink-0">
+                      <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-pebble text-sm sm:text-base">1 Expert Civil CAD Engineer</h3>
+                      <p class="text-xs text-mintGrey">2D structural layouts, 3D home modeling</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-11 h-11 rounded-xl bg-sage/10 border border-sage/40 flex items-center justify-center text-sage text-lg shrink-0">
+                      <i class="fas fa-video"></i>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-pebble text-sm sm:text-base">1 Creative Video Producer</h3>
+                      <p class="text-xs text-mintGrey">Ad Reels, Commercial scripting & editing</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-6 pt-5 border-t border-sage/20 text-center">
+                  <p class="text-xs text-mintGrey">Serving coaching centers, builders & retailers in Sagar</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="py-12 sm:py-16 bg-white border-b border-pebble">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-6 bg-pebbleLight/50 rounded-2xl border border-pebble/40 text-center md:text-left">
+              <div
+                class="w-14 h-14 bg-sage/10 text-sage rounded-full flex items-center justify-center mx-auto md:mx-0 mb-4 text-xl">
+                <i class="fas fa-user-shield"></i>
+              </div>
+              <h3 class="text-lg font-extrabold text-forest mb-2">100% Direct Transparency</h3>
+              <p class="text-slateTeal text-xs sm:text-sm">No random outsourcing. View exact individual
+                developer/engineer portfolios before commissioning projects.</p>
+            </div>
+            <div class="p-6 bg-pebbleLight/50 rounded-2xl border border-pebble/40 text-center md:text-left">
+              <div
+                class="w-14 h-14 bg-slateTeal/10 text-slateTeal rounded-full flex items-center justify-center mx-auto md:mx-0 mb-4 text-xl">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <h3 class="text-lg font-extrabold text-forest mb-2">Hyper-Local Connection</h3>
+              <p class="text-slateTeal text-xs sm:text-sm">Based directly in Makroniya, Sagar. We understand regional
+                demands and can execute physical location visits anytime.</p>
+            </div>
+            <div class="p-6 bg-pebbleLight/50 rounded-2xl border border-pebble/40 text-center md:text-left">
+              <div
+                class="w-14 h-14 bg-sage/10 text-sage rounded-full flex items-center justify-center mx-auto md:mx-0 mb-4 text-xl">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h3 class="text-lg font-extrabold text-forest mb-2">All-in-One Capabilities</h3>
+              <p class="text-slateTeal text-xs sm:text-sm">Avoid hiring multiple disjointed freelancers. Build
+                architecture plans, custom code, and promotional ads simultaneously.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call-To-Action Region -->
+      <div class="py-12 sm:py-16 bg-pebbleLight px-4">
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="bg-forest rounded-3xl text-pebble p-6 sm:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="max-w-xl text-center md:text-left">
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Sagar MP Local Business Catalyst</h3>
+              <p class="text-mintGrey text-xs sm:text-sm leading-relaxed">
+                Let's get your local business accurately mapped on Google, deploy an ultra-fast website, and publish
+                viral advertising.
+              </p>
+            </div>
+            <button onclick="navigateTo('contact')"
+              class="w-full md:w-auto bg-sage hover:bg-opacity-95 active:scale-95 text-forestDark px-6 sm:px-8 py-4 rounded-xl font-bold shadow-lg transition-transform text-center whitespace-nowrap">
+              <i class="fas fa-phone-alt mr-2"></i> Book consultation
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-about" class="page-transition hidden py-12 sm:py-16 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-sage font-extrabold tracking-widest text-xs uppercase">Who We Are</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-forest mt-1">Born In Sagar, Engineered For Scale</h2>
+          <p class="mt-3 text-sm sm:text-base text-slateTeal max-w-2xl mx-auto">
+            A collaborative 4-person dream team combined to solve structural, developmental, and creative promotional
+            challenges for modern local brands.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+          <div>
+            <h3 class="text-xl sm:text-2xl font-extrabold mb-4 text-forest">Grounded In Honesty & Verification</h3>
+            <p class="text-slateTeal text-sm leading-relaxed mb-4">
+              Sagar Sync was formed after identifying a major problem: offline firms in Madhya Pradesh wasting massive
+              funds on distant agencies who don't understand the regional audience.
+            </p>
+            <p class="text-slateTeal text-sm leading-relaxed mb-6">
+              We solve this through absolute visibility. Our portal showcases verified team profiles, exact technical
+              specializations, and real project code records, so you know exactly whose hands are holding your future.
+            </p>
+            <div class="border-l-4 border-sage pl-4 italic text-forest text-sm font-medium">
+              "Bridging modern tech stacks directly to Makroniya and Sagar Lake's commercial ecosystems."
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="page-services" class="page-transition hidden py-12 sm:py-16 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-sage font-extrabold tracking-widest text-xs uppercase">What We Offer</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-forest mt-1">High-Impact Services & Bundles</h2>
+          <p class="mt-3 text-sm sm:text-base text-slateTeal max-w-2xl mx-auto">
+            Specific customized plans built precisely to your goals, alongside high-value local business launch bundles.
+          </p>
+        </div>
+
+        <!-- Custom Services Grid (Prices vary per requirements, hence not shown) -->
+        <div class="mb-16">
+          <div class="flex items-center space-x-3 mb-6">
+            <span class="w-6 h-1 bg-sage rounded-full"></span>
+            <h3 class="text-xl font-extrabold text-forest">Tailored Specialized Services</h3>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Service 1 -->
+            <div
+              class="bg-white p-6 sm:p-8 rounded-2xl border border-pebble shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 bg-sage/10 rounded-xl flex items-center justify-center text-sage text-lg mb-4">
+                  <i class="fas fa-globe"></i>
+                </div>
+                <h4 class="font-extrabold text-lg text-forest mb-2">Custom Website Engineering</h4>
+                <p class="text-slateTeal text-xs sm:text-sm leading-relaxed mb-4">
+                  Tailwind-optimized portfolios, speed-optimized directories, and custom management interfaces matching
+                  absolute desktop/mobile parameters.
+                </p>
+              </div>
+              <span
+                class="text-[10px] font-bold text-slateTeal uppercase tracking-wider bg-pebble px-3 py-1.5 rounded-full inline-block self-start">Price
+                on Requirement</span>
+            </div>
+            <!-- Service 2 -->
+            <div
+              class="bg-white p-6 sm:p-8 rounded-2xl border border-pebble shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-10 h-10 bg-slateTeal/10 rounded-xl flex items-center justify-center text-slateTeal text-lg mb-4">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h4 class="font-extrabold text-lg text-forest mb-2">Mobile Application Development</h4>
+                <p class="text-slateTeal text-xs sm:text-sm leading-relaxed mb-4">
+                  Clean, cross-platform Android & iOS applications targeting local administration, booking, student
+                  databases, or internal tracking.
+                </p>
+              </div>
+              <span
+                class="text-[10px] font-bold text-slateTeal uppercase tracking-wider bg-pebble px-3 py-1.5 rounded-full inline-block self-start">Price
+                on Requirement</span>
+            </div>
+            <!-- Service 3 -->
+            <div
+              class="bg-white p-6 sm:p-8 rounded-2xl border border-pebble shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 bg-sage/10 rounded-xl flex items-center justify-center text-sage text-lg mb-4">
+                  <i class="fas fa-drafting-compass"></i>
+                </div>
+                <h4 class="font-extrabold text-lg text-forest mb-2">Architectural House Maps (CAD)</h4>
+                <p class="text-slateTeal text-xs sm:text-sm leading-relaxed mb-4">
+                  Detailed 2D structure plan layouts, structural frame designs, and elegant 3D external visualizations
+                  perfectly matching government norms.
+                </p>
+              </div>
+              <span
+                class="text-[10px] font-bold text-slateTeal uppercase tracking-wider bg-pebble px-3 py-1.5 rounded-full inline-block self-start">Price
+                on Requirement</span>
+            </div>
+            <!-- Service 4 -->
+            <div
+              class="bg-white p-6 sm:p-8 rounded-2xl border border-pebble shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-10 h-10 bg-slateTeal/10 rounded-xl flex items-center justify-center text-slateTeal text-lg mb-4">
+                  <i class="fas fa-video"></i>
+                </div>
+                <h4 class="font-extrabold text-lg text-forest mb-2">Commercial Ad Videos</h4>
+                <p class="text-slateTeal text-xs sm:text-sm leading-relaxed mb-4">
+                  Scripted, edited, and perfectly optimized ad video creations targeting social platforms, YouTube
+                  promos, or physical local boards.
+                </p>
+              </div>
+              <span
+                class="text-[10px] font-bold text-slateTeal uppercase tracking-wider bg-pebble px-3 py-1.5 rounded-full inline-block self-start">Price
+                on Requirement</span>
+            </div>
+            <!-- Service 5 -->
+            <div
+              class="bg-white p-6 sm:p-8 rounded-2xl border border-pebble shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 bg-sage/10 rounded-xl flex items-center justify-center text-sage text-lg mb-4">
+                  <i class="fas fa-server"></i>
+                </div>
+                <h4 class="font-extrabold text-lg text-forest mb-2">Domain & Hosting Deployments</h4>
+                <p class="text-slateTeal text-xs sm:text-sm leading-relaxed mb-4">
+                  Secure cloud deployment configurations, DNS domain mapping, custom system mail setup, and robust
+                  performance analytics tracker.
+                </p>
+              </div>
+              <span
+                class="text-[10px] font-bold text-slateTeal uppercase tracking-wider bg-pebble px-3 py-1.5 rounded-full inline-block self-start">Price
+                on Requirement</span>
+            </div>
+            <!-- Service 6 -->
+            <div
+              class="bg-white p-6 sm:p-8 rounded-2xl border border-pebble shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-10 h-10 bg-slateTeal/10 rounded-xl flex items-center justify-center text-slateTeal text-lg mb-4">
+                  <i class="fas fa-cubes"></i>
+                </div>
+                <h4 class="font-extrabold text-lg text-forest mb-2">Product Designing</h4>
+                <p class="text-slateTeal text-xs sm:text-sm leading-relaxed mb-4">
+                  High-fidelity mockups, branding design packaging templates, and CAD visualization coordinates for
+                  modern manufactured items.
+                </p>
+              </div>
+              <span
+                class="text-[10px] font-bold text-slateTeal uppercase tracking-wider bg-pebble px-3 py-1.5 rounded-full inline-block self-start">Price
+                on Requirement</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex items-center space-x-3 mb-6">
+            <span class="w-6 h-1 bg-sage rounded-full"></span>
+            <h3 class="text-xl font-extrabold text-forest">Premium Regional Bundles</h3>
+          </div>
+          <div class="space-y-4">
+            <!-- Bundle 1 -->
+            <div class="bg-white rounded-2xl border border-pebble shadow-sm overflow-hidden">
+              <div
+                class="p-5 sm:p-6 flex flex-col md:flex-row items-start md:items-center justify-between cursor-pointer"
+                onclick="toggleBundle('bundle-coaching')">
+                <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                  <div
+                    class="w-12 h-12 bg-sage text-white rounded-xl flex items-center justify-center text-xl shrink-0">
+                    <i class="fas fa-graduation-cap"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-extrabold text-base sm:text-lg text-forest flex items-center flex-wrap gap-2">
+                      Coaching Institute Scale-Up Pack
+                      <span
+                        class="bg-sage/20 text-forest text-[10px] font-extrabold px-2 py-0.5 rounded-full">POPULAR</span>
+                    </h4>
+                    <p class="text-slateTeal text-xs">Transform physical classes into a high-reach localized funnel.</p>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between w-full md:w-auto md:space-x-6">
+                  <div class="text-left md:text-right">
+                    <span class="text-[9px] text-slateTeal block font-bold uppercase tracking-wider">All-Inclusive
+                      Price</span>
+                    <span class="text-xl font-extrabold text-forest">₹19,999/-</span>
+                  </div>
+                  <div
+                    class="w-8 h-8 rounded-full bg-pebbleLight flex items-center justify-center text-forest transition-transform"
+                    id="icon-bundle-coaching">
+                    <i class="fas fa-chevron-down text-xs"></i>
+                  </div>
+                </div>
+              </div>
+              <div id="details-bundle-coaching" class="hidden border-t border-pebble bg-pebbleLight/50 p-5 sm:p-6">
+                <h5 class="font-bold text-forest text-sm mb-3">Covered Services Stack:</h5>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-forest mb-6">
+                  <ul class="space-y-2">
+                    <li class="flex items-start"><i class="fas fa-check text-sage mt-1 mr-2 text-xs"></i>
+                      <span><strong>Student Web Portal:</strong> Fast landing, schedules and notifications.</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-sage mt-1 mr-2 text-xs"></i>
+                      <span><strong>Launch Ads:</strong> 5 edited short-form reels for social campaigns.</span></li>
+                  </ul>
+                  <ul class="space-y-2">
+                    <li class="flex items-start"><i class="fas fa-check text-sage mt-1 mr-2 text-xs"></i>
+                      <span><strong>GMB Profile Setup:</strong> Complete Google Maps optimizations.</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-sage mt-1 mr-2 text-xs"></i>
+                      <span><strong>Hosting Deployment:</strong> Secure server integration with support.</span></li>
+                  </ul>
+                </div>
+                <div class="flex justify-end">
+                  <button
+                    onclick="navigateTo('contact'); selectBundleInForm('Coaching Bundle', 'Coaching Institute Scale-Up Pack')"
+                    class="bg-forest hover:bg-forestDark text-pebble text-xs font-bold px-5 py-3 rounded-xl shadow transition-transform active:scale-95">
+                    Select This Pack
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bundle 2 -->
+            <div class="bg-white rounded-2xl border border-pebble shadow-sm overflow-hidden">
+              <div
+                class="p-5 sm:p-6 flex flex-col md:flex-row items-start md:items-center justify-between cursor-pointer"
+                onclick="toggleBundle('bundle-builder')">
+                <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                  <div
+                    class="w-12 h-12 bg-slateTeal text-white rounded-xl flex items-center justify-center text-xl shrink-0">
+                    <i class="fas fa-building"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-extrabold text-base sm:text-lg text-forest">Real Estate & Contractor Elevation
+                      Bundle</h4>
+                    <p class="text-slateTeal text-xs">Premium blueprinting to fast-track regional property sales.</p>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between w-full md:w-auto md:space-x-6">
+                  <div class="text-left md:text-right">
+                    <span class="text-[9px] text-slateTeal block font-bold uppercase tracking-wider">All-Inclusive
+                      Price</span>
+                    <span class="text-xl font-extrabold text-forest">₹16,499/-</span>
+                  </div>
+                  <div
+                    class="w-8 h-8 rounded-full bg-pebbleLight flex items-center justify-center text-forest transition-transform"
+                    id="icon-bundle-builder">
+                    <i class="fas fa-chevron-down text-xs"></i>
+                  </div>
+                </div>
+              </div>
+              <div id="details-bundle-builder" class="hidden border-t border-pebble bg-pebbleLight/50 p-5 sm:p-6">
+                <h5 class="font-bold text-forest text-sm mb-3">Covered Services Stack:</h5>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-forest mb-6">
+                  <ul class="space-y-2">
+                    <li class="flex items-start"><i class="fas fa-check text-slateTeal mt-1 mr-2 text-xs"></i>
+                      <span><strong>3D Front Elevation:</strong> Detailed Revit modeling coordinates.</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-slateTeal mt-1 mr-2 text-xs"></i>
+                      <span><strong>Walkthrough Render:</strong> High-definition walkthrough edit with overlay.</span>
+                    </li>
+                  </ul>
+                  <ul class="space-y-2">
+                    <li class="flex items-start"><i class="fas fa-check text-slateTeal mt-1 mr-2 text-xs"></i>
+                      <span><strong>Sales Landing System:</strong> Standard web layout mapping lead capture.</span></li>
+                  </ul>
+                </div>
+                <div class="flex justify-end">
+                  <button
+                    onclick="navigateTo('contact'); selectBundleInForm('Builder Bundle', 'Real Estate & Contractor Elevation Bundle')"
+                    class="bg-forest hover:bg-forestDark text-pebble text-xs font-bold px-5 py-3 rounded-xl shadow transition-transform active:scale-95">
+                    Select This Pack
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bundle 3 -->
+            <div class="bg-white rounded-2xl border border-pebble shadow-sm overflow-hidden">
+              <div
+                class="p-5 sm:p-6 flex flex-col md:flex-row items-start md:items-center justify-between cursor-pointer"
+                onclick="toggleBundle('bundle-shop')">
+                <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                  <div
+                    class="w-12 h-12 bg-sage text-white rounded-xl flex items-center justify-center text-xl shrink-0">
+                    <i class="fas fa-store"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-extrabold text-base sm:text-lg text-forest">Local Business Kickstart Bundle</h4>
+                    <p class="text-slateTeal text-xs">Best for retail showrooms, clinics, and local startups.</p>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between w-full md:w-auto md:space-x-6">
+                  <div class="text-left md:text-right">
+                    <span class="text-[9px] text-slateTeal block font-bold uppercase tracking-wider">All-Inclusive
+                      Price</span>
+                    <span class="text-xl font-extrabold text-forest">₹11,999/-</span>
+                  </div>
+                  <div
+                    class="w-8 h-8 rounded-full bg-pebbleLight flex items-center justify-center text-forest transition-transform"
+                    id="icon-bundle-shop">
+                    <i class="fas fa-chevron-down text-xs"></i>
+                  </div>
+                </div>
+              </div>
+              <div id="details-bundle-shop" class="hidden border-t border-pebble bg-pebbleLight/50 p-5 sm:p-6">
+                <h5 class="font-bold text-forest text-sm mb-3">Covered Services Stack:</h5>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-forest mb-6">
+                  <ul class="space-y-2">
+                    <li class="flex items-start"><i class="fas fa-check text-sage mt-1 mr-2 text-xs"></i>
+                      <span><strong>Clean One-Pager:</strong> Contact form and address location locator setup.</span>
+                    </li>
+                    <li class="flex items-start"><i class="fas fa-check text-sage mt-1 mr-2 text-xs"></i>
+                      <span><strong>Showroom Video:</strong> 1 professional 30s marketing promo file.</span></li>
+                  </ul>
+                  <ul class="space-y-2">
+                    <li class="flex items-start"><i class="fas fa-check text-sage mt-1 mr-2 text-xs"></i>
+                      <span><strong>Local SEO Booster:</strong> Local keywords schema mappings.</span></li>
+                  </ul>
+                </div>
+                <div class="flex justify-end">
+                  <button
+                    onclick="navigateTo('contact'); selectBundleInForm('Local Business Bundle', 'Local Business Kickstart Bundle')"
+                    class="bg-forest hover:bg-forestDark text-pebble text-xs font-bold px-5 py-3 rounded-xl shadow transition-transform active:scale-95">
+                    Select This Pack
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-portfolio" class="page-transition hidden py-12 sm:py-16 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-sage font-extrabold tracking-widest text-xs uppercase">The Sync Team</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-forest mt-1">Direct Verification Portfolios</h2>
+          <p class="mt-3 text-sm sm:text-base text-slateTeal max-w-2xl mx-auto">
+            We don't hide behind a curtain. Tap on any team member card to view their credentials, exact software tools,
+            and active projects.
+          </p>
+        </div>
+
+        <!-- Team Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Team Card 1 -->
+          <div
+            class="bg-white p-5 rounded-2xl border border-pebble shadow-sm cursor-pointer hover:shadow-md active:scale-98 transition-all flex flex-col items-center text-center justify-between"
+            onclick="openMemberPortfolio('aman')">
+            <div class="relative w-28 h-28 mb-4">
+              <div class="absolute inset-0 bg-sage rounded-full scale-105 opacity-20"></div>
+              <img src="https://placehold.co/150x150/7B9669/FFFFFF?text=AP"
+                class="w-28 h-28 rounded-full border-4 border-pebble object-cover relative z-10" alt="Aman Patel">
+            </div>
+            <div>
+              <h3 class="font-extrabold text-base sm:text-lg text-forest">Aman Patel</h3>
+              <span class="text-[10px] font-bold text-slateTeal uppercase tracking-wider block mt-1">Lead Full-Stack
+                Developer</span>
+              <div class="mt-3 flex flex-wrap justify-center gap-1">
+                <span class="bg-pebble text-forest text-[9px] font-bold px-2 py-0.5 rounded-full">React</span>
+                <span class="bg-pebble text-forest text-[9px] font-bold px-2 py-0.5 rounded-full">NodeJS</span>
+              </div>
+            </div>
+            <span class="text-[10px] text-sage font-bold block mt-4 uppercase tracking-wider">Tap to View Works <i
+                class="fas fa-chevron-right ml-1"></i></span>
+          </div>
+
+          <!-- Team Card 2 -->
+          <div
+            class="bg-white p-5 rounded-2xl border border-pebble shadow-sm cursor-pointer hover:shadow-md active:scale-98 transition-all flex flex-col items-center text-center justify-between"
+            onclick="openMemberPortfolio('rohan')">
+            <div class="relative w-28 h-28 mb-4">
+              <div class="absolute inset-0 bg-slateTeal rounded-full scale-105 opacity-20"></div>
+              <img src="https://placehold.co/150x150/6C8480/FFFFFF?text=RM"
+                class="w-28 h-28 rounded-full border-4 border-pebble object-cover relative z-10" alt="Rohan Mishra">
+            </div>
+            <div>
+              <h3 class="font-extrabold text-base sm:text-lg text-forest">Rohan Mishra</h3>
+              <span class="text-[10px] font-bold text-slateTeal uppercase tracking-wider block mt-1">Mobile & UI
+                Developer</span>
+              <div class="mt-3 flex flex-wrap justify-center gap-1">
+                <span class="bg-pebble text-forest text-[9px] font-bold px-2 py-0.5 rounded-full">Flutter</span>
+                <span class="bg-pebble text-forest text-[9px] font-bold px-2 py-0.5 rounded-full">Tailwind</span>
+              </div>
+            </div>
+            <span class="text-[10px] text-slateTeal font-bold block mt-4 uppercase tracking-wider">Tap to View Works <i
+                class="fas fa-chevron-right ml-1"></i></span>
+          </div>
+
+          <!-- Team Card 3 -->
+          <div
+            class="bg-white p-5 rounded-2xl border border-pebble shadow-sm cursor-pointer hover:shadow-md active:scale-98 transition-all flex flex-col items-center text-center justify-between"
+            onclick="openMemberPortfolio('priya')">
+            <div class="relative w-28 h-28 mb-4">
+              <div class="absolute inset-0 bg-sage rounded-full scale-105 opacity-20"></div>
+              <img src="https://placehold.co/150x150/7B9669/FFFFFF?text=PS"
+                class="w-28 h-28 rounded-full border-4 border-pebble object-cover relative z-10" alt="Priya Sharma">
+            </div>
+            <div>
+              <h3 class="font-extrabold text-base sm:text-lg text-forest">Priya Sharma</h3>
+              <span class="text-[10px] font-bold text-slateTeal uppercase tracking-wider block mt-1">CAD & Civil
+                Engineer</span>
+              <div class="mt-3 flex flex-wrap justify-center gap-1">
+                <span class="bg-pebble text-forest text-[9px] font-bold px-2 py-0.5 rounded-full">AutoCAD</span>
+                <span class="bg-pebble text-forest text-[9px] font-bold px-2 py-0.5 rounded-full">Revit</span>
+              </div>
+            </div>
+            <span class="text-[10px] text-sage font-bold block mt-4 uppercase tracking-wider">Tap to View Works <i
+                class="fas fa-chevron-right ml-1"></i></span>
+          </div>
+
+          <!-- Team Card 4 -->
+          <div
+            class="bg-white p-5 rounded-2xl border border-pebble shadow-sm cursor-pointer hover:shadow-md active:scale-98 transition-all flex flex-col items-center text-center justify-between"
+            onclick="openMemberPortfolio('sameer')">
+            <div class="relative w-28 h-28 mb-4">
+              <div class="absolute inset-0 bg-slateTeal rounded-full scale-105 opacity-20"></div>
+              <img src="https://placehold.co/150x150/6C8480/FFFFFF?text=SK"
+                class="w-28 h-28 rounded-full border-4 border-pebble object-cover relative z-10" alt="Sameer Khan">
+            </div>
+            <div>
+              <h3 class="font-extrabold text-base sm:text-lg text-forest">Sameer Khan</h3>
+              <span class="text-[10px] font-bold text-slateTeal uppercase tracking-wider block mt-1">Video Editor &
+                Producer</span>
+              <div class="mt-3 flex flex-wrap justify-center gap-1">
+                <span class="bg-pebble text-forest text-[9px] font-bold px-2 py-0.5 rounded-full">Premiere</span>
+                <span class="bg-pebble text-forest text-[9px] font-bold px-2 py-0.5 rounded-full">After Effects</span>
+              </div>
+            </div>
+            <span class="text-[10px] text-slateTeal font-bold block mt-4 uppercase tracking-wider">Tap to View Works <i
+                class="fas fa-chevron-right ml-1"></i></span>
+          </div>
+        </div>
+      </div>
+
+      <div id="portfolio-modal"
+        class="fixed inset-0 bg-forest/80 z-50 flex items-center justify-center p-4 sm:p-6 hidden backdrop-blur-sm">
+        <div
+          class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto relative border border-pebble flex flex-col custom-scrollbar">
+          <button onclick="closePortfolioModal()"
+            class="absolute top-4 right-4 text-slateTeal hover:text-forest text-xl p-2 z-10" aria-label="Close modal">
+            <i class="fas fa-times"></i>
+          </button>
+          <div class="p-6 sm:p-8" id="modal-content">
+            <!-- Dynamic team state rendering will be injected here on tap -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-blog" class="page-transition hidden py-12 sm:py-16 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-sage font-extrabold tracking-widest text-xs uppercase">Developer Insights</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-forest mt-1">Manual Engineering Logs</h2>
+          <p class="mt-3 text-sm sm:text-base text-slateTeal max-w-2xl mx-auto">
+            Informative, detailed guides and strategies written manually by our full-stack developers.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Blog Post 1 -->
+          <div
+            class="bg-white rounded-2xl border border-pebble overflow-hidden flex flex-col justify-between shadow-sm">
+            <div class="p-6">
+              <span class="text-[10px] font-bold text-sage uppercase tracking-wider">Development • June 2026</span>
+              <h3 class="font-extrabold text-lg text-forest mt-2 mb-3">Why Local Sagar Shops Benefit from Static HTML
+                Hybrid Sites</h3>
+              <p class="text-slateTeal text-xs leading-relaxed">
+                A deep-dive exploration of how light static sites with high SEO compliance rank faster than sluggish
+                platforms.
+              </p>
+            </div>
+            <div
+              class="bg-pebbleLight px-6 py-4 border-t border-pebble flex items-center justify-between text-xs font-bold text-forestDark">
+              <span>Written by: Aman Patel</span>
+              <i class="fas fa-book-open"></i>
+            </div>
+          </div>
+
+          <!-- Blog Post 2 -->
+          <div
+            class="bg-white rounded-2xl border border-pebble overflow-hidden flex flex-col justify-between shadow-sm">
+            <div class="p-6">
+              <span class="text-[10px] font-bold text-slateTeal uppercase tracking-wider">CAD Map Design • May
+                2026</span>
+              <h3 class="font-extrabold text-lg text-forest mt-2 mb-3">Residential Front Elevation Norms in Makroniya
+              </h3>
+              <p class="text-slateTeal text-xs leading-relaxed">
+                Reviewing essential height variables, ventilation spacing configurations, and 3D elevations for faster
+                structural approvals.
+              </p>
+            </div>
+            <div
+              class="bg-pebbleLight px-6 py-4 border-t border-pebble flex items-center justify-between text-xs font-bold text-forestDark">
+              <span>Written by: Priya Sharma</span>
+              <i class="fas fa-drafting-compass"></i>
+            </div>
+          </div>
+
+          <!-- Blog Post 3 -->
+          <div
+            class="bg-white rounded-2xl border border-pebble overflow-hidden flex flex-col justify-between shadow-sm">
+            <div class="p-6">
+              <span class="text-[10px] font-bold text-sage uppercase tracking-wider">Commercial Ads • April 2026</span>
+              <h3 class="font-extrabold text-lg text-forest mt-2 mb-3">Retention Formulas for Local Coaching Promos</h3>
+              <p class="text-slateTeal text-xs leading-relaxed">
+                Explaining visual hooks, audio-match rhythms, and text spacing to drive enrollments in Sagar.
+              </p>
+            </div>
+            <div
+              class="bg-pebbleLight px-6 py-4 border-t border-pebble flex items-center justify-between text-xs font-bold text-forestDark">
+              <span>Written by: Sameer Khan</span>
+              <i class="fas fa-video"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-contact" class="page-transition hidden py-12 sm:py-16 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-sage font-extrabold tracking-widest text-xs uppercase">Get Connected</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-forest mt-1">Start Your Project Today</h2>
+          <p class="mt-3 text-sm sm:text-base text-slateTeal max-w-2xl mx-auto">
+            Inquiries feed securely into our local tracking database. Located physically in Makroniya for quick
+            coordination.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <!-- Clean Contact Form with Dynamic Status feedback -->
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-pebble shadow-sm">
+            <h3 class="text-lg font-extrabold text-forest mb-4">Secure Client Consultation Form</h3>
+            <form id="contact-form" onsubmit="handleFormSubmission(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-[10px] font-bold text-slateTeal uppercase tracking-wider mb-1">Your
+                    Name</label>
+                  <input type="text" id="form-name" required
+                    class="w-full px-4 py-3 rounded-xl border border-pebble focus:ring-1 focus:ring-sage focus:outline-none text-xs"
+                    placeholder="Arun Kumar">
+                </div>
+                <div>
+                  <label class="block text-[10px] font-bold text-slateTeal uppercase tracking-wider mb-1">Mobile
+                    Number</label>
+                  <input type="tel" id="form-phone" required
+                    class="w-full px-4 py-3 rounded-xl border border-pebble focus:ring-1 focus:ring-sage focus:outline-none text-xs"
+                    placeholder="+91 94254 XXXXX">
+                </div>
+              </div>
+              <div>
+                <label class="block text-[10px] font-bold text-slateTeal uppercase tracking-wider mb-1">Email
+                  Address</label>
+                <input type="email" id="form-email" required
+                  class="w-full px-4 py-3 rounded-xl border border-pebble focus:ring-1 focus:ring-sage focus:outline-none text-xs"
+                  placeholder="sagarsync.query@gmail.com">
+              </div>
+              <div>
+                <label class="block text-[10px] font-bold text-slateTeal uppercase tracking-wider mb-1">Target Service /
+                  Bundle</label>
+                <select id="form-service"
+                  class="w-full px-4 py-3 rounded-xl border border-pebble focus:ring-1 focus:ring-sage focus:outline-none text-xs bg-white">
+                  <option value="General Query">General Consultancy</option>
+                  <option value="Coaching Bundle">Coaching Scale-Up Bundle (₹19,999)</option>
+                  <option value="Builder Bundle">Contractor Blueprint Bundle (₹16,499)</option>
+                  <option value="Local Business Bundle">Local Business Kickstart (₹11,999)</option>
+                  <option value="Web/App Development">Custom Web/App coding</option>
+                  <option value="CAD Maps">Architectural House Maps</option>
+                  <option value="Video Editing">Creative Commercial Videos</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-[10px] font-bold text-slateTeal uppercase tracking-wider mb-1">Brief Project
+                  Specs</label>
+                <textarea id="form-brief" rows="4" required
+                  class="w-full px-4 py-3 rounded-xl border border-pebble focus:ring-1 focus:ring-sage focus:outline-none text-xs"
+                  placeholder="Explain your design parameters or application goals..."></textarea>
+              </div>
+              <button type="submit"
+                class="w-full bg-forest hover:bg-forestDark text-pebble font-bold py-4 rounded-xl transition-all active:scale-95 shadow">
+                Save to Sagar Sync Spreadsheet DB
+              </button>
+            </form>
+
+            <div id="form-success" class="hidden p-4 bg-sage/10 border border-sage/40 rounded-2xl text-center mt-4">
+              <i class="fas fa-check-circle text-sage text-2xl mb-1 block"></i>
+              <p class="text-xs font-bold text-forest">Lead Logged Into Sagar Sync Local CRM!</p>
+              <p class="text-[10px] text-slateTeal mt-1">We will review your specs and contact your number within 4
+                hours.</p>
+            </div>
+          </div>
+
+          <!-- Direct Representatives & Address details -->
+          <div class="space-y-6 flex flex-col justify-between">
+            <div class="bg-forest text-pebble p-6 sm:p-8 rounded-3xl shadow-lg border border-sage/15">
+              <h3 class="text-base sm:text-lg font-bold text-white mb-4">Direct Contact Partners</h3>
+              <div class="space-y-4 text-xs sm:text-sm">
+                <div class="flex items-start space-x-3">
+                  <div
+                    class="w-8 h-8 bg-sage rounded-full flex items-center justify-center text-forest font-bold shrink-0">
+                    PT</div>
+                  <div>
+                    <h4 class="font-extrabold">Prathvi Singh Thakur (Full-Stack Partner)</h4>
+                    <p class="text-[10px] text-mintGrey">Point of Contact: Tech, App Design, Hosting Setup</p>
+                    <a href="tel:+198962685091" class="font-bold text-white block mt-1"><i class="fas fa-phone mr-1.5 text-sage"></i>+19 8962685091</a>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div
+                    class="w-8 h-8 bg-slateTeal rounded-full flex items-center justify-center text-pebble font-bold shrink-0">
+                    KP</div>
+                  <div>
+                    <h4 class="font-extrabold">Krishna Pathak (Mobile Partner)</h4>
+                    <p class="text-[10px] text-mintGrey">Point of Contact: Maps, Promotions, Project Budgeting</p>
+                    <a href="tel:+918827050460" class="font-bold text-white block mt-1"><i class="fas fa-phone mr-1.5 text-slateTeal"></i>+91 8827050460</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Local physical assurance card -->
+            <div class="bg-white p-6 rounded-3xl border border-pebble flex flex-col items-center text-center">
+              <div class="w-12 h-12 bg-sage/10 text-sage rounded-full flex items-center justify-center text-lg mb-3">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <h4 class="font-extrabold text-forest text-sm sm:text-base">Makroniya, Sagar, MP (470004)</h4>
+              <p class="text-xs text-slateTeal mt-1 max-w-sm">
+                We execute walk-throughs for structural CAD drafting and conduct manual site-shootings for marketing
+                videos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-forestDark text-pebble py-10 mt-auto border-t border-forest">
+    <div class="max-w-7xl mx-auto px-4 text-center md:text-left">
+      <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 bg-sage rounded-full flex items-center justify-center text-forest font-extrabold">S</div>
+          <span class="text-base font-extrabold tracking-wide text-white">SAGAR SYNC</span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4 text-xs text-mintGrey">
+          <button onclick="navigateTo('home')" class="hover:text-white transition-colors">Home</button>
+          <button onclick="navigateTo('about')" class="hover:text-white transition-colors">About</button>
+          <button onclick="navigateTo('services')" class="hover:text-white transition-colors">Services</button>
+          <button onclick="navigateTo('portfolio')" class="hover:text-white transition-colors">Portfolio</button>
+          <button onclick="navigateTo('contact')" class="hover:text-white transition-colors">Contact</button>
+        </div>
+        <div class="text-[10px] text-mintGrey">
+          &copy; 2026 Sagar Sync. Local digital optimization ecosystem.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="fixed bottom-4 right-4 z-50">
+    <!-- Floating Chatbot Launcher button -->
+    <button id="chatbot-launcher" onclick="toggleChatbot()"
+      class="w-12 h-12 sm:w-14 sm:h-14 bg-forest hover:bg-forestDark text-pebble rounded-full flex items-center justify-center shadow-2xl transition-transform active:scale-90 border border-sage/40"
+      aria-label="Open Chatbot">
+      <i class="fas fa-comment-dots text-lg sm:text-xl"></i>
+    </button>
+
+    <!-- Chat Window: Mobile-responsive (converts to smart bottom sheet layout on mobile screen widths) -->
+    <div id="chatbot-window"
+      class="hidden fixed sm:absolute bottom-20 right-4 sm:right-0 w-[calc(100vw-2rem)] sm:w-[380px] h-[450px] bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-pebble flex flex-col overflow-hidden max-w-sm transition-all duration-300">
+      <!-- Header -->
+      <div class="bg-forest text-pebble px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-sage rounded-full flex items-center justify-center text-forest font-extrabold text-xs">
+            SB</div>
+          <div>
+            <h4 class="font-extrabold text-xs leading-none">SyncBot</h4>
+            <span class="text-[9px] text-mintGrey">Gemini AI Assistant</span>
+          </div>
+        </div>
+        <button onclick="toggleChatbot()" class="text-mintGrey hover:text-white p-1 rounded-full hover:bg-forestDark"
+          aria-label="Close chatbot">
+          <i class="fas fa-times text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Scrollable Messages Area -->
+      <div id="chatbot-messages" class="flex-grow p-4 overflow-y-auto space-y-3 custom-scrollbar bg-pebbleLight">
+        <div class="flex items-start space-x-2">
+          <div
+            class="w-6 h-6 bg-sage text-forest rounded-full flex items-center justify-center text-[9px] font-bold shrink-0 mt-1">
+            SB</div>
+          <div class="bg-white text-forest text-[11px] sm:text-xs p-3 rounded-xl shadow-sm max-w-[85%] leading-relaxed">
+            Namaste! I am <strong>SyncBot</strong>, your dynamic AI assistance system. Feel free to ask me anything
+            about Sagar Sync’s services, our 4-person team, prices, local MP packages, or portfolios!
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Suggestion Chips -->
+      <div class="px-3 py-1.5 bg-white flex flex-wrap gap-1 border-t border-pebble">
+        <button onclick="sendQuickQuery('What bundles do you offer?')"
+          class="text-[9px] bg-pebble hover:bg-sage/15 text-forest px-2 py-1 rounded-full transition-colors font-semibold">Bundles
+          Info</button>
+        <button onclick="sendQuickQuery('Who is in the Sagar Sync team?')"
+          class="text-[9px] bg-pebble hover:bg-sage/15 text-forest px-2 py-1 rounded-full transition-colors font-semibold">Team
+          Profiles</button>
+        <button onclick="sendQuickQuery('Tell me about pricing')"
+          class="text-[9px] bg-pebble hover:bg-sage/15 text-forest px-2 py-1 rounded-full transition-colors font-semibold">Pricing</button>
+      </div>
+
+      <!-- Mobile-Friendly Input Box Area -->
+      <div class="p-2 bg-white border-t border-pebble flex items-center space-x-2">
+        <input type="text" id="chatbot-input" onkeypress="handleChatKeyPress(event)"
+          class="flex-grow px-3 py-2.5 rounded-xl border border-pebble text-xs focus:ring-1 focus:ring-sage focus:outline-none"
+          placeholder="Type a message or tap chips above...">
+        <button onclick="sendUserMessage()"
+          class="bg-forest hover:bg-forestDark text-pebble w-9 h-9 rounded-xl flex items-center justify-center shrink-0 active:scale-95 transition-colors">
+          <i class="fas fa-paper-plane text-xs"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Organization Database Context
+    const companyState = {
+      name: "Sagar Sync",
+      location: "Makroniya, Sagar, Madhya Pradesh, India",
+      team: {
+        aman: {
+          name: "Aman Patel",
+          role: "Lead Full-Stack Developer",
+          bio: "Aman manages complex full-stack workflows. He builds Student Portals, scalable business directories, handles API configurations and maintains cloud deployment frameworks.",
+          skills: ["React", "NodeJS", "Google Cloud", "MongoDB", "Express", "REST APIs"],
+          projects: [
+            { name: "Sagar E-Mart Directory", desc: "A directory scaling organic digital visibility for retail outlets." },
+            { name: "JEE coaching tracking node", desc: "Dynamic student information logging backend with mock test schedules." }
+          ]
+        },
+        rohan: {
+          name: "Rohan Mishra",
+          role: "Mobile & UI/UX Developer",
+          bio: "Rohan creates dynamic user interfaces and cross-platform native iOS/Android applications utilizing Flutter.",
+          skills: ["Flutter", "Dart", "Tailwind CSS", "Figma", "Adaptive UX"],
+          projects: [
+            { name: "Sagar Bus Tracker Platform", desc: "A light mobile tracker system optimizing local route mapping." },
+            { name: "Stock counter tracker application", desc: "Inventory checker layout built with offline storage coordinates." }
+          ]
+        },
+        priya: {
+          name: "Priya Sharma",
+          role: "CAD & Civil Engineer",
+          bio: "Priya drafts residential building maps meeting modern compliance parameters, floor outlines, structural frames, and elevations.",
+          skills: ["AutoCAD", "Autodesk Revit", "SolidWorks", "3D Elevations"],
+          projects: [
+            { name: "Civil complex floor blueprint", desc: "Functional commercial spaces optimized for modern builders in Sagar." },
+            { name: "Makroniya Green Villa elevation", desc: "Modern exterior 3D architectural plan complying with city rules." }
+          ]
+        },
+        sameer: {
+          name: "Sameer Khan",
+          role: "Video Editor & Producer",
+          bio: "Sameer produces viral social reels, commercial ads, kinetic titles, sound matches, and promotional walkthrough edits.",
+          skills: ["Premiere Pro", "After Effects", "Sound Mixing", "Color Grading"],
+          projects: [
+            { name: "Inauguration commercial video", desc: "Opening promo designed for high audience retention." },
+            { name: "Coaching institute ad walkthrough", desc: "Promotional reel optimizing local student admissions." }
+          ]
+        }
+      }
+    };
+
+    // Offline Fallback Response Dictionary to prevent chatbot hangs
+    const offlineChatBotResponses = [
+      { keywords: ["bundle", "price", "pack", "charge"], answer: "We offer 3 specialized bundles: Coaching Institute Pack (₹19,999), Builder Elevation Bundle (₹16,499), and Local Business Kickstart (₹11,999). Specific custom services are priced on request. Select your target on our Contact form!" },
+      { keywords: ["team", "aman", "rohan", "priya", "sameer", "member", "people"], answer: "Our 4-person elite squad includes Aman & Rohan (Developers), Priya (Civil CAD Engineer), and Sameer (Creative Video Editor). You can view their full project history directly in our Portfolio section!" },
+      { keywords: ["where", "location", "sagar", "makroniya", "address"], answer: "We are physically based in Makroniya, Sagar, Madhya Pradesh (470004). This enables us to visit sites for civil CAD mapping and shoot physical promotional footage." },
+      { keywords: ["web", "site", "app", "flutter", "react", "code"], answer: "Aman Patel and Rohan Mishra code custom, high-speed static websites, dynamic student portals, and fluid Flutter cross-platform mobile apps. Head to our Services page to book them!" },
+      { keywords: ["house", "map", "elevation", "civil", "cad"], answer: "Priya Sharma is our CAD expert. She drafts professional 2D blueprints, structural elevations, and modern 3D front elevations. View her works under our Portfolio tab." },
+      { keywords: ["video", "ad", "reel", "shoot", "edit"], answer: "Sameer Khan scripts and edits retention-driven short-form reels and commercial ads. We capture high-quality footage right here in Sagar to drive client growth." }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      navigateTo('home');
+    });
+
+    function navigateTo(pageId) {
+      const pages = ['home', 'about', 'services', 'portfolio', 'blog', 'contact'];
+
+      // Hide all pages, remove active navigation styles safely
+      pages.forEach(page => {
+        const pageElement = document.getElementById(`page-${page}`);
+        if (pageElement) {
+          pageElement.classList.add('hidden');
+          pageElement.classList.remove('block');
+        }
+        const navBtn = document.getElementById(`nav-${page}`);
+        if (navBtn) {
+          navBtn.classList.remove('bg-forestDark', 'text-white', 'font-bold');
+          navBtn.classList.add('text-mintGrey');
+        }
+      });
+
+      // Show active page, apply bold design highlight
+      const targetPage = document.getElementById(`page-${pageId}`);
+      if (targetPage) {
+        targetPage.classList.remove('hidden');
+        targetPage.classList.add('block');
+      }
+
+      const activeNavBtn = document.getElementById(`nav-${pageId}`);
+      if (activeNavBtn) {
+        activeNavBtn.classList.add('bg-forestDark', 'text-white', 'font-bold');
+        activeNavBtn.classList.remove('text-mintGrey');
+      }
+
+      // Scroll cleanly back to top on mobile transitions
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.className = 'fas fa-times text-2xl';
+      } else {
+        menu.classList.add('hidden');
+        icon.className = 'fas fa-bars text-2xl';
+      }
+    }
+
+    // Expanding & collapsing bundle specifications
+    function toggleBundle(bundleId) {
+      const details = document.getElementById(`details-${bundleId}`);
+      const icon = document.getElementById(`icon-${bundleId}`);
+      if (details.classList.contains('hidden')) {
+        details.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        details.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    function selectBundleInForm(optionValue, bundleHeadingName) {
+      const selectEl = document.getElementById('form-service');
+      const briefEl = document.getElementById('form-brief');
+
+      if (selectEl) {
+        selectEl.value = optionValue;
+      }
+      if (briefEl) {
+        briefEl.value = `I am looking to book the "${bundleHeadingName}". Please reach out with direct specifications and execution deadlines for our local business.`;
+      }
+    }
+
+    function openMemberPortfolio(memberId) {
+      const member = companyState.team[memberId];
+      if (!member) return;
+
+      const modal = document.getElementById('portfolio-modal');
+      const content = document.getElementById('modal-content');
+
+      // Map skills dynamically to modern clean chips
+      const skillsHtml = member.skills.map(skill =>
+        `<span class="bg-pebble text-forest font-bold text-xs px-3 py-1.5 rounded-full">${skill}</span>`
+      ).join('');
+
+      // Map projects directly to responsive display nodes
+      const projectsHtml = member.projects.map(proj => `
+                <div class="bg-pebbleLight/50 p-4 rounded-xl border border-pebble">
+                    <h5 class="font-extrabold text-forest text-sm sm:text-base mb-1">${proj.name}</h5>
+                    <p class="text-xs text-slateTeal leading-relaxed">${proj.desc}</p>
+                </div>
+            `).join('');
+
+      content.innerHTML = `
+                <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 mb-6 pb-6 border-b border-pebble">
+                    <img src="https://placehold.co/150x150/7B9669/FFFFFF?text=${member.name.split(' ').map(n => n[0]).join('')}" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-pebble object-cover shadow" alt="${member.name}">
+                    <div class="text-center sm:text-left">
+                        <h3 class="text-2xl font-extrabold text-forest">${member.name}</h3>
+                        <span class="text-xs font-semibold text-slateTeal uppercase tracking-wider block mt-1">${member.role}</span>
+                        <p class="text-xs sm:text-sm text-slateTeal mt-3 leading-relaxed">${member.bio}</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-extrabold text-forest text-sm sm:text-base mb-3">Core Stack & Specialization</h4>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        ${skillsHtml}
+                    </div>
+                    
+                    <h4 class="font-extrabold text-forest text-sm sm:text-base mb-3">Direct Verification Projects</h4>
+                    <div class="grid grid-cols-1 gap-3">
+                        ${projectsHtml}
+                    </div>
+                </div>
+            `;
+
+      modal.classList.remove('hidden');
+      document.body.classList.add('modal-open');
+    }
+
+    function closePortfolioModal() {
+      document.getElementById('portfolio-modal').classList.add('hidden');
+      document.body.classList.remove('modal-open');
+    }
+
+    function handleFormSubmission(event) {
+      event.preventDefault();
+      const name = document.getElementById('form-name').value;
+      const phone = document.getElementById('form-phone').value;
+      const email = document.getElementById('form-email').value;
+      const service = document.getElementById('form-service').value;
+      const brief = document.getElementById('form-brief').value;
+
+      const clientLead = {
+        name,
+        phone,
+        email,
+        service,
+        brief,
+        submittedAt: new Date().toISOString()
+      };
+
+      // Saving lead locally inside browser database simulator
+      let existingSpreadsheetDB = JSON.parse(localStorage.getItem('sagar_sync_leads') || '[]');
+      existingSpreadsheetDB.push(clientLead);
+      localStorage.setItem('sagar_sync_leads', JSON.stringify(existingSpreadsheetDB));
+
+      // Informative success feedback screen transition
+      document.getElementById('contact-form').classList.add('hidden');
+      document.getElementById('form-success').classList.remove('hidden');
+
+      setTimeout(() => {
+        document.getElementById('contact-form').reset();
+        document.getElementById('contact-form').classList.remove('hidden');
+        document.getElementById('form-success').classList.add('hidden');
+      }, 5500);
+    }
+
+    function toggleChatbot() {
+      const chatWin = document.getElementById('chatbot-window');
+      if (chatWin.classList.contains('hidden')) {
+        chatWin.classList.remove('hidden');
+      } else {
+        chatWin.classList.add('hidden');
+      }
+    }
+
+    function handleChatKeyPress(event) {
+      if (event.key === 'Enter') {
+        sendUserMessage();
+      }
+    }
+
+    function sendQuickQuery(text) {
+      const inputField = document.getElementById('chatbot-input');
+      if (inputField) {
+        inputField.value = text;
+        sendUserMessage();
+      }
+    }
+
+    async function sendUserMessage() {
+      const inputField = document.getElementById('chatbot-input');
+      const messageText = inputField.value.trim();
+      if (!messageText) return;
+
+      // Display user's question, clear the input
+      inputField.value = '';
+      appendChatMessage(messageText, 'user');
+
+      // Inject animated typing indicator
+      const typingIndicatorId = appendTypingIndicator();
+
+      // Set up local timeout protection to guarantee chatbot never gets "stuck on loading"
+      let completed = false;
+      const fallbackTimeout = setTimeout(() => {
+        if (!completed) {
+          completed = true;
+          removeTypingIndicator(typingIndicatorId);
+          const localizedResponse = lookupOfflineAnswers(messageText);
+          appendChatMessage(localizedResponse, 'bot');
+        }
+      }, 4500); // Trigger local expert backup if the network wait exceeds 4.5 seconds
+
+      try {
+        const systemPrompt = `You are SyncBot, the official AI representative of Sagar Sync.
+                Reference information:
+                - Name: Sagar Sync (Lean, transparent digital & design agency in Sagar, MP).
+                - Team: 4 core members. Developers: Aman Patel & Rohan Mishra. CAD Civil Architect: Priya Sharma. Video Editor: Sameer Khan.
+                - Location: Makroniya, Sagar, Madhya Pradesh (India).
+                - Pricing policy: Custom services are priced dynamically on requirement. Package Bundles: 
+                  1. "Coaching Institute Scale-Up Bundle" (₹19,999) - static portals, GMB setup, social ads, server configuration.
+                  2. "Real Estate / Contractor Elevation Pack" (₹16,499) - 3D front elevations, walkthrough, landing capture.
+                  3. "Local Business Kickstart Pack" (₹11,999) - static lander, showroom reels, map optimized keywords.
+                - Contacts: Prathvi Singh Thakur (+19 8962685091), Krishna Pathak (+91 8827050460).
+                Be concise, extremely friendly on mobile viewports, clear, and direct.`;
+
+        const apiKey = "AQ.Ab8RN6IXvrDnfVL-VAWZydoOyqr5LYkgk-9Xn7h7Y4zEW_-oNg"; // Handled automatically at Canvas runtime
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: messageText }] }],
+            systemInstruction: { parts: [{ text: systemPrompt }] }
+          })
+        });
+
+        if (!completed) {
+          completed = true;
+          clearTimeout(fallbackTimeout);
+          removeTypingIndicator(typingIndicatorId);
+
+          const result = await response.json();
+          const aiMessageText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (aiMessageText) {
+            appendChatMessage(aiMessageText, 'bot');
+          } else {
+            // Safe state recovery block
+            appendChatMessage(lookupOfflineAnswers(messageText), 'bot');
+          }
+        }
+      } catch (err) {
+        if (!completed) {
+          completed = true;
+          clearTimeout(fallbackTimeout);
+          removeTypingIndicator(typingIndicatorId);
+          appendChatMessage(lookupOfflineAnswers(messageText), 'bot');
+        }
+      }
+    }
+
+    // Fallback Response Matcher based on query scanning
+    function lookupOfflineAnswers(query) {
+      const lowercaseQuery = query.toLowerCase();
+      for (const item of offlineChatBotResponses) {
+        if (item.keywords.some(keyword => lowercaseQuery.includes(keyword))) {
+          return item.answer;
+        }
+      }
+      return "Thanks for connecting with Sagar Sync! I am currently running on local backup mode. For immediate queries, feel free to submit a brief on our Contact Page or call Prathvi Singh Thakur directly at +19 8962685091.";
+    }
+
+    function appendChatMessage(text, authorType) {
+      const chatContainer = document.getElementById('chatbot-messages');
+      if (!chatContainer) return;
+
+      const chatWrapper = document.createElement('div');
+      chatWrapper.className = `flex items-start space-x-2 ${authorType === 'user' ? 'justify-end' : 'justify-start'}`;
+
+      const chatBubbleContent = authorType === 'user'
+        ? `<div class="bg-forest text-pebble text-xs p-3 rounded-xl shadow-sm max-w-[85%] leading-relaxed">${text}</div>`
+        : `<div class="w-6 h-6 bg-sage text-forest rounded-full flex items-center justify-center text-[9px] font-bold shrink-0 mt-1">SB</div>
+                   <div class="bg-white text-forest text-xs p-3 rounded-xl shadow-sm max-w-[85%] leading-relaxed">${text.replace(/\n/g, '<br>')}</div>`;
+
+      chatWrapper.innerHTML = chatBubbleContent;
+      chatContainer.appendChild(chatWrapper);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    // Appending the typing indicator element
+    function appendTypingIndicator() {
+      const chatContainer = document.getElementById('chatbot-messages');
+      if (!chatContainer) return null;
+
+      const uniqueId = `typing-${Date.now()}`;
+      const indicatorWrapper = document.createElement('div');
+      indicatorWrapper.id = uniqueId;
+      indicatorWrapper.className = "flex items-start space-x-2 justify-start";
+
+      indicatorWrapper.innerHTML = `
+                <div class="w-6 h-6 bg-sage text-forest rounded-full flex items-center justify-center text-[9px] font-bold shrink-0 mt-1">SB</div>
+                <div class="bg-white text-slateTeal text-xs p-3 rounded-xl shadow-sm max-w-[85%] flex items-center space-x-1">
+                    <span class="animate-bounce inline-block w-1 h-1 bg-slateTeal rounded-full"></span>
+                    <span class="animate-bounce inline-block w-1.5 h-1.5 bg-slateTeal rounded-full" style="animation-delay: 0.15s"></span>
+                    <span class="animate-bounce inline-block w-1 h-1 bg-slateTeal rounded-full" style="animation-delay: 0.3s"></span>
+                </div>
+            `;
+
+      chatContainer.appendChild(indicatorWrapper);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+      return uniqueId;
+    }
+
+    function removeTypingIndicator(id) {
+      const indicatorEl = document.getElementById(id);
+      if (indicatorEl) {
+        indicatorEl.remove();
+      }
+    }
+  </script>
+</body>
+
+</html>
