@@ -7,7 +7,7 @@ export default function PortfolioModal({ activeMember, onClose }) {
     <div className="fixed inset-0 bg-forest/80 z-50 flex items-center justify-center p-4 sm:p-6 backdrop-blur-sm">
       <div 
         id="portfolio-modal-container"
-        className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[85vh] overflow-y-auto relative border border-pebble flex flex-col custom-scrollbar text-left"
+        className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[85vh] overflow-y-auto relative border border-pebble flex flex-col no-scrollbar text-left"
       >
         <button 
           onClick={onClose}
