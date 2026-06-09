@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sage: #7B9669;
+  --color-pebble: #E6E6E6;
+  --color-forest: #404E3B;
+  --color-slateTeal: #6C8480;
+  --color-mintGrey: #BAC8B1;
+  --color-forestDark: #2F3A2C;
+  --color-pebbleLight: #F3F4F6;
+  
+  --font-sans: 'Inter', sans-serif;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #F3F4F6;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #7B9669;
+  border-radius: 99px;
+}
+
+.page-transition {
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+/* Mobile Active Tap Highlighting fix */
+button,
+a,
+select,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent background scroll when modal is active */
+.modal-open {
+  overflow: hidden;
+}
