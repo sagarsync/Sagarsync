@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { blogPosts } from '../data/companyData.js';
 
 export default function Blog() {

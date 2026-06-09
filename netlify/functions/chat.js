@@ -1,4 +1,6 @@
-export async function handler(event, context) {
+/* global process */
+
+export async function handler(event) {
   // Handle preflight OPTIONS request for CORS
   if (event.httpMethod === "OPTIONS") {
     return {
@@ -56,7 +58,7 @@ Reference information:
   1. "Coaching Institute Scale-Up Bundle" (₹19,999) - static portals, GMB setup, social ads, server configuration.
   2. "Real Estate / Contractor Elevation Pack" (₹16,499) - 3D front elevations, walkthrough, landing capture.
   3. "Local Business Kickstart Pack" (₹11,999) - static lander, showroom reels, map optimized keywords.
-- Contacts: Prathvi Singh Thakur (+19 8962685091), Krishna Pathak (+91 8827050460).
+- Contacts: Prathvi Singh Thakur (+91 8962685091), Krishna Pathak (+91 8827050460).
 Be concise, extremely friendly on mobile viewports, clear, and direct.`;
 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;

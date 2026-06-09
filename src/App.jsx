@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { animate, stagger } from 'animejs';
 
 // Static Data
@@ -246,7 +246,7 @@ Be concise, extremely friendly on mobile viewports, clear, and direct.`;
           }]);
         }
       }
-    } catch (err) {
+    } catch {
       if (!completed) {
         completed = true;
         clearTimeout(fallbackTimeout);

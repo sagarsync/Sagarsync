@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { companyState } from '../data/companyData.js';
 
 export default function Portfolio({ onOpenMember }) {

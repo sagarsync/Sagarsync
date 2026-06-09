@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { services, bundles } from '../data/companyData.js';
 
 export default function Services({ onSelectBundle }) {
