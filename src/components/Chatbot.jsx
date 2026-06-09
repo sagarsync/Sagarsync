@@ -34,7 +34,7 @@ export default function Chatbot({
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-sage rounded-full flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/Sagar Sync.png" 
+                  src="/Sagar%20Sync.png" 
                   alt="SB" 
                   className="w-full h-full object-cover scale-110"
                   onError={(e) => {
@@ -63,7 +63,7 @@ export default function Chatbot({
                 {msg.sender === 'bot' && (
                   <div className="w-6 h-6 bg-sage rounded-full flex items-center justify-center overflow-hidden shrink-0 mt-1">
                     <img 
-                      src="/Sagar Sync.png" 
+                      src="/Sagar%20Sync.png" 
                       alt="SB" 
                       className="w-full h-full object-cover scale-110"
                       onError={(e) => {
@@ -93,7 +93,7 @@ export default function Chatbot({
               <div className="flex items-start space-x-2 justify-start">
                 <div className="w-6 h-6 bg-sage rounded-full flex items-center justify-center overflow-hidden shrink-0 mt-1">
                   <img 
-                    src="/Sagar Sync.png" 
+                    src="/Sagar%20Sync.png" 
                     alt="SB" 
                     className="w-full h-full object-cover scale-110"
                     onError={(e) => {

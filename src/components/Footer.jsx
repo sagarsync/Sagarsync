@@ -13,7 +13,7 @@ export default function Footer({ onNavigate }) {
           >
             <div className="w-8 h-8 bg-sage rounded-full flex items-center justify-center overflow-hidden">
               <img 
-                src="/Sagar Sync.png" 
+                src="/Sagar%20Sync.png" 
                 alt="S" 
                 className="w-full h-full object-cover scale-110"
                 onError={(e) => {

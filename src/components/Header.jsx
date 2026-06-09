@@ -13,7 +13,7 @@ export default function Header({ activeTab, onNavigate, mobileMenuOpen, onToggle
           >
             <div className="w-10 h-10 bg-sage rounded-full flex items-center justify-center overflow-hidden shadow-md transform active:scale-95 transition-transform">
               <img 
-                src="/Sagar Sync.png" 
+                src="/Sagar%20Sync.png" 
                 alt="Sagar Sync Logo" 
                 className="w-full h-full object-cover scale-110"
                 onError={(e) => {
