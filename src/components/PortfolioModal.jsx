@@ -23,7 +23,7 @@ export default function PortfolioModal({ activeMember, onClose }) {
               {activeMember.image ? (
                 <img src={activeMember.image} alt={activeMember.name} className="w-full h-full object-cover scale-110" />
               ) : (
-                activeMember.initials
+                <img src="/Default_member_image.png" alt={activeMember.name} className="w-full h-full object-cover scale-110" />
               )}
             </div>
             <div className="text-center sm:text-left">
