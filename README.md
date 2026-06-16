@@ -94,7 +94,7 @@ function doPost(e) {
     var clientSubject = "We have received your project details - Sagar Sync";
     var clientBody = "Dear " + name + ",\n\n" +
                       "Thank you for contacting Sagar Sync! We have successfully logged your project interest for '" + service + "'.\n\n" +
-                      "Our full-stack partner or mobile design coordinator will review your requirements and call you at " + phone + " within 4 hours.\n\n" +
+                      "Our full-stack partner or team representative will review your requirements and reach out to you within 4 hours.\n\n" +
                       "Best regards,\n" +
                       "Sagar Sync Team\n" +
                       "📍 Makroniya, Sagar, MP\n" +
