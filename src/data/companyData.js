@@ -5,68 +5,87 @@ export const companyState = {
     prathvi: {
       id: "prathvi",
       name: "Prathvi Singh Thakur",
-      role: "Team Leader",
-      bio: "Prathvi leads technical operations and full-stack development. He directs system integration, custom deployments, client management, and architectural designs.",
-      skills: ["Team Leadership", "React", "NodeJS", "Google Cloud", "MongoDB", "REST APIs"],
+      role: "Team Leader, Game Dev & AI/ML Enthusiast",
+      bio: "Creative technologist and B.Tech IT student blending engineering rigour with artistic vision. Proficient in Unreal Engine 5 and Blender with a portfolio of original 3D animations, game prototypes, and AI/ML projects. Strong Python and JavaScript foundations enable scripted, procedural, and intelligent systems. Hackathon 1st place winner for Smart City Traffic AI prototype.",
+      skills: ["Unreal Engine 5", "Blender 3D", "Python (Advanced)", "JavaScript", "React", "AI/ML & Data Science", "Scikit-learn", "NumPy & Pandas", "3D Animation & VFX", "Game Design", "Docker", "Git & GitHub"],
       projects: [
         {
-          name: "Personal Portfolio Website",
-          desc: "Designed and developed a complete personal portfolio using React and Tailwind CSS from scratch.",
-          tech: ["React", "Tailwind CSS", "JavaScript", "GitHub"],
-          link: "https://polymathengineering.tech/",
+          name: "Product Animation Series — Headphones & Mechanical Keyboard",
+          desc: "Photorealistic product animations with custom PBR materials, HDR lighting, and motion path animations. Rendered at 4K using Blender Cycles with studio-quality output.",
+          tech: ["Blender", "Cycles Renderer", "PBR Materials", "Three.js"],
           details: {
-            did: "Designed and developed a complete personal portfolio using React and Tailwind CSS from scratch.",
-            approach: "Focused on a clean, modern glassmorphism aesthetic with smooth scroll animations to create a premium feel.",
-            vision: "To build a digital resume that not only lists my skills but actively demonstrates my front-end capabilities.",
-            solved: "Created a centralized hub for all my projects, certifications, and contact info, making it easy for recruiters to evaluate my profile."
+            did: "Created photorealistic product animations with custom PBR materials, HDR lighting, and motion path animations. Modelled intricate mechanical keyboard key mechanisms with fully rigged keycap actuation.",
+            approach: "Rendered sequences at 4K using Blender Cycles with denoising for studio-quality output. Embedded interactive 3D model viewers on personal portfolio website using Three.js.",
+            vision: "To produce advertising-grade 3D product renders that demonstrate professional-level modelling, rigging, and rendering capabilities.",
+            solved: "Achieved studio-quality photorealistic renders suitable for commercial product marketing, with interactive web-based 3D viewers for portfolio showcasing."
           }
         },
         {
-          name: "CodeHub: A Learning Platform",
-          desc: "Built a fully functional e-learning platform frontend with course catalog, video player, and user dashboard.",
-          tech: ["React", "Tailwind CSS", "JavaScript", "GitHub"],
+          name: "Smart City Traffic AI — Hackathon 1st Place",
+          desc: "AI + IoT system predicting and managing urban traffic congestion in real time. Built ML classification model achieving 85%+ accuracy. Won 1st place at RGPV hackathon.",
+          tech: ["Python", "Scikit-learn", "Unreal Engine", "IoT Simulation", "ML"],
+          details: {
+            did: "Designed and led development of an AI + IoT system predicting urban traffic congestion in real time. Implemented ML classification model to analyze traffic density data from simulated IoT sensors. Also built an interactive Unreal Engine visualization of the smart traffic system.",
+            approach: "Built a real-time dashboard visualizing AI predictions — system achieved 85%+ accuracy on test data in a 48-hour sprint. Designed game-style UI overlays displaying real-time AI data, blending game-dev and software skills.",
+            vision: "To combine AI/ML intelligence with game engine visualization for practical smart city applications that solve real urban challenges.",
+            solved: "Won 1st place with judges specifically commending the visual fidelity of the interactive demo and the innovation of combining ML predictions with game engine visualization."
+          }
+        },
+        {
+          name: "Procedural Abstract Flow Animation",
+          desc: "Generative abstract motion piece using Geometry Nodes and fluid simulation for dynamic visual storytelling. Looping animation suitable for music visualizers and motion backgrounds.",
+          tech: ["Blender", "Geometry Nodes", "Fluid Simulation", "EEVEE"],
+          details: {
+            did: "Designed a generative abstract motion piece using Geometry Nodes and fluid simulation for dynamic visual storytelling. Composed a looping animation suitable for music visualizer, motion background, or NFT art use cases.",
+            approach: "Leveraged Blender's procedural Geometry Nodes system to create algorithmically-driven visual art that evolves organically in each frame.",
+            vision: "To explore the intersection of procedural generation and artistic expression through code-driven 3D animation.",
+            solved: "Published renders on portfolio attracting positive engagement from the 3D design community, demonstrating procedural art capabilities."
+          }
+        },
+        {
+          name: "Car Fall Cinematic Animation",
+          desc: "Physics-driven cinematic sequence using Blender's rigid body simulation, camera rig animation, volumetric lighting, and compositing post-processing for filmic look.",
+          tech: ["Blender", "Rigid Body Physics", "Volumetric Lighting", "Compositing"],
+          details: {
+            did: "Produced a physics-driven cinematic sequence using Blender's rigid body simulation and camera rig animation. Composed dramatic lighting using area lights and volumetric fog.",
+            approach: "Implemented compositing post-processing (glare, chromatic aberration) for filmic look. Combined physics simulation with cinematic camera work for dramatic effect.",
+            vision: "To demonstrate advanced Blender skills in physics simulation, cinematic lighting, and post-production compositing.",
+            solved: "Created a visually compelling cinematic piece showcasing proficiency in physics-based animation, volumetric rendering, and film-grade compositing."
+          }
+        },
+        {
+          name: "CodeHub: Adaptive Learning Platform",
+          desc: "E-learning platform with intelligent content recommendation, NLP-powered code hints, and user progress analytics. Built with React and MySQL.",
+          tech: ["React", "JavaScript", "MySQL", "NLP", "GitHub"],
           link: "https://codehub321.netlify.app/",
           details: {
-            did: "Built a fully functional e-learning platform frontend with course catalog, video player, and user dashboard.",
-            approach: "Utilized React Router for seamless navigation and a state management system to track user progress.",
-            vision: "To democratize coding education by providing an accessible, intuitive platform for learners of all levels.",
-            solved: "Solved the problem of scattered learning resources by aggregating tutorials, exercises, and progress tracking in one place."
+            did: "Built a fully functional e-learning platform with intelligent content recommendation logic to surface personalized coding exercises. Implemented basic NLP-powered code hint system for context-sensitive suggestions.",
+            approach: "Utilized React Router for seamless navigation, integrated user progress analytics (MySQL) to identify learning bottlenecks and improve curriculum design.",
+            vision: "To democratize coding education by providing an accessible, AI-enhanced platform that adapts to each learner's journey.",
+            solved: "Solved the problem of one-size-fits-all learning by aggregating tutorials, exercises, and adaptive progress tracking in one intelligent platform."
           }
         },
         {
-          name: "Git Bridge: Tool to use Git",
-          desc: "Developed a desktop GUI application using Python and Tkinter that acts as a wrapper around Git CLI commands.",
+          name: "Python Data Science Capstone Projects",
+          desc: "End-to-end data analysis projects: data cleaning, EDA, feature engineering, predictive modelling with Scikit-learn, and visualization with Matplotlib and Seaborn.",
+          tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib", "Jupyter"],
+          details: {
+            did: "Completed end-to-end data analysis projects covering data cleaning, EDA, feature engineering, and model evaluation. Built predictive models using Scikit-learn evaluated with cross-validation, precision, recall, and F1 metrics.",
+            approach: "Visualized insights with Matplotlib and Seaborn; presented findings in structured Jupyter notebooks. Applied systematic data science workflow from raw data to actionable predictions.",
+            vision: "To build a strong applied data science foundation for developing intelligent features in software products.",
+            solved: "Demonstrated ability to handle real-world data challenges end-to-end — from messy data preprocessing to model deployment and insight communication."
+          }
+        },
+        {
+          name: "Git Bridge: Interactive Web Application",
+          desc: "Visual browser-based GitHub interface demonstrating UI/UX design sensibility and front-end engineering. Built with Python and Tkinter.",
           tech: ["Python", "Tkinter", "Git", "Automation", "GitHub"],
           link: "https://gitbridge.netlify.app/",
           details: {
-            did: "Developed a desktop GUI application using Python and Tkinter that acts as a wrapper around Git CLI commands.",
+            did: "Developed a desktop GUI application using Python and Tkinter that acts as a wrapper around Git CLI commands, making version control accessible to beginners.",
             approach: "Automated the execution of shell commands through Python's subprocess module, parsing the output into a user-friendly interface.",
             vision: "To lower the barrier to entry for version control, helping beginners use Git without the steep command-line learning curve.",
             solved: "Eliminated the friction of memorizing Git commands for simple tasks like committing, pushing, and pulling, reducing workflow errors."
-          }
-        },
-        {
-          name: "HVEV - Client Production Website",
-          desc: "Collaborated on the frontend initially, then took full ownership of the backend logic, automated email responses, and deployment.",
-          tech: ["React", "Vercel", "Google Apps Script", "Resend", "Git", "GitHub"],
-          link: "https://www.hvev.in/",
-          details: {
-            did: "Collaborated on the frontend initially, then took full ownership of the backend logic, automated email responses, and deployment. Managed the complete GitHub workflow and connected the custom domain.",
-            approach: "Architected a system using free tiers of modern serverless tools instead of traditional paid hosting to meet the client's zero-cost constraint.",
-            vision: "To deliver a highly functional, scalable, and professional website without the overhead of monthly database and hosting subscriptions, focusing on real-world constraints.",
-            solved: "Used Google Sheets + Apps Script as a lightweight, zero-cost database. Managed user form data efficiently and switched from Zapier to the Resend API for a more scalable, free email automation solution."
-          }
-        },
-        {
-          name: "Utility Box: AI-Powered Multi-Tool",
-          desc: "Built a multi-utility AI-powered tool by integrating Gemini API for intelligent responses and remove.bg API for background removal.",
-          tech: ["React", "Gemini API", "remove.bg API", "JavaScript", "GitHub"],
-          link: "https://utilityboxy.netlify.app/",
-          details: {
-            did: "Built a multi-utility AI-powered tool by integrating Gemini API for intelligent responses and remove.bg API for background removal, combining different features into a single cohesive platform.",
-            approach: "Started as an experiment with AI tools but evolved into a real engineering challenge. Debugged AI-generated errors, refactored and optimized code, handled API failures and edge cases, and made everything work together smoothly.",
-            vision: "To move beyond just 'using AI' to actually engineering with AI — understanding how to build reliable systems that leverage AI capabilities while handling the real-world complexity AI alone can't solve.",
-            solved: "AI can generate code, but it doesn't always work correctly. This project tackled the gap between AI-generated output and production-ready software by debugging, refactoring, and building robust error handling around multiple API integrations."
           }
         }
       ],
@@ -77,36 +96,162 @@ export const companyState = {
     sampoorn: {
       id: "sampoorn",
       name: "Sampoorn Choubey",
-      role: "Social Media Manager & Digital Marketer",
-      bio: "Sampoorn manages social media strategies, digital marketing, content planning, and brand growth. He coordinates campaigns on YouTube and Instagram to scale online presence.",
-      skills: ["Social Media Management", "Content Creation", "Marketing Strategy", "Team Management", "Canva Design", "Video Editing", "Content Planning"],
+      role: "Digital Marketing & Social Media Specialist",
+      bio: "Results-driven Digital Marketing professional with 2+ years of hands-on experience in social media management, content strategy, and brand growth. Managed YouTube and Instagram channels with a combined following of 45,000+, achieving 3x engagement growth through data-driven content planning. Adept at Canva design, video editing, SEO content, and cross-platform campaign execution.",
+      skills: ["Social Media Management", "Content Strategy", "Canva (Advanced)", "Video Editing", "SEO & Analytics", "Meta Ads Manager", "Google Analytics", "Campaign Management", "Brand Growth", "Community Management", "Automation (Buffer, Hootsuite, Zapier, N8N)"],
       projects: [
-        { name: "Sheetal Sant Shree Ramdas Management", desc: "Appointed as Social Media Manager for YouTube and Instagram. Responsible for content organization, audience growth, and platform management." },
-        { name: "Brand Growth & Content Strategy", desc: "Providing post & reel ideas, Canva design support, audience engagement support, team coordination, and growth planning for local brands." }
+        {
+          name: "Sheetal Sant Shree Ramdas — YouTube & Instagram Management",
+          desc: "Social Media Manager since Jan 2024. Grew YouTube from 8K to 28K+ subscribers (250% increase) and boosted Instagram reel views by 320% through strategic content scheduling and SEO optimization.",
+          tech: ["YouTube Studio", "Meta Business Suite", "Canva", "CapCut", "SEO"],
+          details: {
+            did: "Managed full social media operations for YouTube and Instagram — grew YouTube subscribers from 8,000 to 28,000+ (250% increase) in 12 months. Increased average Instagram reel views by 320% with trending audio strategy and 5 reels/week cadence.",
+            approach: "Implemented data-driven content planning using YouTube Studio and Meta Insights. Designed 100+ branded Canva graphics, thumbnails, and story templates. Managed a 30+ posts/month content calendar across both platforms.",
+            vision: "To scale the creator's digital presence through strategic storytelling, SEO-optimized content, and consistent community engagement.",
+            solved: "Established a cohesive visual identity that boosted click-through rates by 45%. Improved average watch time by 2.1 minutes through weekly performance analysis. Handled community management with 200+ comments/week moderation."
+          }
+        },
+        {
+          name: "Brand Growth Campaign — 90-Day YouTube Sprint",
+          desc: "Conceptualized and executed a 90-day YouTube growth sprint: researched 500+ keywords, optimized 80+ existing videos, resulting in 40% increase in organic impressions and 3,000+ new Instagram followers from cross-promotion.",
+          tech: ["SEMrush", "YouTube Studio", "Keyword Research", "Cross-Platform Strategy"],
+          details: {
+            did: "Researched 500+ keywords, optimized 80+ existing videos with new titles/tags/descriptions, and launched a cross-promotion strategy between YouTube and Instagram driving 3,000+ new followers in 3 months.",
+            approach: "Created a weekly themed content series format and implemented systematic keyword research and SEO optimization across all existing and new content.",
+            vision: "To maximize organic reach and build sustainable audience growth through data-backed content optimization rather than paid promotion.",
+            solved: "Achieved 40% increase in organic impressions. Increased subscriber retention rate by 28% and reduced unsubscribe spikes through consistent themed content series."
+          }
+        },
+        {
+          name: "Freelance Content Strategy — Local Businesses",
+          desc: "Developed and executed social media launch campaigns for 3 local businesses (restaurant, boutique, coaching institute), helping them reach 1,000+ followers within 60 days of launch.",
+          tech: ["Canva", "CapCut", "Instagram", "Content Planning", "Analytics"],
+          details: {
+            did: "Created promotional reels, stories, and posts using Canva and CapCut — producing 15–20 content pieces per client per month. Delivered monthly performance reports with reach, engagement, and follower growth analytics.",
+            approach: "Advised businesses on platform selection, content mix, and posting frequency based on target audience demographics. Tailored visual branding and content calendars for each business type.",
+            vision: "To empower local businesses in Sagar with professional digital presence and social media strategy at accessible price points.",
+            solved: "Helped 3 businesses go from zero to 1,000+ followers in 60 days through systematic content creation and strategic posting schedules."
+          }
+        },
+        {
+          name: "IGEC TechFest 2023 — Digital Promotions",
+          desc: "Led the social media promotions team of 6 members for the annual college tech fest. Designed event posters, countdown stories, and highlights reels, contributing to 40% increase in registrations.",
+          tech: ["Canva", "Instagram", "WhatsApp", "Team Coordination"],
+          details: {
+            did: "Coordinated content creation and daily posting across Instagram and WhatsApp for IGEC Sagar's TechFest 2023. Managed live event coverage on Instagram Stories, accumulating 5,000+ story views over 2 event days.",
+            approach: "Led a 6-member social media team, coordinating content creation workflows, daily posting schedules, and real-time event coverage.",
+            vision: "To maximize event visibility and registrations through creative digital promotions and real-time social media engagement.",
+            solved: "Contributed to a 40% increase in registrations compared to the previous year through strategic digital promotion and live event coverage."
+          }
+        }
       ],
       initials: "SC"
     },
     mrityunjay: {
       id: "mrityunjay",
       name: "Mrityunjay Shukla",
-      role: "Junior Web Developer",
-      bio: "Mrityunjay is a B.Tech IT student focusing on full-stack web development, frontend interfaces, and data structures. He builds functional web applications and backend APIs.",
-      skills: ["Full Stack Web Development", "HTML & CSS", "JavaScript", "Node.js", "Express.js", "MongoDB", "Data Structures"],
+      role: "Full-Stack Web Developer",
+      bio: "Motivated B.Tech IT student with hands-on experience building full-stack web applications using the MERN stack. Solid foundation in Data Structures & Algorithms with 80+ problems solved on LeetCode and GeeksforGeeks. Built and deployed multiple projects independently, demonstrating the ability to learn quickly and ship functional products.",
+      skills: ["JavaScript (ES6+)", "React.js", "Node.js", "Express.js", "MongoDB", "REST API Design", "JWT Authentication", "TailwindCSS", "MySQL", "DSA", "Git & GitHub", "Postman"],
       projects: [
-        { name: "Tic-Tac-Toe Game", desc: "A simple logic-based game built to practice coding, interactive styling, and DOM manipulation." },
-        { name: "E-commerce Backend API", desc: "Developing user authentication, REST APIs, and product management systems using Node.js and Express.js." }
+        {
+          name: "ShopNest — E-Commerce Backend API",
+          desc: "Production-style RESTful backend for an e-commerce platform with full JWT authentication, role-based access control, and 25+ tested endpoints deployed on Railway.",
+          tech: ["Node.js", "Express.js", "MongoDB", "JWT", "bcrypt", "Railway"],
+          details: {
+            did: "Built a production-style RESTful backend with full user authentication (JWT + bcrypt), role-based access control for admin and customer users, and designed MongoDB schemas for users, products, orders, and cart with Mongoose.",
+            approach: "Secured API routes using middleware for token verification and input validation using express-validator. Tested all 25+ endpoints using Postman with documented route descriptions, sample requests, and expected responses.",
+            vision: "To build a scalable, secure backend architecture that mirrors real-world e-commerce systems and demonstrates production-level API design skills.",
+            solved: "Implemented complete CRUD endpoints for all major resources with proper authentication, authorization, and input validation. Deployed on Railway with environment variable management and persistent MongoDB Atlas cloud database."
+          }
+        },
+        {
+          name: "Tic-Tac-Toe Game with AI Opponent",
+          desc: "Interactive browser-based game with two-player local and single-player vs. unbeatable AI using Minimax algorithm. 120+ page views within first 2 weeks.",
+          tech: ["JavaScript", "HTML5", "CSS3", "Minimax Algorithm"],
+          details: {
+            did: "Developed a fully interactive browser-based Tic-Tac-Toe game with two modes: two-player local and single-player vs. AI opponent. Implemented the Minimax algorithm making it unbeatable in hard mode.",
+            approach: "Engineered game state management using vanilla JavaScript with clean DOM manipulation for real-time board updates, win detection, and score tracking across sessions. Styled with CSS animations for piece placement and win-line highlight.",
+            vision: "To demonstrate understanding of recursion, game theory, and algorithmic thinking through a polished, interactive web application.",
+            solved: "Created a fully responsive game for mobile and desktop with an intelligent AI opponent. Published on GitHub Pages — achieved 120+ page views within first 2 weeks after sharing in college coding community."
+          }
+        },
+        {
+          name: "Personal Portfolio Website",
+          desc: "Portfolio website built from scratch showcasing projects, skills, and contact info. Achieved 90+ Google Lighthouse performance score.",
+          tech: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+          details: {
+            did: "Designed and built a personal portfolio website from scratch showcasing projects, skills, and contact information with smooth scroll navigation and CSS keyframe animations.",
+            approach: "Implemented a functional contact form with client-side validation, optimized assets for performance, and used semantic HTML structure throughout.",
+            vision: "To create a professional digital presence that effectively communicates technical skills and project experience to potential employers.",
+            solved: "Achieved 90+ Google Lighthouse performance score through asset optimization and semantic HTML structure. Hosted on GitHub Pages with custom domain configuration."
+          }
+        },
+        {
+          name: "DSA Problem Solving — 80+ Problems",
+          desc: "Consistent competitive programming practice on LeetCode and GeeksforGeeks — arrays, strings, linked lists, recursion, and sorting with Big-O analysis.",
+          tech: ["JavaScript", "LeetCode", "GeeksforGeeks", "Algorithms"],
+          details: {
+            did: "Solved 80+ problems across arrays, strings, linked lists, recursion, and sorting on LeetCode and GeeksforGeeks with consistent time and space complexity analysis.",
+            approach: "Focused on documenting Big-O reasoning in solution comments. Participated in weekly DSA challenges at IGEC Sagar Coding Club with peer code review sessions.",
+            vision: "To build a strong algorithmic foundation essential for writing efficient, scalable production code and excelling in technical interviews.",
+            solved: "Developed systematic problem-solving skills across core data structures and algorithms, contributing to better code quality in all project work."
+          }
+        }
       ],
       initials: "MS"
     },
     prajawal: {
       id: "prajawal",
       name: "Prajawal Rathore",
-      role: "Video Editor & Social Media Manager",
-      bio: "Prajawal is a professional Video Editor and Social Media Manager. He creates high-retention short-form video content and drives engagement strategies for domestic and international brands.",
-      skills: ["Video Editing", "Social Media Management", "CapCut", "Adobe After Effects", "Sharp Storytelling", "Photography", "Sketching & Art"],
+      role: "Video Editor, Social Media Manager & Content Creator",
+      bio: "Creative video editor and social media strategist with 2+ years of freelance experience crafting high-impact short-form content for brands across India and the United States. Edited 150+ videos for Instagram Reels, YouTube Shorts, and TikTok — consistently hitting 300K+ combined views. Proficient in Adobe Premiere Pro, After Effects, CapCut, and DaVinci Resolve. Former studio videographer with on-set production experience.",
+      skills: ["Adobe Premiere Pro", "Adobe After Effects", "CapCut", "DaVinci Resolve", "Motion Graphics & VFX", "DSLR Photography", "Social Media Strategy", "Content Calendars", "Color Grading", "Canva", "Storyboarding", "Visual Storytelling"],
       projects: [
-        { name: "Freelance Short-Form Editing Portfolio", desc: "Edited 100+ high-engagement Instagram Reels and YouTube Shorts for India and U.S. clients, boosting engagement by up to 60%." },
-        { name: "Motozoomer Studio Content", desc: "Filmed and edited high-quality promotional videos, managed lighting, sound polish, and end-to-end production pipelines." }
+        {
+          name: "Freelance Video Editing — India & International Clients",
+          desc: "Edited 150+ short-form videos for Instagram Reels, YouTube Shorts, and TikTok. Increased client engagement by 60%+ and grew a U.S. client's Instagram from 3,200 to 11,000+ followers in 5 months.",
+          tech: ["Adobe Premiere Pro", "After Effects", "CapCut", "Frame.io", "DaVinci Resolve"],
+          details: {
+            did: "Edited 150+ short-form videos optimized for Instagram Reels, YouTube Shorts, and TikTok — applying platform-specific aspect ratios, caption styles, pacing, and hook structures. Served clients across India and the United States in fitness, real estate, lifestyle, and e-commerce niches.",
+            approach: "Managed end-to-end content production pipelines: raw footage intake, color grading in Premiere Pro, motion graphics in After Effects, export optimization, and client delivery via Frame.io. Designed monthly content calendars for 4 recurring clients with 20–30 posts/month.",
+            vision: "To deliver retention-driven content that ranks on platform algorithms, retains viewer attention, and converts audiences into customers for brands worldwide.",
+            solved: "Increased average client engagement rates by 60%+ through trend-informed editing techniques including jump cuts, kinetic typography, and sound-reactive transitions. Grew a U.S.-based lifestyle client's Instagram from 3,200 to 11,000+ followers in 5 months through Reels strategy and niche hashtag research."
+          }
+        },
+        {
+          name: "Motozoomer Studio — Videography & Editing",
+          desc: "Shot and edited high-quality video content for automotive and lifestyle projects using DSLR cameras and professional lighting rigs at Motozoomer Studio, Bhopal.",
+          tech: ["Adobe Premiere Pro", "DSLR", "Professional Lighting", "Audio Monitoring"],
+          details: {
+            did: "Shot and edited high-quality video content for Motozoomer Studio's automotive and lifestyle projects. Managed on-set responsibilities including equipment setup, lighting configuration, camera operation, and audio monitoring.",
+            approach: "Edited raw footage in Premiere Pro — adding color grades, sound design, effects, and final polish — delivering finalized cuts within 48-hour post-production windows. Maintained structured file management for raw assets and project files.",
+            vision: "To deliver studio-quality video production that aligns with client briefs and the studio's visual identity standards.",
+            solved: "Collaborated directly with the creative director to ensure edits matched brand guidelines. Organized production pipelines for efficient asset management across ongoing projects."
+          }
+        },
+        {
+          name: "Fitness Brand Reels Campaign — U.S. Client",
+          desc: "Produced a 30-piece Instagram Reels series for a U.S. fitness coach — videos averaged 85,000 views each, with the top reel reaching 420,000 views organically.",
+          tech: ["After Effects", "Premiere Pro", "Instagram Reels", "Motion Graphics"],
+          details: {
+            did: "Produced a 30-piece Instagram Reels series for a U.S. fitness coach over 6 weeks. Applied fast-cut editing, motivational text overlays in After Effects, and licensed audio syncing to build a high-energy brand identity.",
+            approach: "Combined kinetic typography, sound-reactive transitions, and trending audio formats to maximize algorithmic reach and viewer retention on Instagram.",
+            vision: "To create a viral-ready content series that establishes the client as a top fitness voice on Instagram through professional-grade short-form video.",
+            solved: "Videos averaged 85,000 views each, with the top reel reaching 420,000 views organically — the highest-performing video in the client's account history."
+          }
+        },
+        {
+          name: "Real Estate Property Showcase — Indian Client",
+          desc: "Edited 20+ property walkthrough and aerial footage videos with cinematic color grading, dynamic lower-thirds, and CTA end screens — averaging 12,000+ views on Facebook and YouTube.",
+          tech: ["Premiere Pro", "After Effects", "Color Grading", "Motion Graphics"],
+          details: {
+            did: "Edited 20+ property walkthrough and aerial footage videos for a Bhopal-based real estate agency using cinematic color grading and smooth transitions. Added dynamic lower-thirds, price overlays, and call-to-action end screens.",
+            approach: "Applied cinematic color grading techniques and professional motion graphics to transform raw property footage into polished marketing content.",
+            vision: "To elevate real estate marketing in the local market through high-production-value video content that drives buyer inquiries.",
+            solved: "Videos averaged 12,000+ views on Facebook and YouTube, providing the agency with a professional digital portfolio for property listings."
+          }
+        }
       ],
       initials: "PR"
     }
@@ -339,11 +484,11 @@ export const bundles = [
 
 export const offlineChatBotResponses = [
   { keywords: ["bundle", "price", "pack", "charge"], answer: "We offer 3 specialized bundles: Coaching Institute Pack (₹19,999), Builder Elevation Bundle (₹16,499), and Local Business Kickstart (₹11,999). Specific custom services are priced on request. Select your target on our Contact form!" },
-  { keywords: ["team", "prathvi", "sampoorn", "mrityunjay", "prajawal", "member", "people"], answer: "Our elite squad includes Prathvi (Team Leader), Sampoorn (Social Media Manager & Digital Marketer), Mrityunjay (Junior Web Developer), and Prajawal (Video Editor & Social Media Manager). You can view their full project history directly in our Portfolio section!" },
+  { keywords: ["team", "prathvi", "sampoorn", "mrityunjay", "prajawal", "member", "people"], answer: "Our elite squad includes Prathvi (Team Leader, Game Dev & AI/ML Enthusiast — Unreal Engine, Blender 3D, Python AI/ML), Sampoorn (Digital Marketing & Social Media Specialist), Mrityunjay (Full-Stack Web Developer), and Prajawal (Video Editor, Social Media Manager & Content Creator). You can view their full project history directly in our Portfolio section!" },
   { keywords: ["where", "location", "sagar", "makroniya", "address"], answer: "We are physically based in Makroniya, Sagar, Madhya Pradesh (470004). This enables us to visit sites for civil CAD mapping and shoot physical promotional footage." },
-  { keywords: ["web", "site", "app", "react", "code", "backend", "node"], answer: "Prathvi Singh Thakur and Mrityunjay Shukla code custom, high-speed static websites, dynamic student portals, and backend APIs. Head to our Services page to book them!" },
-  { keywords: ["video", "ad", "reel", "shoot", "edit"], answer: "Sampoorn Choubey and Prajawal Rathore script and edit retention-driven short-form reels, commercial ads, and high-quality videography content." },
-  { keywords: ["social", "media", "marketing", "content", "instagram", "youtube", "post", "reel", "canva", "creator", "sampoorn", "prajawal"], answer: "Sampoorn Choubey and Prajawal Rathore are our Social Media Managers & Content Creators. They manage platform growth (YouTube & Instagram), content planning, Canva graphics, video editing, and audience engagement." },
-  { keywords: ["dsa", "javascript", "script", "backend", "express", "game", "tictactoe", "database", "mysql", "mongodb", "mrityunjay", "code", "dev"], answer: "Mrityunjay Shukla is our Junior Web Developer. He builds interactive frontend games, user authentication flows, and Express/Node.js backend APIs." },
-  { keywords: ["prajawal", "editor", "capcut", "after effects", "effects", "storytelling", "video editing", "photography"], answer: "Prajawal Rathore is our Video Editor & Social Media Manager. He specializes in CapCut, Adobe After Effects, photography, and high-engagement social media content." }
+  { keywords: ["web", "site", "app", "react", "code", "backend", "node", "game", "3d", "blender", "unreal", "ai", "ml", "python", "prathvi"], answer: "Prathvi Singh Thakur is our Team Leader, Game Dev & AI/ML Enthusiast. He specializes in Unreal Engine 5, Blender 3D animation, Python AI/ML (Scikit-learn, Pandas), and React web development. Won 1st place at a hackathon with a Smart City Traffic AI prototype. Mrityunjay Shukla is our Full-Stack Web Developer building MERN stack applications and REST APIs." },
+  { keywords: ["video", "ad", "reel", "shoot", "edit"], answer: "Prajawal Rathore is our lead Video Editor & Content Creator with 2+ years of freelance experience. He has edited 150+ videos for Instagram Reels, YouTube Shorts, and TikTok — consistently hitting 300K+ combined views across client accounts. Proficient in Premiere Pro, After Effects, CapCut, and DaVinci Resolve." },
+  { keywords: ["social", "media", "marketing", "content", "instagram", "youtube", "post", "reel", "canva", "creator", "sampoorn", "prajawal"], answer: "Sampoorn Choubey is our Digital Marketing & Social Media Specialist with 2+ years of experience managing YouTube & Instagram channels (45,000+ combined following, 3x engagement growth). Prajawal Rathore is our Video Editor, Social Media Manager & Content Creator — edited 150+ videos with 300K+ combined views for clients in India and the U.S. Together they handle content strategy, video production, SEO optimization, Meta Ads, and cross-platform campaign execution." },
+  { keywords: ["dsa", "javascript", "script", "backend", "express", "game", "tictactoe", "database", "mysql", "mongodb", "mrityunjay", "code", "dev"], answer: "Mrityunjay Shukla is our Full-Stack Web Developer specializing in the MERN stack. He builds production-style RESTful APIs with JWT authentication, interactive browser games with AI opponents, and has solved 80+ DSA problems on LeetCode and GeeksforGeeks." },
+  { keywords: ["prajawal", "editor", "capcut", "after effects", "effects", "storytelling", "video editing", "photography", "premiere", "davinci"], answer: "Prajawal Rathore is our Video Editor, Social Media Manager & Content Creator. He has 2+ years of freelance experience, edited 150+ videos with 300K+ combined views, and specializes in Adobe Premiere Pro, After Effects, CapCut, DaVinci Resolve, motion graphics, DSLR photography, and cinematic color grading. His top reel reached 420,000 organic views." }
 ];

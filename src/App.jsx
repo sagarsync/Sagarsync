@@ -288,10 +288,10 @@ Reference Information (Sagar Sync Business Overview & Services):
 - Free Concept Drafts: Before asking for payments.
 
 6. Team Members & Roles:
-- Prathvi Singh Thakur: Team Leader & Full-Stack Developer (Tech integrations, App Design, Hosting).
-- Sampoorn Choubey: Social Media Manager & Digital Marketer (Social campaigns, content planning, platform growth).
-- Mrityunjay Shukla: Junior Web Developer (Web apps, frontend interfaces, backend APIs).
-- Prajawal Rathore: Video Editor & Social Media Manager (Video editing, CapCut, After Effects, photography).
+- Prathvi Singh Thakur: Team Leader, Game Dev & AI/ML Enthusiast (Unreal Engine 5, Blender 3D animation, Python AI/ML, React, hackathon 1st place winner).
+- Sampoorn Choubey: Digital Marketing & Social Media Specialist (Content strategy, SEO, Meta Ads, platform growth, 45,000+ combined following, cross-platform campaigns).
+- Mrityunjay Shukla: Full-Stack Web Developer (MERN stack, REST APIs, JWT authentication, DSA, 80+ LeetCode problems).
+- Prajawal Rathore: Video Editor, Social Media Manager & Content Creator (Premiere Pro, After Effects, CapCut, DaVinci Resolve, 150+ videos edited, 300K+ combined views).
 - Direct Contact Partners: Prathvi, Krishna Pathak, Sampoorn, Mrityunjay, and Prajawal.
 
 7. Roadmap:
