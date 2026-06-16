@@ -115,51 +115,173 @@ export const companyState = {
 export const services = [
   {
     id: 1,
-    title: "Custom Website Engineering",
-    desc: "Tailwind-optimized portfolios, speed-optimized directories, and custom management interfaces matching absolute desktop/mobile parameters.",
-    icon: "fa-globe",
+    title: "Design & Branding",
+    desc: "Logos, banners, brochures, visiting cards, invitations, and more.",
+    icon: "fa-palette",
     price: "Price on Requirement",
-    theme: "sage"
+    theme: "sage",
+    items: [
+      { name: "Logo Design", desc: "Custom logos for businesses, coaching centres, shops, professionals, NGOs, and events." },
+      { name: "Brand Identity", desc: "Complete brand systems — colour palette, typography, brand guidelines, stationery." },
+      { name: "Banner Design", desc: "Flex banners, digital banners, hoardings, social media banners." },
+      { name: "Business Cards", desc: "Visiting card design and printing — standard, premium, folded formats." },
+      { name: "Invitations", desc: "Wedding cards, event invitations, birthday cards — design and printing." },
+      { name: "Booklet / Handbook", desc: "Company profiles, product catalogues, coaching handbooks, annual reports." },
+      { name: "Art & Craft Work", desc: "Custom handmade art, craft products, decorative items, gift crafting." }
+    ]
   },
   {
     id: 2,
-    title: "Mobile Application Development",
-    desc: "Clean, cross-platform Android & iOS applications targeting local administration, booking, student databases, or internal tracking.",
-    icon: "fa-mobile-alt",
+    title: "Websites & Digital Presence",
+    desc: "Business websites, e-commerce, landing pages & maintenance.",
+    icon: "fa-globe",
     price: "Price on Requirement",
-    theme: "slateTeal"
+    theme: "slateTeal",
+    items: [
+      { name: "Business Website", desc: "Professional multi-page websites for any type of business." },
+      { name: "Landing Pages", desc: "Single-page conversion-focused websites for campaigns or products." },
+      { name: "E-Commerce Website", desc: "Full online store with product listings, cart, and payment gateway." },
+      { name: "Online Ordering System", desc: "Website or app feature for restaurants, shops, and local retailers." },
+      { name: "Online Presence Setup", desc: "Google Business listing, social media profiles, local SEO setup." },
+      { name: "Website Maintenance", desc: "Ongoing updates, security, hosting management, and support." }
+    ]
   },
   {
     id: 3,
-    title: "Architectural House Maps (CAD)",
-    desc: "Detailed 2D structure plan layouts, structural frame designs, and elegant 3D external visualizations perfectly matching government norms.",
-    icon: "fa-drafting-compass",
+    title: "Software & App Development",
+    desc: "Billing, stock, sales, mobile apps & custom software solutions.",
+    icon: "fa-code",
     price: "Price on Requirement",
-    theme: "sage"
+    theme: "sage",
+    items: [
+      { name: "Billing Software", desc: "Custom billing/invoicing software with bill printing and payment records." },
+      { name: "Stock Management", desc: "Inventory tracking with low-stock alerts, supplier records, and reorder triggers." },
+      { name: "Daily Sales & Profit Tracker", desc: "Auto-calculates daily revenue, cost, profit; generates monthly summaries." },
+      { name: "Easy Return System", desc: "Streamlined product return and exchange tracking within billing software." },
+      { name: "QR & Cash Payment Support", desc: "Software supports both cash and QR/UPI payments at checkout." },
+      { name: "Mobile Application", desc: "Android/iOS apps for businesses, coaching centres, or service platforms." },
+      { name: "Custom Software", desc: "Any bespoke business software — attendance, payroll, reporting, etc." }
+    ]
   },
   {
     id: 4,
-    title: "Commercial Ad Videos",
-    desc: "Scripted, edited, and perfectly optimized ad video creations targeting social platforms, YouTube promos, or physical local boards.",
-    icon: "fa-video",
+    title: "Coaching Institute Solutions",
+    desc: "Notes, fees, results, student apps & full digital setup.",
+    icon: "fa-graduation-cap",
     price: "Price on Requirement",
-    theme: "slateTeal"
+    theme: "slateTeal",
+    items: [
+      { name: "Online Presence", desc: "Website, Google listing, social media setup for the coaching centre." },
+      { name: "Notes & Study Material Design", desc: "Professional design of coaching notes, worksheets, and practice papers." },
+      { name: "Notebook & Book Design", desc: "Custom-branded notebooks, exercise books, and student handbooks." },
+      { name: "Fee Management Software", desc: "Digital fee collection, payment tracking, receipt generation." },
+      { name: "Auto Fee Notifications", desc: "Automated WhatsApp/SMS reminders sent to students every month to pay fees." },
+      { name: "Student Result Management", desc: "System to record, manage, and share exam results with students/parents." },
+      { name: "Student Portal / App", desc: "Dedicated portal for students to access notes, results, and announcements." },
+      { name: "Logo & Branding", desc: "Full brand identity for the coaching institute." }
+    ]
   },
   {
     id: 5,
-    title: "Domain & Hosting Deployments",
-    desc: "Secure cloud deployment configurations, DNS domain mapping, custom system mail setup, and robust performance analytics tracker.",
-    icon: "fa-server",
+    title: "Shop & Retail Owner Solutions",
+    desc: "Billing, stock alerts, profits, reports & much more.",
+    icon: "fa-store",
     price: "Price on Requirement",
-    theme: "sage"
+    theme: "sage",
+    items: [
+      { name: "Shop Website", desc: "Professional website showcasing products and services." },
+      { name: "Online Order Feature", desc: "Add online ordering to their website or via WhatsApp automation." },
+      { name: "Billing Software", desc: "POS-style billing with bill printing and payment support." },
+      { name: "Stock Alert System", desc: "Real-time stock monitoring — alerts when items fall below threshold." },
+      { name: "Daily Profit Calculator", desc: "Calculates daily sales, cost, and profit automatically." },
+      { name: "Monthly Sales Report", desc: "Auto-generated monthly profit and loss summaries." },
+      { name: "Bill Printing", desc: "Thermal printer integration for paper receipts." },
+      { name: "QR / Cash Payments", desc: "Accept UPI/QR and cash payments — tracked in software." },
+      { name: "Easy Returns", desc: "Built-in return and exchange management in the billing system." }
+    ]
   },
   {
     id: 6,
-    title: "Product Designing",
-    desc: "High-fidelity mockups, branding design packaging templates, and CAD visualization coordinates for modern manufactured items.",
-    icon: "fa-cubes",
+    title: "Printing Services",
+    desc: "Visiting cards, flex, notebooks, brochures, booklets & stationery.",
+    icon: "fa-print",
     price: "Price on Requirement",
-    theme: "slateTeal"
+    theme: "slateTeal",
+    items: [
+      { name: "Visiting Cards", desc: "Single-sided, double-sided, and premium card printing." },
+      { name: "Flex & Banners", desc: "Large format flex printing for shops, events, and campaigns." },
+      { name: "Brochures & Flyers", desc: "A4/A5/tri-fold brochures for marketing." },
+      { name: "Stationery", desc: "Letterheads, envelopes, notepads, stamps." },
+      { name: "Coaching Notebooks", desc: "Branded notebooks with custom covers for coaching centres." },
+      { name: "Booklets & Handbooks", desc: "Saddle-stitched or perfect-bound printed booklets." }
+    ]
+  },
+  {
+    id: 7,
+    title: "Photography & Videography",
+    desc: "Weddings, events, products, reels & video editing.",
+    icon: "fa-camera",
+    price: "Price on Requirement",
+    theme: "sage",
+    items: [
+      { name: "Wedding Photography", desc: "Full wedding day coverage — mehendi, haldi, ceremony, reception." },
+      { name: "Wedding Videography", desc: "Cinematic wedding films, highlight reels, drone coverage." },
+      { name: "Pre-wedding Shoot", desc: "Location-based pre-wedding photo and video sessions." },
+      { name: "Product Photography", desc: "Studio and lifestyle shots for online stores and catalogues." },
+      { name: "Event Photography", desc: "Corporate events, birthday parties, school functions, openings." },
+      { name: "Video Editing", desc: "Post-production editing for any video — colour grade, music, graphics." },
+      { name: "Reels & Short Videos", desc: "Social media-ready short videos for Instagram, YouTube Shorts." }
+    ]
+  },
+  {
+    id: 8,
+    title: "Legal & Financial Services",
+    desc: "Legal advice, ITR, GST, CA services & registrations.",
+    icon: "fa-balance-scale",
+    price: "Price on Requirement",
+    theme: "slateTeal",
+    items: [
+      { name: "Lawyer Consultation", desc: "Connect with local qualified lawyers for legal advice and documentation." },
+      { name: "Income Tax Filing", desc: "ITR filing for individuals and businesses." },
+      { name: "GST Registration & Returns", desc: "GST registration, monthly and quarterly return filing." },
+      { name: "CA Services", desc: "Chartered accountant work — audits, balance sheets, tax planning." },
+      { name: "Business Registration", desc: "Company or firm registration, MSME registration, trade licence." },
+      { name: "Legal Documentation", desc: "Agreements, affidavits, NOCs, rental deeds, and other legal papers." }
+    ]
+  },
+  {
+    id: 9,
+    title: "Events & Function Management",
+    desc: "Weddings, parties, corporate events & full management.",
+    icon: "fa-calendar-alt",
+    price: "Price on Requirement",
+    theme: "sage",
+    items: [
+      { name: "Wedding Planning", desc: "End-to-end wedding coordination — venue, decor, catering, schedule." },
+      { name: "Tent & Shamiana", desc: "Tent and canopy setup for weddings, jagrans, and outdoor events." },
+      { name: "Catering Coordination", desc: "Catering tie-up and management for functions of all sizes." },
+      { name: "Stage & Decoration", desc: "Stage setup, floral decoration, lighting, entrance arches." },
+      { name: "Birthday & Parties", desc: "Kids' parties, adult birthdays, milestone celebrations." },
+      { name: "Corporate Events", desc: "Office launches, seminars, award functions, brand events." },
+      { name: "Programme Management", desc: "Any kind of function or programme — cultural, religious, social." }
+    ]
+  },
+  {
+    id: 10,
+    title: "Construction & Trade Services",
+    desc: "House mapping, CAD, carpentry, welding & construction work.",
+    icon: "fa-tools",
+    price: "Price on Requirement",
+    theme: "slateTeal",
+    items: [
+      { name: "House Mapping", desc: "Architectural floor plans and building layouts for residential properties." },
+      { name: "CAD Drawings", desc: "Computer-aided design drawings for construction and renovation projects." },
+      { name: "Carpentry Work", desc: "Custom furniture, cabinets, wooden fixtures, and interior carpentry." },
+      { name: "Iron Smithing", desc: "Fabrication of iron structures, grilles, gates, and custom metalwork." },
+      { name: "Iron Welding", desc: "Structural welding and repair work for residential and commercial needs." },
+      { name: "General Construction", desc: "Renovation, extension, interior construction, and flooring work." },
+      { name: "Interior Consulting", desc: "Basic space planning and interior layout advice." }
+    ]
   }
 ];
 

@@ -6,30 +6,27 @@ export default function Header({ activeTab, onNavigate, mobileMenuOpen, onToggle
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Logo with the round image logo */}
+          {/* Logo with favicon image */}
           <div 
             className="flex items-center space-x-3 cursor-pointer select-none" 
             onClick={() => onNavigate('home')}
           >
-            <div className="w-10 h-10 bg-sage rounded-full flex items-center justify-center overflow-hidden shadow-md transform active:scale-95 transition-transform">
+            <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center overflow-hidden shadow-sm transform active:scale-95 transition-transform border border-sage/20">
               <img 
-                src="/Sagar%20Sync.png" 
+                src="/Sagar_Sync_favicon.png" 
                 alt="Sagar Sync Logo" 
-                className="w-full h-full object-cover scale-110"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
+                className="w-8 h-8 object-contain"
               />
             </div>
             <div>
               <span className="text-lg sm:text-xl font-extrabold tracking-wide text-white block">SAGAR SYNC</span>
-              <span className="text-[10px] text-mintGrey tracking-widest block -mt-1 uppercase">Local Digital Force</span>
+              <span className="text-[9px] text-mintGrey tracking-normal block -mt-1 font-medium italic">No matter what the case is, we deliver.</span>
             </div>
           </div>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex space-x-1 lg:space-x-4">
-            {['home', 'about', 'services', 'portfolio', 'blog', 'contact'].map((tab) => (
+            {['home', 'about', 'services', 'portfolio', 'contact'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => onNavigate(tab)}
@@ -37,7 +34,7 @@ export default function Header({ activeTab, onNavigate, mobileMenuOpen, onToggle
                   activeTab === tab ? 'bg-forestDark text-white font-bold' : 'text-mintGrey'
                 }`}
               >
-                {tab}
+                {tab === 'services' ? 'Service' : tab}
               </button>
             ))}
           </nav>
@@ -46,10 +43,10 @@ export default function Header({ activeTab, onNavigate, mobileMenuOpen, onToggle
           <div className="hidden md:block">
             <button
               onClick={() => onNavigate('contact')}
-              className="bg-sage hover:bg-opacity-90 active:scale-95 text-forestDark px-5 py-2.5 rounded-xl font-bold shadow-md transition-all text-sm flex items-center space-x-2 cursor-pointer"
+              className="bg-forest hover:bg-forestDark active:scale-95 text-white px-5 py-2.5 rounded-xl font-bold shadow-md transition-all text-sm flex items-center space-x-2 cursor-pointer border border-sage/20"
             >
-              <span>Get Consultation</span>
-              <i className="fas fa-arrow-right text-xs"></i>
+              <i className="far fa-comment text-xs"></i>
+              <span>Get In Touch</span>
             </button>
           </div>
 
@@ -70,20 +67,20 @@ export default function Header({ activeTab, onNavigate, mobileMenuOpen, onToggle
       {mobileMenuOpen && (
         <div className="md:hidden bg-forestDark border-t border-forest border-opacity-40 transition-all duration-300">
           <div className="px-4 pt-2 pb-6 space-y-2 text-center">
-            {['home', 'about', 'services', 'portfolio', 'blog', 'contact'].map((tab) => (
+            {['home', 'about', 'services', 'portfolio', 'contact'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => onNavigate(tab)}
                 className="block w-full py-3 px-4 rounded-xl text-base font-semibold text-pebble hover:bg-forest/50 transition-colors capitalize"
               >
-                {tab}
+                {tab === 'services' ? 'Service' : tab}
               </button>
             ))}
             <button
               onClick={() => onNavigate('contact')}
               className="w-full bg-sage active:scale-95 text-forest font-bold py-4 mt-4 rounded-xl shadow-md transition-transform cursor-pointer"
             >
-              Get Free Consultation
+              Get In Touch
             </button>
           </div>
         </div>

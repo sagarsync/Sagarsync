@@ -16,7 +16,6 @@ import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Services from './pages/Services.jsx';
 import Portfolio from './pages/Portfolio.jsx';
-import Blog from './pages/Blog.jsx';
 import Contact from './pages/Contact.jsx';
 
 export default function App() {
@@ -72,6 +71,32 @@ export default function App() {
         });
       }, 50);
     }
+  }, [activeTab]);
+
+  // Viewport scroll-reveal animations using anime.js
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animate(entry.target, {
+            opacity: [0, 1],
+            y: [20, 0],
+            duration: 600,
+            ease: 'outQuad'
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+
+    const elements = document.querySelectorAll('.reveal-on-scroll');
+    elements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, [activeTab]);
 
   // Scroll chatbot to bottom when new messages arrive
@@ -315,7 +340,6 @@ Be concise, extremely friendly on mobile viewports, clear, and direct.`;
         {activeTab === 'about' && <About />}
         {activeTab === 'services' && <Services onSelectBundle={handleSelectBundle} />}
         {activeTab === 'portfolio' && <Portfolio onOpenMember={openMemberPortfolio} />}
-        {activeTab === 'blog' && <Blog />}
         {activeTab === 'contact' && (
           <Contact 
             formName={formName}

@@ -1,52 +1,48 @@
 /* global process */
 
-export async function handler(event) {
+export default async function handler(request, context) {
+  // CORS headers
+  const corsHeaders = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "POST, OPTIONS"
+  };
+
   // Handle preflight OPTIONS request for CORS
-  if (event.httpMethod === "OPTIONS") {
-    return {
-      statusCode: 200,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Methods": "POST, OPTIONS"
-      },
-      body: JSON.stringify({ message: "Successful preflight" })
-    };
+  if (request.method === "OPTIONS") {
+    return new Response(JSON.stringify({ message: "Successful preflight" }), {
+      status: 200,
+      headers: corsHeaders
+    });
   }
 
-  if (event.httpMethod !== "POST") {
-    return {
-      statusCode: 405,
-      headers: {
-        "Access-Control-Allow-Origin": "*"
-      },
-      body: JSON.stringify({ error: "Method Not Allowed" })
-    };
+  if (request.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method Not Allowed" }), {
+      status: 405,
+      headers: corsHeaders
+    });
   }
 
   try {
-    const { message } = JSON.parse(event.body);
+    const { message } = await request.json();
     if (!message) {
-      return {
-        statusCode: 400,
-        headers: {
-          "Access-Control-Allow-Origin": "*"
-        },
-        body: JSON.stringify({ error: "Message is required" })
-      };
+      return new Response(JSON.stringify({ error: "Message is required" }), {
+        status: 400,
+        headers: corsHeaders
+      });
     }
 
     // Retrieve the API Key from Netlify environment variables
     const apiKey = process.env.GEMINI_API_KEY;
 
     if (!apiKey) {
-      return {
-        statusCode: 500,
-        headers: {
-          "Access-Control-Allow-Origin": "*"
-        },
-        body: JSON.stringify({ error: "GEMINI_API_KEY is not configured on Netlify environment variables." })
-      };
+      return new Response(
+        JSON.stringify({ error: "GEMINI_API_KEY is not configured on Netlify environment variables." }),
+        {
+          status: 500,
+          headers: corsHeaders
+        }
+      );
     }
 
     const systemPrompt = `You are SyncBot, the official AI representative of Sagar Sync.
@@ -73,21 +69,21 @@ Be concise, extremely friendly on mobile viewports, clear, and direct.`;
     });
 
     const result = await response.json();
-    return {
-      statusCode: response.status,
+    return new Response(JSON.stringify(result), {
+      status: response.status,
       headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*"
-      },
-      body: JSON.stringify(result)
-    };
+        ...corsHeaders,
+        "Content-Type": "application/json"
+      }
+    });
   } catch (error) {
-    return {
-      statusCode: 500,
-      headers: {
-        "Access-Control-Allow-Origin": "*"
-      },
-      body: JSON.stringify({ error: error.message || "Internal Server Error" })
-    };
+    return new Response(JSON.stringify({ error: error.message || "Internal Server Error" }), {
+      status: 500,
+      headers: corsHeaders
+    });
   }
 }
+
+export const config = {
+  path: "/api/chat"
+};

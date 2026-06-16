@@ -7,10 +7,47 @@
   --color-slateTeal: #6C8480;
   --color-mintGrey: #BAC8B1;
   --color-forestDark: #2F3A2C;
-  --color-pebbleLight: #F3F4F6;
+  --color-pebbleLight: #F8F9F7;
   
   --font-sans: 'Inter', sans-serif;
 }
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.9; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+.animate-orbit {
+  animation: orbit 120s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit-reverse 120s linear infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 4s ease-in-out infinite;
+}
+
 
 .custom-scrollbar::-webkit-scrollbar {
   width: 5px;
