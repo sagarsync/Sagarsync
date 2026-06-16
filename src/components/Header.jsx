@@ -2,7 +2,7 @@
 
 export default function Header({ activeTab, onNavigate, mobileMenuOpen, onToggleMobileMenu }) {
   return (
-    <header className="bg-forest/95 text-pebble sticky top-0 z-40 shadow-md backdrop-blur-md border-b border-sage/10">
+    <header className="bg-forest/95 text-pebble fixed top-0 left-0 right-0 w-full z-40 shadow-md backdrop-blur-md border-b border-sage/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           

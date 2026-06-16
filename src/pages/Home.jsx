@@ -204,29 +204,59 @@ export default function Home({ onNavigate }) {
 
           {/* Stepper Timeline */}
           <div className="relative">
-            {/* Horizontal Line (Desktop) */}
-            <div className="absolute top-5 left-0 right-0 h-0.5 border-t border-dashed border-sage/45 z-0 hidden md:block"></div>
+            
+            {/* Desktop Stepper Timeline (Horizontal Layout) */}
+            <div className="hidden md:block">
+              {/* Horizontal Line */}
+              <div className="absolute top-5 left-0 right-0 h-0.5 border-t border-dashed border-sage/45 z-0"></div>
 
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
+              <div className="grid grid-cols-5 gap-8 relative z-10">
+                {steps.map((step, index) => (
+                  <div key={index} className="flex flex-col items-center text-center reveal-on-scroll">
+                    {/* Step Bubble Counter */}
+                    <div className="w-10 h-10 bg-white border-2 border-sage rounded-full flex items-center justify-center font-bold text-forest text-sm z-10 relative shadow-sm">
+                      {step.num}
+                    </div>
+
+                    {/* Icon Badge */}
+                    <div className="w-14 h-14 bg-sage/10 text-sage rounded-2xl flex items-center justify-center text-xl my-4 shadow-sm border border-sage/10 animate-float" style={{ animationDelay: `${index * 0.3}s` }}>
+                      <i className={`fas ${step.icon}`}></i>
+                    </div>
+
+                    {/* Info details */}
+                    <h3 className="font-extrabold text-sm sm:text-base text-forest mb-2">{step.title}</h3>
+                    <p className="text-xs text-slateTeal leading-relaxed max-w-[170px]">{step.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Stepper Timeline (Vertical Cards Layout - No Dotted Line) */}
+            <div className="block md:hidden space-y-6">
               {steps.map((step, index) => (
-                <div key={index} className="flex flex-col items-center text-center reveal-on-scroll">
+                <div 
+                  key={index} 
+                  className="bg-white p-5 rounded-2xl border border-pebble/80 flex items-start space-x-4 shadow-sm reveal-on-scroll"
+                >
+                  {/* Icon with numbered badge */}
+                  <div className="relative shrink-0">
+                    <div className="absolute -top-1.5 -left-1.5 w-6 h-6 bg-sage text-white rounded-full flex items-center justify-center font-bold text-xs shadow-sm border border-white">
+                      {step.num}
+                    </div>
+                    <div className="w-12 h-12 bg-sage/10 text-sage rounded-xl flex items-center justify-center text-lg border border-sage/10 shadow-sm">
+                      <i className={`fas ${step.icon}`}></i>
+                    </div>
+                  </div>
                   
-                  {/* Step Bubble Counter */}
-                  <div className="w-10 h-10 bg-white border-2 border-sage rounded-full flex items-center justify-center font-bold text-forest text-sm z-10 relative shadow-sm">
-                    {step.num}
+                  {/* Text Content */}
+                  <div className="text-left">
+                    <h3 className="font-extrabold text-base text-forest mb-1">{step.title}</h3>
+                    <p className="text-xs text-slateTeal leading-relaxed">{step.desc}</p>
                   </div>
-
-                  {/* Icon Badge */}
-                  <div className="w-14 h-14 bg-sage/10 text-sage rounded-2xl flex items-center justify-center text-xl my-4 shadow-sm border border-sage/10 animate-float" style={{ animationDelay: `${index * 0.3}s` }}>
-                    <i className={`fas ${step.icon}`}></i>
-                  </div>
-
-                  {/* Info details */}
-                  <h3 className="font-extrabold text-sm sm:text-base text-forest mb-2">{step.title}</h3>
-                  <p className="text-xs text-slateTeal leading-relaxed max-w-[170px]">{step.desc}</p>
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </div>
@@ -256,12 +286,12 @@ export default function Home({ onNavigate }) {
               </button>
             </div>
 
-            {/* Laptop Illustration Image */}
-            <div className="relative w-64 h-48 sm:w-80 sm:h-56 shrink-0 flex items-center justify-center z-10 select-none">
+            {/* Laptop Illustration Image (Anchored at absolute bottom on desktop, hidden on mobile) */}
+            <div className="hidden lg:flex lg:absolute lg:bottom-0 lg:right-6 xl:right-12 lg:w-[320px] lg:h-[220px] xl:w-[360px] xl:h-[240px] shrink-0 items-end justify-center z-10 select-none">
               <img 
                 src="/Laptop%20placed%20on%20table.png" 
                 alt="Laptop placed on table" 
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain object-bottom"
               />
             </div>
           </div>

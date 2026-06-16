@@ -335,7 +335,7 @@ Be concise, extremely friendly on mobile viewports, clear, and direct.`;
       />
 
       {/* Main Content Area */}
-      <main className="flex-grow" ref={pageContentRef}>
+      <main className="flex-grow pt-20" ref={pageContentRef}>
         {activeTab === 'home' && <Home onNavigate={handleNavigate} />}
         {activeTab === 'about' && <About />}
         {activeTab === 'services' && <Services onSelectBundle={handleSelectBundle} />}
