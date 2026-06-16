@@ -236,7 +236,7 @@ Reference information:
 - Contacts: Prathvi Singh Thakur (+91 8962685091), Krishna Pathak (+91 8827050460).
 Be concise, extremely friendly on mobile viewports, clear, and direct.`;
 
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${clientApiKey}`;
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${clientApiKey}`;
         response = await fetch(url, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

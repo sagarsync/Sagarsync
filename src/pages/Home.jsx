@@ -41,7 +41,7 @@ export default function Home({ onNavigate }) {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Column: Copy & Badges */}
             <div className="text-center lg:text-left lg:col-span-7">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight text-forest">
@@ -51,7 +51,7 @@ export default function Home({ onNavigate }) {
               <p className="text-base sm:text-lg text-slateTeal mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 From digital to design, legal to construction – Sagar Sync is your all-in-one service partner in Sagar.
               </p>
-              
+
               {/* Values Badges Row (4 Items) */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 max-w-2xl mx-auto lg:mx-0">
                 {[
@@ -93,17 +93,17 @@ export default function Home({ onNavigate }) {
               <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-[350px] md:h-[350px] relative border border-dashed border-mintGrey/60 rounded-full animate-orbit flex items-center justify-center">
                 {/* Center S Logo (Circular and enlarged) */}
                 <div className="absolute w-32 h-32 sm:w-40 sm:h-40 bg-white rounded-full shadow-lg border border-pebble flex items-center justify-center p-2 animate-orbit-reverse">
-                  <img 
-                    src="/Sagar_Sync_favicon.png" 
-                    alt="Sagar Sync Logo" 
+                  <img
+                    src="/Sagar_Sync_favicon.png"
+                    alt="Sagar Sync Logo"
                     className="w-28 h-28 sm:w-36 sm:h-36 object-contain"
                   />
                 </div>
-                
+
                 {/* Surrounding floating icon circles (Enlarged) */}
                 {ringIcons.map((item, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="absolute"
                     style={{
                       top: item.top,
@@ -140,7 +140,7 @@ export default function Home({ onNavigate }) {
           {/* Grid of 10 Service Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
             {homeServices.map((service, index) => (
-              <div 
+              <div
                 key={index}
                 onClick={() => onNavigate('services')}
                 className="bg-white p-6 rounded-2xl border border-pebble shadow-sm hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer flex flex-col items-center text-center reveal-on-scroll"
@@ -172,11 +172,11 @@ export default function Home({ onNavigate }) {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
             {[
-              { num: "100+", label: "Happy Clients", icon: "fa-users" },
-              { num: "250+", label: "Projects Completed", icon: "fa-briefcase" },
-              { num: "15+", label: "Service Categories", icon: "fa-award" },
-              { num: "100%", label: "Local - Sagar Based", icon: "fa-map-marker-alt" },
-              { num: "Trusted", label: "By Businesses Like Yours", icon: "fa-handshake" }
+              { num: "20+", label: "Happy Clients", icon: "fa-users" },
+              { num: "50+", label: "Projects Completed", icon: "fa-briefcase" },
+              { num: "100+", label: "Service Categories", icon: "fa-award" },
+              { num: "90%", label: "Local - Sagar Based", icon: "fa-map-marker-alt" },
+              { num: "Trusted", label: "By Businesses", icon: "fa-handshake" }
             ].map((stat, index) => (
               <div key={index} className="flex flex-col items-center space-y-1 reveal-on-scroll">
                 <div className="w-8 h-8 rounded-full bg-sage/15 text-mintGrey flex items-center justify-center text-xs mb-1">
@@ -204,7 +204,7 @@ export default function Home({ onNavigate }) {
 
           {/* Stepper Timeline */}
           <div className="relative">
-            
+
             {/* Desktop Stepper Timeline (Horizontal Layout) */}
             <div className="hidden md:block">
               {/* Horizontal Line */}
@@ -234,8 +234,8 @@ export default function Home({ onNavigate }) {
             {/* Mobile Stepper Timeline (Vertical Cards Layout - No Dotted Line) */}
             <div className="block md:hidden space-y-6">
               {steps.map((step, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="bg-white p-5 rounded-2xl border border-pebble/80 flex items-start space-x-4 shadow-sm reveal-on-scroll"
                 >
                   {/* Icon with numbered badge */}
@@ -247,7 +247,7 @@ export default function Home({ onNavigate }) {
                       <i className={`fas ${step.icon}`}></i>
                     </div>
                   </div>
-                  
+
                   {/* Text Content */}
                   <div className="text-left">
                     <h3 className="font-extrabold text-base text-forest mb-1">{step.title}</h3>
@@ -264,7 +264,7 @@ export default function Home({ onNavigate }) {
       {/* 5. Bottom CTA Banner & Contacts */}
       <div className="py-12 sm:py-20 bg-pebbleLight px-4">
         <div className="max-w-7xl mx-auto">
-          
+
           {/* Main CTA Box */}
           <div className="bg-forest rounded-3xl text-pebble p-6 sm:p-12 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden relative border border-sage/10 reveal-on-scroll">
             <div className="absolute top-0 right-0 w-64 h-64 bg-sage/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -288,9 +288,9 @@ export default function Home({ onNavigate }) {
 
             {/* Laptop Illustration Image (Anchored at absolute bottom on desktop, hidden on mobile) */}
             <div className="hidden lg:flex lg:absolute lg:bottom-0 lg:right-6 xl:right-12 lg:w-[320px] lg:h-[220px] xl:w-[360px] xl:h-[240px] shrink-0 items-end justify-center z-10 select-none">
-              <img 
-                src="/Laptop%20placed%20on%20table.png" 
-                alt="Laptop placed on table" 
+              <img
+                src="/Laptop%20placed%20on%20table.png"
+                alt="Laptop placed on table"
                 className="w-full h-full object-contain object-bottom"
               />
             </div>

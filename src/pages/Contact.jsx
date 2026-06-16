@@ -98,7 +98,7 @@ export default function Contact({
                   type="submit"
                   className="w-full bg-forest hover:bg-forestDark text-pebble font-bold py-4 rounded-xl transition-all active:scale-95 shadow cursor-pointer"
                 >
-                  Save to Sagar Sync Spreadsheet DB
+                  Submit
                 </button>
               </form>
             ) : (

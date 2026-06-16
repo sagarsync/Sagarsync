@@ -43,8 +43,7 @@ export default function Chatbot({
                 />
               </div>
               <div>
-                <h4 className="font-extrabold text-xs leading-none">SyncBot</h4>
-                <span className="text-[9px] text-mintGrey">Gemini AI Assistant</span>
+                <h4 className="font-extrabold text-xs">SyncBot</h4>
               </div>
             </div>
             <button 
