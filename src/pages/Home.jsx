@@ -305,10 +305,8 @@ export default function Home({ onNavigate }) {
             </div>
             {/* Social icons */}
             <div className="flex space-x-4 text-sm">
-              <a href="#" className="hover:text-sage transition-colors"><i className="fab fa-facebook-f"></i></a>
-              <a href="#" className="hover:text-sage transition-colors"><i className="fab fa-instagram"></i></a>
+              <a href="https://www.instagram.com/sagar.sync/" target="_blank" rel="noopener noreferrer" className="hover:text-sage transition-colors"><i className="fab fa-instagram"></i></a>
               <a href="https://www.linkedin.com/company/sagar-sync" target="_blank" rel="noopener noreferrer" className="hover:text-sage transition-colors"><i className="fab fa-linkedin-in"></i></a>
-              <a href="#" className="hover:text-sage transition-colors"><i className="fab fa-youtube"></i></a>
             </div>
           </div>
 

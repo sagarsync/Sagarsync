@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { animate, stagger } from 'animejs';
 
 // Static Data
@@ -18,8 +18,20 @@ import Services from './pages/Services.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Contact from './pages/Contact.jsx';
 
+// Map URL paths to tab IDs and vice versa
+const VALID_TABS = ['home', 'about', 'services', 'portfolio', 'contact'];
+
+function getTabFromPath() {
+  const path = window.location.pathname.replace(/^\//, '').toLowerCase();
+  return VALID_TABS.includes(path) ? path : 'home';
+}
+
+function getPathFromTab(tab) {
+  return tab === 'home' ? '/' : `/${tab}`;
+}
+
 export default function App() {
-  const [activeTab, setActiveTab] = useState('home');
+  const [activeTab, setActiveTab] = useState(getTabFromPath);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMember, setActiveMember] = useState(null);
   
@@ -110,10 +122,23 @@ export default function App() {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  const handleNavigate = (tabId) => {
+  // Sync activeTab from browser back/forward navigation
+  useEffect(() => {
+    const onPopState = () => {
+      setActiveTab(getTabFromPath());
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
+  const handleNavigate = useCallback((tabId) => {
+    const newPath = getPathFromTab(tabId);
+    if (window.location.pathname !== newPath) {
+      window.history.pushState(null, '', newPath);
+    }
     setActiveTab(tabId);
     setMobileMenuOpen(false);
-  };
+  }, []);
 
   // Select a bundle and auto-populate the contact form
   const handleSelectBundle = (optionValue, bundleName) => {

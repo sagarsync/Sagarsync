@@ -335,26 +335,7 @@ export const bundles = [
   }
 ];
 
-export const blogPosts = [
-  {
-    id: 1,
-    title: "Why Local Sagar Shops Benefit from Static HTML Hybrid Sites",
-    category: "Development",
-    date: "June 2026",
-    summary: "A deep-dive exploration of how light static sites with high SEO compliance rank faster than sluggish platforms.",
-    author: "Prathvi Singh Thakur",
-    icon: "fa-book-open"
-  },
-  {
-    id: 2,
-    title: "Retention Formulas for Local Coaching Promos",
-    category: "Commercial Ads",
-    date: "April 2026",
-    summary: "Explaining visual hooks, audio-match rhythms, and text spacing to drive enrollments in Sagar.",
-    author: "Prajawal Rathore",
-    icon: "fa-video"
-  }
-];
+
 
 export const offlineChatBotResponses = [
   { keywords: ["bundle", "price", "pack", "charge"], answer: "We offer 3 specialized bundles: Coaching Institute Pack (₹19,999), Builder Elevation Bundle (₹16,499), and Local Business Kickstart (₹11,999). Specific custom services are priced on request. Select your target on our Contact form!" },
