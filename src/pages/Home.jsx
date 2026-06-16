@@ -287,7 +287,7 @@ export default function Home({ onNavigate }) {
             </div>
 
             {/* Laptop Illustration Image (Anchored at absolute bottom on desktop, hidden on mobile) */}
-            <div className="hidden lg:flex lg:absolute lg:bottom-0 lg:right-6 xl:right-12 lg:w-[320px] lg:h-[220px] xl:w-[360px] xl:h-[240px] shrink-0 items-end justify-center z-10 select-none">
+            <div className="hidden lg:flex lg:absolute lg:bottom-0 lg:right-0 xl:right-6 lg:w-[420px] lg:h-[300px] xl:w-[520px] xl:h-[360px] shrink-0 items-end justify-center z-10 transform lg:translate-x-6 xl:translate-x-12 select-none">
               <img
                 src="/Laptop%20placed%20on%20table.png"
                 alt="Laptop placed on table"
