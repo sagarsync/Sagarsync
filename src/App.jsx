@@ -36,7 +36,7 @@ export default function App() {
   const [chatMessages, setChatMessages] = useState([
     {
       id: "welcome",
-      text: "Namaste! I am **SyncBot**, your dynamic AI assistance system. Feel free to ask me anything about Sagar Sync’s services, our 4-person team, prices, local MP packages, or portfolios!",
+      text: "Namaste! I am **SyncBot**, your dynamic AI assistance system. Feel free to ask me anything about Sagar Sync’s services, our team, prices, local MP packages, or portfolios!",
       sender: "bot"
     }
   ]);
@@ -189,7 +189,7 @@ export default function App() {
         return item.answer;
       }
     }
-    return "Thanks for connecting with Sagar Sync! I am currently running on local backup mode. For immediate queries, feel free to submit a brief on our Contact Page or call Prathvi Singh Thakur directly at +91 8962685091.";
+    return "Thanks for connecting with Sagar Sync! I am currently running on local backup mode. For immediate queries, feel free to submit a brief on our Contact Page or reach out to us directly.";
   };
 
   // Send chatbot user query
@@ -264,10 +264,10 @@ Reference Information (Sagar Sync Business Overview & Services):
 
 6. Team Members & Roles:
 - Prathvi Singh Thakur: Team Leader & Full-Stack Developer (Tech integrations, App Design, Hosting).
-- Rohan Mishra: Mobile & UI/UX Developer (Flutter cross-platform apps, UI).
-- Priya Sharma: CAD & Civil Engineer (Architectural house mapping, Revit 3D elevations).
-- Sameer Khan: Video Editor & Producer (Social reels, commercials, walkthroughs).
-- Direct Contact Partners: Prathvi (+91 8962685091), Krishna Pathak (+91 8827050460).
+- Sampoorn Choubey: Social Media Manager & Digital Marketer (Social campaigns, content planning, platform growth).
+- Mrityunjay Shukla: Junior Web Developer (Web apps, frontend interfaces, backend APIs).
+- Prajawal Rathore: Video Editor & Social Media Manager (Video editing, CapCut, After Effects, photography).
+- Direct Contact Partners: Prathvi, Krishna Pathak, Sampoorn, Mrityunjay, and Prajawal.
 
 7. Roadmap:
 - Phase 1 (Launch): Local base build & inbound/outbound setup.

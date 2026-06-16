@@ -85,10 +85,10 @@ Reference Information (Sagar Sync Business Overview & Services):
 
 6. Team Members & Roles:
 - Prathvi Singh Thakur: Team Leader & Full-Stack Developer (Tech integrations, App Design, Hosting).
-- Rohan Mishra: Mobile & UI/UX Developer (Flutter cross-platform apps, UI).
-- Priya Sharma: CAD & Civil Engineer (Architectural house mapping, Revit 3D elevations).
-- Sameer Khan: Video Editor & Producer (Social reels, commercials, walkthroughs).
-- Direct Contact Partners: Prathvi (+91 8962685091), Krishna Pathak (+91 8827050460).
+- Sampoorn Choubey: Social Media Manager & Digital Marketer (Social campaigns, content planning, platform growth).
+- Mrityunjay Shukla: Junior Web Developer (Web apps, frontend interfaces, backend APIs).
+- Prajawal Rathore: Video Editor & Social Media Manager (Video editing, CapCut, After Effects, photography).
+- Direct Contact Partners: Prathvi, Krishna Pathak, Sampoorn, Mrityunjay, and Prajawal.
 
 7. Roadmap:
 - Phase 1 (Launch): Local base build & inbound/outbound setup.

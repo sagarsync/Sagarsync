@@ -73,41 +73,42 @@ export const companyState = {
       initials: "PT",
       image: "/Prathvi.png"
     },
-    rohan: {
-      id: "rohan",
-      name: "Rohan Mishra",
-      role: "Mobile & UI/UX Developer",
-      bio: "Rohan creates dynamic user interfaces and cross-platform native iOS/Android applications utilizing Flutter.",
-      skills: ["Flutter", "Dart", "Tailwind CSS", "Figma", "Adaptive UX"],
+
+    sampoorn: {
+      id: "sampoorn",
+      name: "Sampoorn Choubey",
+      role: "Social Media Manager & Digital Marketer",
+      bio: "Sampoorn manages social media strategies, digital marketing, content planning, and brand growth. He coordinates campaigns on YouTube and Instagram to scale online presence.",
+      skills: ["Social Media Management", "Content Creation", "Marketing Strategy", "Team Management", "Canva Design", "Video Editing", "Content Planning"],
       projects: [
-        { name: "Sagar Bus Tracker Platform", desc: "A light mobile tracker system optimizing local route mapping." },
-        { name: "Stock counter tracker application", desc: "Inventory checker layout built with offline storage coordinates." }
+        { name: "Sheetal Sant Shree Ramdas Management", desc: "Appointed as Social Media Manager for YouTube and Instagram. Responsible for content organization, audience growth, and platform management." },
+        { name: "Brand Growth & Content Strategy", desc: "Providing post & reel ideas, Canva design support, audience engagement support, team coordination, and growth planning for local brands." }
       ],
-      initials: "RM"
+      initials: "SC"
     },
-    priya: {
-      id: "priya",
-      name: "Priya Sharma",
-      role: "CAD & Civil Engineer",
-      bio: "Priya drafts residential building maps meeting modern compliance parameters, floor outlines, structural frames, and elevations.",
-      skills: ["AutoCAD", "Autodesk Revit", "SolidWorks", "3D Elevations"],
+    mrityunjay: {
+      id: "mrityunjay",
+      name: "Mrityunjay Shukla",
+      role: "Junior Web Developer",
+      bio: "Mrityunjay is a B.Tech IT student focusing on full-stack web development, frontend interfaces, and data structures. He builds functional web applications and backend APIs.",
+      skills: ["Full Stack Web Development", "HTML & CSS", "JavaScript", "Node.js", "Express.js", "MongoDB", "Data Structures"],
       projects: [
-        { name: "Civil complex floor blueprint", desc: "Functional commercial spaces optimized for modern builders in Sagar." },
-        { name: "Makroniya Green Villa elevation", desc: "Modern exterior 3D architectural plan complying with city rules." }
+        { name: "Tic-Tac-Toe Game", desc: "A simple logic-based game built to practice coding, interactive styling, and DOM manipulation." },
+        { name: "E-commerce Backend API", desc: "Developing user authentication, REST APIs, and product management systems using Node.js and Express.js." }
       ],
-      initials: "PS"
+      initials: "MS"
     },
-    sameer: {
-      id: "sameer",
-      name: "Sameer Khan",
-      role: "Video Editor & Producer",
-      bio: "Sameer produces viral social reels, commercial ads, kinetic titles, sound matches, and promotional walkthrough edits.",
-      skills: ["Premiere Pro", "After Effects", "Sound Mixing", "Color Grading"],
+    prajawal: {
+      id: "prajawal",
+      name: "Prajawal Rathore",
+      role: "Video Editor & Social Media Manager",
+      bio: "Prajawal is a professional Video Editor and Social Media Manager. He creates high-retention short-form video content and drives engagement strategies for domestic and international brands.",
+      skills: ["Video Editing", "Social Media Management", "CapCut", "Adobe After Effects", "Sharp Storytelling", "Photography", "Sketching & Art"],
       projects: [
-        { name: "Inauguration commercial video", desc: "Opening promo designed for high audience retention." },
-        { name: "Coaching institute ad walkthrough", desc: "Promotional reel optimizing local student admissions." }
+        { name: "Freelance Short-Form Editing Portfolio", desc: "Edited 100+ high-engagement Instagram Reels and YouTube Shorts for India and U.S. clients, boosting engagement by up to 60%." },
+        { name: "Motozoomer Studio Content", desc: "Filmed and edited high-quality promotional videos, managed lighting, sound polish, and end-to-end production pipelines." }
       ],
-      initials: "SK"
+      initials: "PR"
     }
   }
 };
@@ -346,29 +347,22 @@ export const blogPosts = [
   },
   {
     id: 2,
-    title: "Residential Front Elevation Norms in Makroniya",
-    category: "CAD Map Design",
-    date: "May 2026",
-    summary: "Reviewing essential height variables, ventilation spacing configurations, and 3D elevations for faster structural approvals.",
-    author: "Priya Sharma",
-    icon: "fa-drafting-compass"
-  },
-  {
-    id: 3,
     title: "Retention Formulas for Local Coaching Promos",
     category: "Commercial Ads",
     date: "April 2026",
     summary: "Explaining visual hooks, audio-match rhythms, and text spacing to drive enrollments in Sagar.",
-    author: "Sameer Khan",
+    author: "Prajawal Rathore",
     icon: "fa-video"
   }
 ];
 
 export const offlineChatBotResponses = [
   { keywords: ["bundle", "price", "pack", "charge"], answer: "We offer 3 specialized bundles: Coaching Institute Pack (₹19,999), Builder Elevation Bundle (₹16,499), and Local Business Kickstart (₹11,999). Specific custom services are priced on request. Select your target on our Contact form!" },
-  { keywords: ["team", "prathvi", "rohan", "priya", "sameer", "member", "people"], answer: "Our 4-person elite squad includes Prathvi (Team Leader), Rohan (Developer), Priya (Civil CAD Engineer), and Sameer (Creative Video Editor). You can view their full project history directly in our Portfolio section!" },
+  { keywords: ["team", "prathvi", "sampoorn", "mrityunjay", "prajawal", "member", "people"], answer: "Our elite squad includes Prathvi (Team Leader), Sampoorn (Social Media Manager & Digital Marketer), Mrityunjay (Junior Web Developer), and Prajawal (Video Editor & Social Media Manager). You can view their full project history directly in our Portfolio section!" },
   { keywords: ["where", "location", "sagar", "makroniya", "address"], answer: "We are physically based in Makroniya, Sagar, Madhya Pradesh (470004). This enables us to visit sites for civil CAD mapping and shoot physical promotional footage." },
-  { keywords: ["web", "site", "app", "flutter", "react", "code"], answer: "Prathvi Singh Thakur and Rohan Mishra code custom, high-speed static websites, dynamic student portals, and fluid Flutter cross-platform mobile apps. Head to our Services page to book them!" },
-  { keywords: ["house", "map", "elevation", "civil", "cad"], answer: "Priya Sharma is our CAD expert. She drafts professional 2D blueprints, structural elevations, and modern 3D front elevations. View her works under our Portfolio tab." },
-  { keywords: ["video", "ad", "reel", "shoot", "edit"], answer: "Sameer Khan scripts and edits retention-driven short-form reels and commercial ads. We capture high-quality footage right here in Sagar to drive client growth." }
+  { keywords: ["web", "site", "app", "react", "code", "backend", "node"], answer: "Prathvi Singh Thakur and Mrityunjay Shukla code custom, high-speed static websites, dynamic student portals, and backend APIs. Head to our Services page to book them!" },
+  { keywords: ["video", "ad", "reel", "shoot", "edit"], answer: "Sampoorn Choubey and Prajawal Rathore script and edit retention-driven short-form reels, commercial ads, and high-quality videography content." },
+  { keywords: ["social", "media", "marketing", "content", "instagram", "youtube", "post", "reel", "canva", "creator", "sampoorn", "prajawal"], answer: "Sampoorn Choubey and Prajawal Rathore are our Social Media Managers & Content Creators. They manage platform growth (YouTube & Instagram), content planning, Canva graphics, video editing, and audience engagement." },
+  { keywords: ["dsa", "javascript", "script", "backend", "express", "game", "tictactoe", "database", "mysql", "mongodb", "mrityunjay", "code", "dev"], answer: "Mrityunjay Shukla is our Junior Web Developer. He builds interactive frontend games, user authentication flows, and Express/Node.js backend APIs." },
+  { keywords: ["prajawal", "editor", "capcut", "after effects", "effects", "storytelling", "video editing", "photography"], answer: "Prajawal Rathore is our Video Editor & Social Media Manager. He specializes in CapCut, Adobe After Effects, photography, and high-engagement social media content." }
 ];

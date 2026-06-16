@@ -22,7 +22,7 @@ export default function Portfolio({ onOpenMember }) {
               onClick={() => onOpenMember(member.id)}
             >
               <div className="relative w-28 h-28 mb-4">
-                <div className={`absolute inset-0 ${member.id === 'prathvi' || member.id === 'priya' ? 'bg-sage' : 'bg-slateTeal'} rounded-full scale-105 opacity-20`}></div>
+                <div className={`absolute inset-0 ${member.id === 'prathvi' || member.id === 'sampoorn' ? 'bg-sage' : 'bg-slateTeal'} rounded-full scale-105 opacity-20`}></div>
                 <div className="w-28 h-28 rounded-full border-4 border-pebble bg-forest text-pebble flex items-center justify-center overflow-hidden font-extrabold text-3xl relative z-10">
                   {member.image ? (
                     <img src={member.image} alt={member.name} className="w-full h-full object-cover scale-110" />
@@ -40,7 +40,7 @@ export default function Portfolio({ onOpenMember }) {
                   ))}
                 </div>
               </div>
-              <span className={`text-[10px] ${member.id === 'prathvi' || member.id === 'priya' ? 'text-sage' : 'text-slateTeal'} font-bold block mt-4 uppercase tracking-wider`}>
+              <span className={`text-[10px] ${member.id === 'prathvi' || member.id === 'sampoorn' ? 'text-sage' : 'text-slateTeal'} font-bold block mt-4 uppercase tracking-wider`}>
                 Tap to View Works <i className="fas fa-chevron-right ml-1"></i>
               </span>
             </div>

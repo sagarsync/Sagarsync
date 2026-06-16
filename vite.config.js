@@ -39,15 +39,17 @@ export default defineConfig(({ mode }) => {
                   // Fallback to mock responses if no API key is configured locally
                   if (!apiKey) {
                     const queryText = userMessage.toLowerCase();
-                    let reply = "Thanks for connecting with Sagar Sync! I am currently running on local backup mode. For immediate queries, feel free to submit a brief on our Contact Page or call Prathvi Singh Thakur directly at +91 8962685091.";
+                    let reply = "Thanks for connecting with Sagar Sync! I am currently running on local backup mode. For immediate queries, feel free to submit a brief on our Contact Page or reach out to us directly.";
                     
                     const offlineChatBotResponses = [
                       { keywords: ["bundle", "price", "pack", "charge"], answer: "We offer 3 specialized bundles: Coaching Institute Pack (₹19,999), Builder Elevation Bundle (₹16,499), and Local Business Kickstart (₹11,999). Specific custom services are priced on request. Select your target on our Contact form!" },
-                      { keywords: ["team", "prathvi", "rohan", "priya", "sameer", "member", "people"], answer: "Our 4-person elite squad includes Prathvi (Team Leader), Rohan (Developer), Priya (Civil CAD Engineer), and Sameer (Creative Video Editor). You can view their full project history directly in our Portfolio section!" },
+                      { keywords: ["team", "prathvi", "sampoorn", "mrityunjay", "prajawal", "member", "people"], answer: "Our elite squad includes Prathvi (Team Leader), Sampoorn (Social Media Manager & Digital Marketer), Mrityunjay (Junior Web Developer), and Prajawal (Video Editor & Social Media Manager). You can view their full project history directly in our Portfolio section!" },
                       { keywords: ["where", "location", "sagar", "makroniya", "address"], answer: "We are physically based in Makroniya, Sagar, Madhya Pradesh (470004). This enables us to visit sites for civil CAD mapping and shoot physical promotional footage." },
-                      { keywords: ["web", "site", "app", "flutter", "react", "code"], answer: "Prathvi Singh Thakur and Rohan Mishra code custom, high-speed static websites, dynamic student portals, and fluid Flutter cross-platform mobile apps. Head to our Services page to book them!" },
-                      { keywords: ["house", "map", "elevation", "civil", "cad"], answer: "Priya Sharma is our CAD expert. She drafts professional 2D blueprints, structural elevations, and modern 3D front elevations. View her works under our Portfolio tab." },
-                      { keywords: ["video", "ad", "reel", "shoot", "edit"], answer: "Sameer Khan scripts and edits retention-driven short-form reels and commercial ads. We capture high-quality footage right here in Sagar to drive client growth." }
+                      { keywords: ["web", "site", "app", "react", "code", "backend", "node"], answer: "Prathvi Singh Thakur and Mrityunjay Shukla code custom, high-speed static websites, dynamic student portals, and backend APIs. Head to our Services page to book them!" },
+                      { keywords: ["video", "ad", "reel", "shoot", "edit"], answer: "Sampoorn Choubey and Prajawal Rathore script and edit retention-driven short-form reels, commercial ads, and high-quality videography content." },
+                      { keywords: ["social", "media", "marketing", "content", "instagram", "youtube", "post", "reel", "canva", "creator", "sampoorn", "prajawal"], answer: "Sampoorn Choubey and Prajawal Rathore are our Social Media Managers & Content Creators. They manage platform growth (YouTube & Instagram), content planning, Canva graphics, video editing, and audience engagement." },
+                      { keywords: ["dsa", "javascript", "script", "backend", "express", "game", "tictactoe", "database", "mysql", "mongodb", "mrityunjay", "code", "dev"], answer: "Mrityunjay Shukla is our Junior Web Developer. He builds interactive frontend games, user authentication flows, and Express/Node.js backend APIs." },
+                      { keywords: ["prajawal", "editor", "capcut", "after effects", "effects", "storytelling", "video editing", "photography"], answer: "Prajawal Rathore is our Video Editor & Social Media Manager. He specializes in CapCut, Adobe After Effects, photography, and high-engagement social media content." }
                     ];
 
                     for (const item of offlineChatBotResponses) {
@@ -111,10 +113,10 @@ Reference Information (Sagar Sync Business Overview & Services):
 
 6. Team Members & Roles:
 - Prathvi Singh Thakur: Team Leader & Full-Stack Developer (Tech integrations, App Design, Hosting).
-- Rohan Mishra: Mobile & UI/UX Developer (Flutter cross-platform apps, UI).
-- Priya Sharma: CAD & Civil Engineer (Architectural house mapping, Revit 3D elevations).
-- Sameer Khan: Video Editor & Producer (Social reels, commercials, walkthroughs).
-- Direct Contact Partners: Prathvi (+91 8962685091), Krishna Pathak (+91 8827050460).
+- Sampoorn Choubey: Social Media Manager & Digital Marketer (Social campaigns, content planning, platform growth).
+- Mrityunjay Shukla: Junior Web Developer (Web apps, frontend interfaces, backend APIs).
+- Prajawal Rathore: Video Editor & Social Media Manager (Video editing, CapCut, After Effects, photography).
+- Direct Contact Partners: Prathvi, Krishna Pathak, Sampoorn, Mrityunjay, and Prajawal.
 
 7. Roadmap:
 - Phase 1 (Launch): Local base build & inbound/outbound setup.
