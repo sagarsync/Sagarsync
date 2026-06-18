@@ -147,10 +147,12 @@ export default function Contact({
               <div className="w-12 h-12 bg-sage/10 text-sage rounded-full flex items-center justify-center text-lg mb-3">
                 <i className="fas fa-map-marked-alt"></i>
               </div>
-              <h4 className="font-extrabold text-forest text-sm sm:text-base">Makroniya, Sagar, MP (470004)</h4>
-              <p className="text-xs text-slateTeal mt-1 max-w-sm">
-                We execute walk-throughs for structural CAD drafting and conduct manual site-shootings for marketing videos.
-              </p>
+              <address className="not-italic">
+                <h4 className="font-extrabold text-forest text-sm sm:text-base">Makroniya, Sagar, MP (470004)</h4>
+                <p className="text-xs text-slateTeal mt-1 max-w-sm">
+                  We execute walk-throughs for structural CAD drafting and conduct manual site-shootings for marketing videos.
+                </p>
+              </address>
             </div>
           </div>
         </div>

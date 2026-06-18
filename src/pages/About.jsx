@@ -46,7 +46,7 @@ export default function About() {
         </div>
 
         {/* Vision, Mission & Philosophy Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16" role="region" aria-label="Vision, Mission and Philosophy">
           
           {/* Left Block: Vision & Mission */}
           <div className="lg:col-span-7 space-y-6">
@@ -108,7 +108,7 @@ export default function About() {
         </div>
 
         {/* "What Sets Sagar Sync Apart" Section */}
-        <div>
+        <section aria-label="Key Differentiators">
           <div className="text-center mb-10">
             <h3 className="text-xl sm:text-3xl font-extrabold text-forest">What Sets Sagar Sync Apart</h3>
             <p className="text-slateTeal text-xs sm:text-sm mt-2">The key values that drive our managed platform ecosystem.</p>
@@ -127,7 +127,7 @@ export default function About() {
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
       </div>
     </section>

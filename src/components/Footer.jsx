@@ -22,7 +22,7 @@ export default function Footer({ onNavigate }) {
           </div>
 
           <div className="flex flex-col items-center md:items-end space-y-2">
-            <div className="flex flex-wrap justify-center gap-4 text-xs text-mintGrey">
+            <nav className="flex flex-wrap justify-center gap-4 text-xs text-mintGrey" aria-label="Footer Navigation">
               {['home', 'about', 'services', 'portfolio', 'contact'].map((tab) => (
                 <button
                   key={tab}
@@ -32,10 +32,10 @@ export default function Footer({ onNavigate }) {
                   {tab === 'services' ? 'Service' : tab}
                 </button>
               ))}
-            </div>
-            <div className="text-[10px] text-mintGrey text-center md:text-right">
+            </nav>
+            <address className="text-[10px] text-mintGrey text-center md:text-right not-italic">
               Makroniya, Sagar, MP | +91 8962685091 / +91 8827050460 | sagarsync.query@gmail.com
-            </div>
+            </address>
           </div>
           
           <div className="text-[10px] text-mintGrey">

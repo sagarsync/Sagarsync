@@ -1,0 +1,156 @@
+# Sagar Sync
+
+> Sagar Sync is a comprehensive, all-in-one service platform based in Makroniya, Sagar, Madhya Pradesh, India. It serves as a single point of contact for individuals, coaching centres, shop owners, businesses, and builders for digital, creative, printing, media, legal, events, and construction services.
+
+## Website
+
+- Homepage: https://sagarsync.live/
+- About: https://sagarsync.live/about
+- Services: https://sagarsync.live/services
+- Portfolio: https://sagarsync.live/portfolio
+- Contact: https://sagarsync.live/contact
+
+## Contact Information
+
+- Location: Makroniya, Sagar, Madhya Pradesh 470004, India
+- Email: sagarsync.query@gmail.com
+- Phone: +91 8962685091 / +91 8827050460
+- Instagram: https://www.instagram.com/sagar.sync/
+- LinkedIn: https://www.linkedin.com/company/sagar-sync
+
+## Core Philosophy
+
+"Understand first, quote later." Every quote is custom-tailored to the client's scope. No rigid upfront price lists. The process is:
+1. Inquiry logged (via form, WhatsApp, or direct outreach)
+2. Discovery conversation to understand project scope
+3. Rough layout, wireframe, or concept provided at NO CHARGE
+4. Detailed itemised quote presented
+5. Client approves and work begins with clear milestones
+
+## Service Catalogue (10 Categories)
+
+### 1. Design & Branding
+- Logo Design — Custom logos for businesses, coaching centres, shops, professionals, NGOs, and events
+- Brand Identity — Complete brand systems: colour palette, typography, brand guidelines, stationery
+- Banner Design — Flex banners, digital banners, hoardings, social media banners
+- Business Cards — Visiting card design and printing: standard, premium, folded formats
+- Invitations — Wedding cards, event invitations, birthday cards: design and printing
+- Booklet / Handbook — Company profiles, product catalogues, coaching handbooks, annual reports
+- Art & Craft Work — Custom handmade art, craft products, decorative items, gift crafting
+
+### 2. Websites & Digital Presence
+- Business Website — Professional multi-page websites for any type of business
+- Landing Pages — Single-page conversion-focused websites for campaigns or products
+- E-Commerce Website — Full online store with product listings, cart, and payment gateway
+- Online Ordering System — Website or app feature for restaurants, shops, and local retailers
+- Online Presence Setup — Google Business listing, social media profiles, local SEO setup
+- Website Maintenance — Ongoing updates, security, hosting management, and support
+
+### 3. Software & App Development
+- Billing Software — Custom billing/invoicing software with bill printing and payment records
+- Stock Management — Inventory tracking with low-stock alerts, supplier records, and reorder triggers
+- Daily Sales & Profit Tracker — Auto-calculates daily revenue, cost, profit; generates monthly summaries
+- Easy Return System — Streamlined product return and exchange tracking within billing software
+- QR & Cash Payment Support — Software supports both cash and QR/UPI payments at checkout
+- Mobile Application — Android/iOS apps for businesses, coaching centres, or service platforms
+- Custom Software — Any bespoke business software: attendance, payroll, reporting, etc.
+
+### 4. Coaching Institute Solutions
+- Online Presence — Website, Google listing, social media setup for the coaching centre
+- Notes & Study Material Design — Professional design of coaching notes, worksheets, and practice papers
+- Notebook & Book Design — Custom-branded notebooks, exercise books, and student handbooks
+- Fee Management Software — Digital fee collection, payment tracking, receipt generation
+- Auto Fee Notifications — Automated WhatsApp/SMS reminders sent to students every month to pay fees
+- Student Result Management — System to record, manage, and share exam results with students/parents
+- Student Portal / App — Dedicated portal for students to access notes, results, and announcements
+- Logo & Branding — Full brand identity for the coaching institute
+
+### 5. Shop & Retail Owner Solutions
+- Shop Website — Professional website showcasing products and services
+- Online Order Feature — Add online ordering to their website or via WhatsApp automation
+- Billing Software — POS-style billing with bill printing and payment support
+- Stock Alert System — Real-time stock monitoring, alerts when items fall below threshold
+- Daily Profit Calculator — Calculates daily sales, cost, and profit automatically
+- Monthly Sales Report — Auto-generated monthly profit and loss summaries
+- Bill Printing — Thermal printer integration for paper receipts
+- QR / Cash Payments — Accept UPI/QR and cash payments, tracked in software
+- Easy Returns — Built-in return and exchange management in the billing system
+
+### 6. Printing Services
+- Visiting Cards — Single-sided, double-sided, and premium card printing
+- Flex & Banners — Large format flex printing for shops, events, and campaigns
+- Brochures & Flyers — A4/A5/tri-fold brochures for marketing
+- Stationery — Letterheads, envelopes, notepads, stamps
+- Coaching Notebooks — Branded notebooks with custom covers for coaching centres
+- Booklets & Handbooks — Saddle-stitched or perfect-bound printed booklets
+
+### 7. Photography & Videography
+- Wedding Photography — Full wedding day coverage: mehendi, haldi, ceremony, reception
+- Wedding Videography — Cinematic wedding films, highlight reels, drone coverage
+- Pre-wedding Shoot — Location-based pre-wedding photo and video sessions
+- Product Photography — Studio and lifestyle shots for online stores and catalogues
+- Event Photography — Corporate events, birthday parties, school functions, openings
+- Video Editing — Post-production editing for any video: colour grade, music, graphics
+- Reels & Short Videos — Social media-ready short videos for Instagram, YouTube Shorts
+
+### 8. Legal & Financial Services
+- Lawyer Consultation — Connect with local qualified lawyers for legal advice and documentation
+- Income Tax Filing — ITR filing for individuals and businesses
+- GST Registration & Returns — GST registration, monthly and quarterly return filing
+- CA Services — Chartered accountant work: audits, balance sheets, tax planning
+- Business Registration — Company or firm registration, MSME registration, trade licence
+- Legal Documentation — Agreements, affidavits, NOCs, rental deeds, and other legal papers
+
+### 9. Events & Function Management
+- Wedding Planning — End-to-end wedding coordination: venue, decor, catering, schedule
+- Tent & Shamiana — Tent and canopy setup for weddings, jagrans, and outdoor events
+- Catering Coordination — Catering tie-up and management for functions of all sizes
+- Stage & Decoration — Stage setup, floral decoration, lighting, entrance arches
+- Birthday & Parties — Kids' parties, adult birthdays, milestone celebrations
+- Corporate Events — Office launches, seminars, award functions, brand events
+- Programme Management — Any kind of function or programme: cultural, religious, social
+
+### 10. Construction & Trade Services
+- House Mapping — Architectural floor plans and building layouts for residential properties
+- CAD Drawings — Computer-aided design drawings for construction and renovation projects
+- Carpentry Work — Custom furniture, cabinets, wooden fixtures, and interior carpentry
+- Iron Smithing — Fabrication of iron structures, grilles, gates, and custom metalwork
+- Iron Welding — Structural welding and repair work for residential and commercial needs
+- General Construction — Renovation, extension, interior construction, and flooring work
+- Interior Consulting — Basic space planning and interior layout advice
+
+## Premium Bundles (Pre-Packaged Pricing)
+
+### Coaching Institute Scale-Up Pack — ₹19,999
+- Student Web Portal: Fast landing, schedules and notifications
+- Launch Ads: 5 edited short-form reels for social campaigns
+- GMB Profile Setup: Complete Google Maps optimizations
+- Hosting Deployment: Secure server integration with support
+
+### Real Estate & Contractor Elevation Bundle — ₹16,499
+- 3D Front Elevation: Detailed Revit modeling coordinates
+- Walkthrough Render: High-definition walkthrough edit with overlay
+- Sales Landing System: Standard web layout mapping lead capture
+
+### Local Business Kickstart Bundle — ₹11,999
+- Clean One-Pager: Contact form and address location locator setup
+- Showroom Video: 1 professional 30s marketing promo file
+- Local SEO Booster: Local keywords schema mappings
+
+## Team
+
+- **Prathvi Singh Thakur** — Team Leader, Game Dev & AI/ML Enthusiast. Unreal Engine 5, Blender 3D, Python AI/ML, React. Hackathon 1st place winner.
+- **Sampoorn Choubey** — Digital Marketing & Social Media Specialist. Content strategy, SEO, Meta Ads, 45,000+ combined following, cross-platform campaigns.
+- **Mrityunjay Shukla** — Full-Stack Web Developer. MERN stack, REST APIs, JWT authentication, 80+ LeetCode problems.
+- **Prajawal Rathore** — Video Editor, Social Media Manager & Content Creator. Premiere Pro, After Effects, CapCut, DaVinci Resolve, 150+ videos edited, 300K+ combined views.
+
+## Key Differentiators
+
+- Hyperlocal Expertise: Physically based in Sagar, allowing site visits and local shoots
+- No-Pressure Pricing: Custom tailored to scope
+- Wide Range: Covers everything under one roof from logos to construction blueprints
+- Free Concept Drafts: Rough layout or wireframe provided before any payment is requested
+
+## Target Clients
+
+Shop/retail owners, coaching centres, schools, builders/contractors, newlyweds/families, professionals (CAs, lawyers, doctors), social/political campaigns in Sagar and surrounding districts.

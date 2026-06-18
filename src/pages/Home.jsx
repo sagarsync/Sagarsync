@@ -34,7 +34,7 @@ const steps = [
 
 export default function Home({ onNavigate }) {
   return (
-    <section className="page-transition bg-pebbleLight min-h-screen">
+    <section className="page-transition bg-pebbleLight min-h-screen" itemScope itemType="https://schema.org/LocalBusiness">
       {/* 1. Hero / Pitch Section */}
       <div className="relative py-16 sm:py-24 lg:py-28 overflow-hidden px-4 border-b border-pebble/30 bg-gradient-to-b from-white to-pebbleLight">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-mintGrey/15 via-transparent to-transparent pointer-events-none"></div>
@@ -44,12 +44,12 @@ export default function Home({ onNavigate }) {
 
             {/* Left Column: Copy & Badges */}
             <div className="text-center lg:text-left lg:col-span-7">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight text-forest">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight text-forest" itemProp="name">
                 One Platform.<br />
                 <span className="text-sage">Every Solution.</span>
               </h1>
-              <p className="text-base sm:text-lg text-slateTeal mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                From digital to design, legal to construction – Sagar Sync is your all-in-one service partner in Sagar.
+              <p className="text-base sm:text-lg text-slateTeal mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0" itemProp="description">
+                Sagar Sync is a comprehensive, all-in-one service platform based in Sagar, Madhya Pradesh. From digital to design, legal to construction — one platform for 10+ service categories with transparent, scope-based pricing and free concept drafts.
               </p>
 
               {/* Values Badges Row (4 Items) */}
@@ -126,7 +126,7 @@ export default function Home({ onNavigate }) {
       </div>
 
       {/* 2. "Every Service You Need, Under One Roof" Section */}
-      <div className="py-16 sm:py-20 px-4 bg-white">
+      <section className="py-16 sm:py-20 px-4 bg-white" aria-label="Service Categories">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 reveal-on-scroll">
             <h2 className="text-2xl sm:text-4xl font-extrabold text-forest">
@@ -165,10 +165,10 @@ export default function Home({ onNavigate }) {
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* 3. Stats / Counter Ribbon */}
-      <div className="bg-forest text-pebble py-10 border-t border-b border-sage/10">
+      <aside className="bg-forest text-pebble py-10 border-t border-b border-sage/10" aria-label="Key Statistics">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
             {[
@@ -188,7 +188,7 @@ export default function Home({ onNavigate }) {
             ))}
           </div>
         </div>
-      </div>
+      </aside>
 
       {/* 4. "Our Simple 5-Step Process" Section */}
       <div className="py-16 sm:py-24 px-4 bg-white border-b border-pebble/30">
