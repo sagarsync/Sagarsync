@@ -1,15 +1,81 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { services, bundles } from '../data/companyData.js';
 
 export default function Services({ onSelectBundle }) {
   const [selectedServiceId, setSelectedServiceId] = useState(services[0].id);
   const [activeBundle, setActiveBundle] = useState(null);
+  const [activeImageIndex, setActiveImageIndex] = useState(null);
 
   const selectedService = services.find(s => s.id === selectedServiceId) || services[0];
 
   const toggleBundle = (bundleId) => {
     setActiveBundle(activeBundle === bundleId ? null : bundleId);
   };
+
+  const openLightbox = (index) => {
+    setActiveImageIndex(index);
+  };
+
+  const closeLightbox = () => {
+    setActiveImageIndex(null);
+  };
+
+  const nextImage = () => {
+    const imagesWithIndices = selectedService.items
+      .map((item, index) => ({ ...item, originalIndex: index }))
+      .filter(item => item.image);
+    
+    if (imagesWithIndices.length === 0) return;
+    
+    const currentPos = imagesWithIndices.findIndex(item => item.originalIndex === activeImageIndex);
+    if (currentPos !== -1) {
+      const nextPos = (currentPos + 1) % imagesWithIndices.length;
+      setActiveImageIndex(imagesWithIndices[nextPos].originalIndex);
+    }
+  };
+
+  const prevImage = () => {
+    const imagesWithIndices = selectedService.items
+      .map((item, index) => ({ ...item, originalIndex: index }))
+      .filter(item => item.image);
+    
+    if (imagesWithIndices.length === 0) return;
+    
+    const currentPos = imagesWithIndices.findIndex(item => item.originalIndex === activeImageIndex);
+    if (currentPos !== -1) {
+      const prevPos = (currentPos - 1 + imagesWithIndices.length) % imagesWithIndices.length;
+      setActiveImageIndex(imagesWithIndices[prevPos].originalIndex);
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (activeImageIndex === null) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeImageIndex, selectedServiceId]);
+
+  // Reset lightbox when changing services
+  useEffect(() => {
+    setActiveImageIndex(null);
+  }, [selectedServiceId]);
+
+  // Lock underlying page scroll when lightbox is open
+  useEffect(() => {
+    if (activeImageIndex !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [activeImageIndex]);
 
   return (
     <section className="page-transition py-12 sm:py-16 px-4 bg-pebbleLight min-h-screen">
@@ -112,21 +178,55 @@ export default function Services({ onSelectBundle }) {
                     Detailed Services Catalogue
                   </h4>
                   
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[350px] lg:max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
-                    {selectedService.items.map((item, idx) => (
-                      <div 
-                        key={idx} 
-                        className="bg-pebbleLight/30 p-4 rounded-2xl border border-pebble/40 flex items-start space-x-3 hover:bg-white hover:shadow-sm transition-all"
-                      >
-                        <span className="w-5 h-5 bg-sage/10 text-sage rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                          <i className="fas fa-check text-[9px]"></i>
-                        </span>
-                        <div>
-                          <strong className="text-xs sm:text-sm text-forest block font-extrabold mb-0.5">{item.name}</strong>
-                          <span className="text-xs text-slateTeal leading-relaxed">{item.desc}</span>
+                  {/* Adjust height if service has showcase images */}
+                  <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto pr-2 custom-scrollbar ${
+                    selectedService.items.some(item => item.image) 
+                      ? 'max-h-[550px] lg:max-h-[600px]' 
+                      : 'max-h-[350px] lg:max-h-[400px]'
+                  }`}>
+                    {selectedService.items.map((item, idx) => {
+                      const hasImage = !!item.image;
+                      return (
+                        <div 
+                          key={idx} 
+                          className={`bg-pebbleLight/30 rounded-2xl border border-pebble/40 hover:bg-white hover:shadow-sm transition-all flex flex-col ${
+                            hasImage ? 'p-3' : 'p-4 flex-row items-start space-x-3'
+                          }`}
+                        >
+                          {hasImage && (
+                            <div 
+                              onClick={() => openLightbox(idx)}
+                              className="relative aspect-video w-full mb-3 rounded-xl overflow-hidden group cursor-pointer border border-pebble/20 shadow-sm bg-pebbleLight flex items-center justify-center animate-fade-in"
+                            >
+                              <img 
+                                src={item.image} 
+                                alt={item.name} 
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                              />
+                              <div className="absolute inset-0 bg-forest/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span className="bg-white/95 text-forest w-10 h-10 rounded-full shadow-md scale-90 group-hover:scale-100 transition-all duration-300 flex items-center justify-center">
+                                  <i className="fas fa-search-plus text-sm"></i>
+                                </span>
+                              </div>
+                            </div>
+                          )}
+
+                          <div className="flex items-start space-x-3">
+                            <span className="w-5 h-5 bg-sage/10 text-sage rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                              <i className="fas fa-check text-[9px]"></i>
+                            </span>
+                            <div>
+                              <strong className="text-xs sm:text-sm text-forest block font-extrabold mb-0.5">
+                                {item.name}
+                              </strong>
+                              <span className="text-xs text-slateTeal leading-relaxed">
+                                {item.desc}
+                              </span>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -234,6 +334,63 @@ export default function Services({ onSelectBundle }) {
         </div>
 
       </div>
+
+      {/* Lightbox Modal */}
+      {activeImageIndex !== null && selectedService.items[activeImageIndex] && 
+        createPortal(
+          <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-forest/90 backdrop-blur-md p-4 sm:p-6 transition-all duration-300 overflow-hidden">
+            {/* Close Area Backdrop */}
+            <div className="absolute inset-0 cursor-zoom-out" onClick={closeLightbox}></div>
+            
+            {/* Close Button */}
+            <button 
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 z-50 bg-white/10 hover:bg-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all cursor-pointer border border-white/10"
+              aria-label="Close Lightbox"
+            >
+              <i className="fas fa-times text-xl"></i>
+            </button>
+
+            {/* Navigation Buttons */}
+            <button 
+              onClick={(e) => { e.stopPropagation(); prevImage(); }}
+              className="absolute left-4 z-50 bg-white/10 hover:bg-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all cursor-pointer border border-white/10"
+              aria-label="Previous Image"
+            >
+              <i className="fas fa-chevron-left text-lg"></i>
+            </button>
+            <button 
+              onClick={(e) => { e.stopPropagation(); nextImage(); }}
+              className="absolute right-4 z-50 bg-white/10 hover:bg-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all cursor-pointer border border-white/10"
+              aria-label="Next Image"
+            >
+              <i className="fas fa-chevron-right text-lg"></i>
+            </button>
+
+            {/* Lightbox Content Container */}
+            <div className="relative z-10 max-w-4xl w-full flex flex-col items-center justify-center">
+              {/* Image Showcase */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black/45 max-h-[60vh] sm:max-h-[65vh] lg:max-h-[70vh] flex items-center justify-center">
+                <img 
+                  src={selectedService.items[activeImageIndex].image} 
+                  alt={selectedService.items[activeImageIndex].name} 
+                  className="max-w-full max-h-[60vh] sm:max-h-[65vh] lg:max-h-[70vh] object-contain select-none"
+                />
+              </div>
+
+              {/* Info Card */}
+              <div className="mt-4 sm:mt-6 w-full max-w-xl text-center text-white px-6 py-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 shadow-lg animate-fade-in">
+                <h4 className="text-lg font-extrabold mb-1">{selectedService.items[activeImageIndex].name}</h4>
+                <p className="text-xs sm:text-sm text-white/80 leading-relaxed">{selectedService.items[activeImageIndex].desc}</p>
+                <div className="mt-3 text-[10px] uppercase tracking-widest text-white/40 font-bold">
+                  Image {selectedService.items.filter(item => item.image).findIndex(item => item.name === selectedService.items[activeImageIndex].name) + 1} of {selectedService.items.filter(item => item.image).length}
+                </div>
+              </div>
+            </div>
+          </div>,
+          document.body
+        )
+      }
     </section>
   );
 }

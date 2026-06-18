@@ -27,7 +27,7 @@ export default function Portfolio({ onOpenMember }) {
                   {member.image ? (
                     <img src={member.image} alt={member.name} className="w-full h-full object-cover scale-110" />
                   ) : (
-                    <img src="/Default_member_image.png" alt={member.name} className="w-full h-full object-cover scale-110" />
+                    <img src="/Default_member_image.webp" alt={member.name} className="w-full h-full object-cover scale-110" />
                   )}
                 </div>
               </div>

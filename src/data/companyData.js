@@ -90,7 +90,7 @@ export const companyState = {
         }
       ],
       initials: "PT",
-      image: "/Prathvi.png"
+      image: "/Prathvi.webp"
     },
 
     sampoorn: {
@@ -267,13 +267,41 @@ export const services = [
     price: "Price on Requirement",
     theme: "sage",
     items: [
-      { name: "Logo Design", desc: "Custom logos for businesses, coaching centres, shops, professionals, NGOs, and events." },
-      { name: "Brand Identity", desc: "Complete brand systems — colour palette, typography, brand guidelines, stationery." },
-      { name: "Banner Design", desc: "Flex banners, digital banners, hoardings, social media banners." },
-      { name: "Business Cards", desc: "Visiting card design and printing — standard, premium, folded formats." },
-      { name: "Invitations", desc: "Wedding cards, event invitations, birthday cards — design and printing." },
-      { name: "Booklet / Handbook", desc: "Company profiles, product catalogues, coaching handbooks, annual reports." },
-      { name: "Art & Craft Work", desc: "Custom handmade art, craft products, decorative items, gift crafting." }
+      { 
+        name: "Logo Design", 
+        desc: "Custom logos for businesses, coaching centres, shops, professionals, NGOs, and events.",
+        image: "/Catalogues images/Logo design.webp"
+      },
+      { 
+        name: "Brand Identity", 
+        desc: "Complete brand systems — colour palette, typography, brand guidelines, stationery.",
+        image: "/Catalogues images/Brand identity.webp"
+      },
+      { 
+        name: "Banner Design", 
+        desc: "Flex banners, digital banners, hoardings, social media banners.",
+        image: "/Catalogues images/Banner and hoardings.webp"
+      },
+      { 
+        name: "Business Cards", 
+        desc: "Visiting card design and printing — standard, premium, folded formats.",
+        image: "/Catalogues images/Business Cards.webp"
+      },
+      { 
+        name: "Invitations", 
+        desc: "Wedding cards, event invitations, birthday cards — design and printing.",
+        image: "/Catalogues images/Invitation cards.webp"
+      },
+      { 
+        name: "Booklet / Handbook", 
+        desc: "Company profiles, product catalogues, coaching handbooks, annual reports.",
+        image: "/Catalogues images/Handbook.webp"
+      },
+      { 
+        name: "Art & Craft Work", 
+        desc: "Custom handmade art, craft products, decorative items, gift crafting.",
+        image: "/Catalogues images/art and craft work.webp"
+      }
     ]
   },
   {
