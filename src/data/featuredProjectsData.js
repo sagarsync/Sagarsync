@@ -7,6 +7,35 @@ export const featuredProjects = [
     clientName: "Elite Career Institute, Makroniya, Sagar, Madhya Pradesh (MP), India",
     icon: "fa-graduation-cap",
     theme: "sage",
+    geoMetadata: {
+      latitude: "23.8642° N",
+      longitude: "78.7880° E",
+      city: "Sagar",
+      suburb: "Makroniya",
+      state: "Madhya Pradesh",
+      country: "India",
+      postalCode: "470004",
+      region: "Bundelkhand",
+      coverageAreas: [
+        "Makroniya",
+        "Sagar City",
+        "Gopal Ganj",
+        "Civil Lines",
+        "Tili",
+        "Khurai",
+        "Bina",
+        "Damoh",
+        "Garhakota",
+        "Banda",
+        "Rahatgarh"
+      ],
+      landmarks: [
+        "Elite Career Institute Makroniya",
+        "Makroniya Chouraha",
+        "Deendayal Chowk",
+        "Sagar Railway Station"
+      ]
+    },
     colorClasses: {
       primary: "text-forest",
       secondary: "text-sage",
@@ -30,7 +59,11 @@ export const featuredProjects = [
       "School management system Makroniya",
       "Parent alert SMS gate scanner MP",
       "Vite React Tailwind database integration Sagar",
-      "Sagar Sync software engineering case study"
+      "Sagar Sync software engineering case study",
+      "Elite Career Institute Makroniya Sagar",
+      "RFID Attendance Sagar MP",
+      "Coaching classes management Makroniya Sagar",
+      "Sagar Madhya Pradesh local software development"
     ],
     
     deliverables: [

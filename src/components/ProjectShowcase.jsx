@@ -196,6 +196,37 @@ export default function ProjectShowcase({ projects }) {
                           ))}
                         </div>
                       </div>
+
+                      {/* Geographic Deployment Metadata */}
+                      {selectedProject.geoMetadata && (
+                        <div className="bg-white p-6 sm:p-8 rounded-3xl border border-pebble shadow-sm space-y-4">
+                          <h5 className="font-extrabold text-xs sm:text-sm text-forest uppercase tracking-wider flex items-center">
+                            <i className="fas fa-map-marked-alt text-sage mr-2"></i> Geographic & Deployment Metadata
+                          </h5>
+                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
+                            <div>
+                              <span className="block text-[10px] font-bold text-slateTeal/80 uppercase tracking-wider">Location</span>
+                              <span className="block text-xs sm:text-sm font-extrabold text-forest">{selectedProject.geoMetadata.suburb}, {selectedProject.geoMetadata.city}</span>
+                            </div>
+                            <div>
+                              <span className="block text-[10px] font-bold text-slateTeal/80 uppercase tracking-wider">GPS Coordinates</span>
+                              <span className="block text-xs sm:text-sm font-extrabold text-forest">{selectedProject.geoMetadata.latitude}, {selectedProject.geoMetadata.longitude}</span>
+                            </div>
+                            <div>
+                              <span className="block text-[10px] font-bold text-slateTeal/80 uppercase tracking-wider">Postal / Region</span>
+                              <span className="block text-xs sm:text-sm font-extrabold text-forest">{selectedProject.geoMetadata.postalCode} • {selectedProject.geoMetadata.region}</span>
+                            </div>
+                            <div className="col-span-2 sm:col-span-3">
+                              <span className="block text-[10px] font-bold text-slateTeal/80 uppercase tracking-wider">Local Landmarks</span>
+                              <span className="block text-xs text-slateTeal font-medium">{selectedProject.geoMetadata.landmarks?.join(" • ")}</span>
+                            </div>
+                            <div className="col-span-2 sm:col-span-3">
+                              <span className="block text-[10px] font-bold text-slateTeal/80 uppercase tracking-wider">Service Coverage Areas</span>
+                              <span className="block text-xs text-slateTeal font-medium">{selectedProject.geoMetadata.coverageAreas?.join(", ")}</span>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                     {/* Infographic Section */}

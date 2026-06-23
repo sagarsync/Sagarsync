@@ -281,6 +281,8 @@ Reference Information (Sagar Sync Business Overview & Services):
 - Construction & Trade: House mapping floor plans, Revit 3D/2D CAD drawings, carpentry, iron smithing/welding, renovations/flooring, interior layout consulting.
 
 4. Flagship Deployment Case Study - Coaching Institute Management System:
+- Live client deployment: Elite Career Institute, Makroniya, Sagar, Madhya Pradesh, India (GPS Coordinates: 23.8642° N, 78.7880° E, PIN: 470004).
+- Target coverage: Sagar city, Makroniya suburb, and surrounding towns (Bina, Khurai, Damoh, Garhakota, Banda, Rahatgarh).
 - We deliver a comprehensive, 3-panel digital ecosystem + 1 physical RFID/Barcode hardware device to modernize and secure local educational centers.
 - What We Deliver:
   * 1. Institute Admin Panel (Desktop Web): Full student profile editing, class-wise database filters, bulk exam marks entry, automated grade calculation, course syllabus notes upload, fee invoices and payment installment tracking, push announcements, and Excel/PDF reports exporter. Includes student ID card templates printing with custom barcodes.
