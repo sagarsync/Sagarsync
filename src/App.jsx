@@ -168,13 +168,15 @@ export default function App() {
     setFormSubmitted(true);
 
     try {
-      await fetch('/api/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(clientLead)
-      });
+      // Call Google Apps Script directly (no server-side proxy needed)
+      const scriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+      if (scriptUrl) {
+        await fetch(scriptUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(clientLead)
+        });
+      }
     } catch {
       // Fail silently - since it is already saved in localStorage, the client won't lose their data
     }
@@ -314,11 +316,18 @@ Instructions for you (SyncBot):
           })
         });
       } else {
-        response = await fetch('/api/chat', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: queryText })
-        });
+        // No API key available — use offline fallback immediately
+        if (!completed) {
+          completed = true;
+          clearTimeout(fallbackTimeout);
+          setIsTyping(false);
+          setChatMessages(prev => [...prev, {
+            id: `bot-${Date.now()}`,
+            text: lookupOfflineAnswers(queryText),
+            sender: "bot"
+          }]);
+        }
+        return;
       }
 
       if (!completed) {
