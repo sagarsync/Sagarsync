@@ -1,4 +1,6 @@
 import React from 'react';
+import ProjectShowcase from '../components/ProjectShowcase.jsx';
+import { featuredProjects } from '../data/featuredProjectsData.js';
 
 const setsUsApart = [
   {
@@ -34,78 +36,20 @@ const missionStatements = [
 export default function About() {
   return (
     <section className="page-transition py-16 px-4 bg-pebbleLight min-h-screen">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto space-y-16">
         
-        {/* Title Block */}
-        <div className="text-center mb-16">
-          <span className="text-sage font-extrabold tracking-widest text-xs uppercase bg-white px-4 py-2 rounded-full border border-pebble shadow-sm">Who We Are</span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-forest mt-4">Born In Sagar, Engineered For Trust</h2>
-          <p className="mt-4 text-sm sm:text-base text-slateTeal max-w-2xl mx-auto leading-relaxed">
-            A comprehensive, locally-rooted service platform based in Sagar, MP, designed to serve as your single point of contact for any creative, digital, legal, event, or construction service.
-          </p>
-        </div>
-
-        {/* Vision, Mission & Philosophy Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16" role="region" aria-label="Vision, Mission and Philosophy">
+        {/* Flagship Enterprise Solutions Showcase */}
+        <section aria-label="Flagship Enterprise Solutions">
+          <div className="text-center mb-10">
+            <span className="text-sage font-extrabold tracking-widest text-[10px] uppercase bg-white px-3 py-1.5 rounded-full border border-pebble shadow-sm">Flagship Deployments</span>
+            <h3 className="text-xl sm:text-3xl font-extrabold text-forest mt-3">Our End-to-End Enterprise Systems</h3>
+            <p className="text-slateTeal text-xs sm:text-sm mt-2 max-w-xl mx-auto leading-relaxed">
+              We design, build, and deploy complete hardware-software hybrid systems custom-tailored to resolve local business bottlenecks.
+            </p>
+          </div>
           
-          {/* Left Block: Vision & Mission */}
-          <div className="lg:col-span-7 space-y-6">
-            
-            {/* Vision */}
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-pebble shadow-sm">
-              <h3 className="text-lg sm:text-xl font-extrabold text-forest mb-3 flex items-center">
-                <i className="far fa-eye text-sage mr-3 text-lg"></i> Our Vision
-              </h3>
-              <p className="text-slateTeal text-xs sm:text-sm leading-relaxed">
-                To become Sagar's most trusted, all-in-one service platform — the name that every business owner, professional, family, and institution reaches for whenever they need something done right.
-              </p>
-            </div>
-
-            {/* Mission */}
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-pebble shadow-sm">
-              <h3 className="text-lg sm:text-xl font-extrabold text-forest mb-4 flex items-center">
-                <i className="fas fa-bullseye text-sage mr-3 text-lg"></i> Our Mission
-              </h3>
-              <ul className="space-y-3">
-                {missionStatements.map((statement, idx) => (
-                  <li key={idx} className="flex items-start text-xs sm:text-sm text-slateTeal">
-                    <span className="w-5 h-5 bg-sage/10 rounded-full flex items-center justify-center shrink-0 mr-3 mt-0.5">
-                      <i className="fas fa-check text-sage text-[9px]"></i>
-                    </span>
-                    <span className="leading-relaxed">{statement}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-          </div>
-
-          {/* Right Block: Pricing Philosophy Card */}
-          <div className="lg:col-span-5">
-            <div className="bg-gradient-to-br from-forest to-forestDark text-pebble p-6 sm:p-8 rounded-3xl border border-sage/20 shadow-lg flex flex-col justify-between h-full relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-48 h-48 bg-sage/10 rounded-full blur-2xl pointer-events-none"></div>
-              
-              <div>
-                <h3 className="text-lg sm:text-xl font-extrabold text-white mb-4 flex items-center">
-                  <i className="fas fa-hand-holding-usd text-sage mr-3 text-lg"></i> Pricing Policy & Philosophy
-                </h3>
-                <h4 className="text-xs sm:text-sm font-bold text-mintGrey uppercase tracking-wider mb-2">No Upfront Price List</h4>
-                <p className="text-mintGrey text-xs sm:text-sm leading-relaxed mb-4">
-                  Sagar Sync deliberately does not display prices on the website at the initial stage. Every client's requirement is unique.
-                </p>
-                <p className="text-mintGrey/80 text-xs sm:text-sm leading-relaxed mb-6">
-                  A logo for a local tea stall is structured differently than one for a law firm. Billing software for a grocery store has different dependencies than one for a coaching centre. We price based on actual scope — not assumptions.
-                </p>
-              </div>
-
-              <div className="border-t border-sage/20 pt-4">
-                <span className="text-[10px] text-mintGrey/60 font-bold block uppercase tracking-widest">Our Promise</span>
-                <span className="text-xs text-white font-medium italic">"Listen first, create a concept, and then provide a fair, itemised quote."</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
+          <ProjectShowcase projects={featuredProjects} />
+        </section>
 
         {/* "What Sets Sagar Sync Apart" Section */}
         <section aria-label="Key Differentiators">
@@ -128,6 +72,79 @@ export default function About() {
             ))}
           </div>
         </section>
+
+        {/* Born In Sagar Section */}
+        <div className="border-t border-pebble pt-16">
+          {/* Title Block */}
+          <div className="text-center mb-16">
+            <span className="text-sage font-extrabold tracking-widest text-xs uppercase bg-white px-4 py-2 rounded-full border border-pebble shadow-sm">Who We Are</span>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-forest mt-4">Born In Sagar, Engineered For Trust</h2>
+            <p className="mt-4 text-sm sm:text-base text-slateTeal max-w-2xl mx-auto leading-relaxed">
+              A comprehensive, locally-rooted service platform based in Sagar, MP, designed to serve as your single point of contact for any creative, digital, legal, event, or construction service.
+            </p>
+          </div>
+
+          {/* Vision, Mission & Philosophy Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8" role="region" aria-label="Vision, Mission and Philosophy">
+            
+            {/* Left Block: Vision & Mission */}
+            <div className="lg:col-span-7 space-y-6">
+              
+              {/* Vision */}
+              <div className="bg-white p-6 sm:p-8 rounded-3xl border border-pebble shadow-sm">
+                <h3 className="text-lg sm:text-xl font-extrabold text-forest mb-3 flex items-center">
+                  <i className="far fa-eye text-sage mr-3 text-lg"></i> Our Vision
+                </h3>
+                <p className="text-slateTeal text-xs sm:text-sm leading-relaxed">
+                  To become Sagar's most trusted, all-in-one service platform — the name that every business owner, professional, family, and institution reaches for whenever they need something done right.
+                </p>
+              </div>
+
+              {/* Mission */}
+              <div className="bg-white p-6 sm:p-8 rounded-3xl border border-pebble shadow-sm">
+                <h3 className="text-lg sm:text-xl font-extrabold text-forest mb-4 flex items-center">
+                  <i className="fas fa-bullseye text-sage mr-3 text-lg"></i> Our Mission
+                </h3>
+                <ul className="space-y-3">
+                  {missionStatements.map((statement, idx) => (
+                    <li key={idx} className="flex items-start text-xs sm:text-sm text-slateTeal">
+                      <span className="w-5 h-5 bg-sage/10 rounded-full flex items-center justify-center shrink-0 mr-3 mt-0.5">
+                        <i className="fas fa-check text-sage text-[9px]"></i>
+                      </span>
+                      <span className="leading-relaxed">{statement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+            </div>
+
+            {/* Right Block: Pricing Philosophy Card */}
+            <div className="lg:col-span-5">
+              <div className="bg-gradient-to-br from-forest to-forestDark text-pebble p-6 sm:p-8 rounded-3xl border border-sage/20 shadow-lg flex flex-col justify-between h-full relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-sage/10 rounded-full blur-2xl pointer-events-none"></div>
+                
+                <div>
+                  <h3 className="text-lg sm:text-xl font-extrabold text-white mb-4 flex items-center">
+                    <i className="fas fa-hand-holding-usd text-sage mr-3 text-lg"></i> Pricing Policy & Philosophy
+                  </h3>
+                  <h4 className="text-xs sm:text-sm font-bold text-mintGrey uppercase tracking-wider mb-2">No Upfront Price List</h4>
+                  <p className="text-mintGrey text-xs sm:text-sm leading-relaxed mb-4">
+                    Sagar Sync deliberately does not display prices on the website at the initial stage. Every client's requirement is unique.
+                  </p>
+                  <p className="text-mintGrey/80 text-xs sm:text-sm leading-relaxed mb-6">
+                    A logo for a local tea stall is structured differently than one for a law firm. Billing software for a grocery store has different dependencies than one for a coaching centre. We price based on actual scope — not assumptions.
+                  </p>
+                </div>
+
+                <div className="border-t border-sage/20 pt-4">
+                  <span className="text-[10px] text-mintGrey/60 font-bold block uppercase tracking-widest">Our Promise</span>
+                  <span className="text-xs text-white font-medium italic">"Listen first, create a concept, and then provide a fair, itemised quote."</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </section>

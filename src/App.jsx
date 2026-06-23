@@ -280,23 +280,37 @@ Reference Information (Sagar Sync Business Overview & Services):
 - Events & Function Management: Wedding planning, tent/shamiana canopy setup, catering coordination, stage/decor floral lighting, parties/birthdays, corporate launches.
 - Construction & Trade: House mapping floor plans, Revit 3D/2D CAD drawings, carpentry, iron smithing/welding, renovations/flooring, interior layout consulting.
 
-4. Target Client Segments:
+4. Flagship Deployment Case Study - Coaching Institute Management System:
+- We deliver a comprehensive, 3-panel digital ecosystem + 1 physical RFID/Barcode hardware device to modernize and secure local educational centers.
+- What We Deliver:
+  * 1. Institute Admin Panel (Desktop Web): Full student profile editing, class-wise database filters, bulk exam marks entry, automated grade calculation, course syllabus notes upload, fee invoices and payment installment tracking, push announcements, and Excel/PDF reports exporter. Includes student ID card templates printing with custom barcodes.
+  * 2. Student Companion App (Mobile App): Marks/grades tracker charts, course/batch details (timings, faculty), PDF notes downloads, monthly attendance calendar, and a Digital Punching Card (QR/barcode on screen).
+  * 3. Parent Monitoring App (Mobile App): Child's live check-in/check-out timeline log, month-wise attendance calendar, exam results and rank trends, fee dues status, and general announcement notifications.
+  * 4. RFID Scanning Gate System (Hardware): Wall-mounted punch machine at entrance connected to software database. Scanning triggers an instant SMS parent alert showing the child's entry/exit timestamp status.
+- Client Benefits (How it helps):
+  * Eliminates manual roll-calls, saving 15 minutes of teacher time per class.
+  * Bolsters institute security and parent trust with instant SMS alerts on student check-in/out.
+  * Accelerates fee recovery by 35% via transparent due trackers on parent apps and automated notification reminders.
+  * Centralizes all marks, study notes, notices, and payments under a single secure database.
+  * Eliminates physical printing overhead by distributing notes digitally.
+
+5. Target Client Segments:
 - Shop/retail owners, coaching centres, schools, builders/contractors, newlyweds/families, professionals (CAs, lawyers, doctors), social/political campaigns.
 
-5. Key Differentiators:
+6. Key Differentiators:
 - Hyperlocal Expertise: Physically based in Sagar, allowing site visits and local shoots.
 - No-Pressure Pricing: Custom tailored to scope.
 - Wide Range: Covers everything under one roof.
 - Free Concept Drafts: Before asking for payments.
 
-6. Team Members & Roles:
+7. Team Members & Roles:
 - Prathvi Singh Thakur: Team Leader, Game Dev & AI/ML Enthusiast (Unreal Engine 5, Blender 3D animation, Python AI/ML, React, hackathon 1st place winner).
 - Sampoorn Choubey: Digital Marketing & Social Media Specialist (Content strategy, SEO, Meta Ads, platform growth, 45,000+ combined following, cross-platform campaigns).
 - Mrityunjay Shukla: Full-Stack Web Developer (MERN stack, REST APIs, JWT authentication, DSA, 80+ LeetCode problems).
 - Prajawal Rathore: Video Editor, Social Media Manager & Content Creator (Premiere Pro, After Effects, CapCut, DaVinci Resolve, 150+ videos edited, 300K+ combined views).
 - Direct Contact Partners: Prathvi, Krishna Pathak, Sampoorn, Mrityunjay, and Prajawal.
 
-7. Roadmap:
+8. Roadmap:
 - Phase 1 (Launch): Local base build & inbound/outbound setup.
 - Phase 2 (Pricing & Portfolio): Add public portfolio & client tracking portal.
 - Phase 3 (Expansion): Hire staff, launch mobile app, expand to Damoh, Chhatarpur, Tikamgarh.
@@ -304,7 +318,8 @@ Reference Information (Sagar Sync Business Overview & Services):
 Instructions for you (SyncBot):
 - Answer all inquiries accurately using the details above.
 - Be extremely friendly, clear, direct, and concise (especially for mobile viewports).
-- Highlight the free layout/wireframe policy whenever custom services or pricing are mentioned.`;
+- Highlight the free layout/wireframe policy whenever custom services or pricing are mentioned.
+- If asked about Coaching Management or RFID Attendance, enthusiastically describe our 3-panel ecosystem + hardware gate machine details.`;
 
         const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${clientApiKey}`;
         response = await fetch(url, {
