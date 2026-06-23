@@ -1,48 +1,44 @@
-/* global process */
+import { onRequest } from "firebase-functions/v2/https";
 
-export default async function handler(request, context) {
-  // CORS headers
-  const corsHeaders = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Methods": "POST, OPTIONS"
-  };
+// ─────────────────────────────────────────────────
+// CORS helper
+// ─────────────────────────────────────────────────
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "Content-Type, Accept",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+};
 
-  // Handle preflight OPTIONS request for CORS
-  if (request.method === "OPTIONS") {
-    return new Response(JSON.stringify({ message: "Successful preflight" }), {
-      status: 200,
-      headers: corsHeaders
-    });
-  }
+function corsPreflightResponse(res) {
+  res.set(corsHeaders);
+  return res.status(200).json({ message: "Successful preflight" });
+}
 
-  if (request.method !== "POST") {
-    return new Response(JSON.stringify({ error: "Method Not Allowed" }), {
-      status: 405,
-      headers: corsHeaders
-    });
+// ─────────────────────────────────────────────────
+// /api/chat — Gemini API proxy
+// Keeps the API key server-side (never exposed to browser)
+// ─────────────────────────────────────────────────
+export const chat = onRequest({ region: "us-central1" }, async (req, res) => {
+  res.set(corsHeaders);
+
+  if (req.method === "OPTIONS") return corsPreflightResponse(res);
+
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method Not Allowed" });
   }
 
   try {
-    const { message } = await request.json();
+    const { message } = req.body;
     if (!message) {
-      return new Response(JSON.stringify({ error: "Message is required" }), {
-        status: 400,
-        headers: corsHeaders
-      });
+      return res.status(400).json({ error: "Message is required" });
     }
 
-    // Retrieve the API Key from Netlify environment variables
     const apiKey = process.env.GEMINI_API_KEY;
 
     if (!apiKey) {
-      return new Response(
-        JSON.stringify({ error: "GEMINI_API_KEY is not configured on Netlify environment variables." }),
-        {
-          status: 500,
-          headers: corsHeaders
-        }
-      );
+      return res
+        .status(500)
+        .json({ error: "GEMINI_API_KEY is not configured in Firebase environment." });
     }
 
     const systemPrompt = `You are SyncBot, the official AI representative of Sagar Sync.
@@ -101,32 +97,70 @@ Instructions for you (SyncBot):
 - Highlight the free layout/wireframe policy whenever custom services or pricing are mentioned.`;
 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
-    
-    const response = await fetch(url, {
+
+    const fetchRes = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         contents: [{ parts: [{ text: message }] }],
-        systemInstruction: { parts: [{ text: systemPrompt }] }
-      })
+        systemInstruction: { parts: [{ text: systemPrompt }] },
+      }),
     });
 
-    const result = await response.json();
-    return new Response(JSON.stringify(result), {
-      status: response.status,
-      headers: {
-        ...corsHeaders,
-        "Content-Type": "application/json"
-      }
+    const result = await fetchRes.json();
+    return res.status(fetchRes.status).json(result);
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ error: error.message || "Internal Server Error" });
+  }
+});
+
+// ─────────────────────────────────────────────────
+// /api/submit — Forwards contact form to Google Apps Script
+// ─────────────────────────────────────────────────
+export const submit = onRequest({ region: "us-central1" }, async (req, res) => {
+  res.set(corsHeaders);
+
+  if (req.method === "OPTIONS") return corsPreflightResponse(res);
+
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method Not Allowed" });
+  }
+
+  try {
+    const { name, phone, email, service, brief } = req.body;
+
+    if (!name || !phone || !email || !service || !brief) {
+      return res
+        .status(400)
+        .json({ error: "All form fields are required." });
+    }
+
+    const scriptUrl = process.env.GOOGLE_SCRIPT_URL;
+
+    if (!scriptUrl) {
+      return res
+        .status(500)
+        .json({ error: "GOOGLE_SCRIPT_URL is not configured in Firebase environment." });
+    }
+
+    // Forward form data to Google Apps Script Web App
+    const fetchRes = await fetch(scriptUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, phone, email, service, brief }),
+    });
+
+    const resultText = await fetchRes.text();
+
+    return res.status(fetchRes.status).json({
+      message: "Lead submitted successfully",
+      details: resultText,
     });
   } catch (error) {
-    return new Response(JSON.stringify({ error: error.message || "Internal Server Error" }), {
-      status: 500,
-      headers: corsHeaders
-    });
+    return res
+      .status(500)
+      .json({ error: error.message || "Failed to process submission" });
   }
-}
-
-export const config = {
-  path: "/api/chat"
-};
+});
