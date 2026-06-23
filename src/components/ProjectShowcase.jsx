@@ -26,6 +26,23 @@ export default function ProjectShowcase({ projects }) {
     return () => document.body.classList.remove('modal-open');
   }, [selectedProject]);
 
+  // Inject JSON-LD Schema.org metadata dynamically for GEO (Generative Engine Optimization)
+  useEffect(() => {
+    if (selectedProject && selectedProject.geoFriendlyOptimization?.schemaMarkup) {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.id = 'project-jsonld-schema';
+      script.innerHTML = JSON.stringify(selectedProject.geoFriendlyOptimization.schemaMarkup);
+      document.head.appendChild(script);
+      return () => {
+        const existingScript = document.getElementById('project-jsonld-schema');
+        if (existingScript) {
+          existingScript.remove();
+        }
+      };
+    }
+  }, [selectedProject]);
+
   if (!projects || projects.length === 0) return null;
 
   const handleOpenModal = (project) => {
@@ -197,32 +214,49 @@ export default function ProjectShowcase({ projects }) {
                         </div>
                       </div>
 
-                      {/* Geographic Deployment Metadata */}
-                      {selectedProject.geoMetadata && (
-                        <div className="bg-white p-6 sm:p-8 rounded-3xl border border-pebble shadow-sm space-y-4">
-                          <h5 className="font-extrabold text-xs sm:text-sm text-forest uppercase tracking-wider flex items-center">
-                            <i className="fas fa-map-marked-alt text-sage mr-2"></i> Geographic & Deployment Metadata
-                          </h5>
-                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
-                            <div>
-                              <span className="block text-[10px] font-bold text-slateTeal/80 uppercase tracking-wider">Location</span>
-                              <span className="block text-xs sm:text-sm font-extrabold text-forest">{selectedProject.geoMetadata.suburb}, {selectedProject.geoMetadata.city}</span>
+                      {/* Generative Engine Optimization (GEO) & AI Reference Hub */}
+                      {selectedProject.geoFriendlyOptimization && (
+                        <div className="space-y-6">
+                          {/* Verifiable Performance Metrics */}
+                          <div className="bg-white p-6 sm:p-8 rounded-3xl border border-pebble shadow-sm space-y-4">
+                            <h5 className="font-extrabold text-xs sm:text-sm text-forest uppercase tracking-wider flex items-center">
+                              <i className="fas fa-chart-bar text-sage mr-2"></i> Verifiable Performance Metrics (AI Indexable)
+                            </h5>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+                              {selectedProject.geoFriendlyOptimization.verifiableMetrics?.map((metric, idx) => (
+                                <div key={idx} className="bg-pebbleLight/40 p-4 rounded-2xl border border-pebble/30 flex items-start space-x-3">
+                                  <span className="w-8 h-8 bg-white text-sage rounded-xl flex items-center justify-center text-xs shadow-sm shrink-0">
+                                    <i className={`fas ${metric.icon}`}></i>
+                                  </span>
+                                  <div>
+                                    <span className="block text-[10px] font-bold text-slateTeal/80 uppercase tracking-wider">{metric.label}</span>
+                                    <span className="block text-xs sm:text-sm font-semibold text-forest mt-0.5">{metric.value}</span>
+                                  </div>
+                                </div>
+                              ))}
                             </div>
-                            <div>
-                              <span className="block text-[10px] font-bold text-slateTeal/80 uppercase tracking-wider">GPS Coordinates</span>
-                              <span className="block text-xs sm:text-sm font-extrabold text-forest">{selectedProject.geoMetadata.latitude}, {selectedProject.geoMetadata.longitude}</span>
-                            </div>
-                            <div>
-                              <span className="block text-[10px] font-bold text-slateTeal/80 uppercase tracking-wider">Postal / Region</span>
-                              <span className="block text-xs sm:text-sm font-extrabold text-forest">{selectedProject.geoMetadata.postalCode} • {selectedProject.geoMetadata.region}</span>
-                            </div>
-                            <div className="col-span-2 sm:col-span-3">
-                              <span className="block text-[10px] font-bold text-slateTeal/80 uppercase tracking-wider">Local Landmarks</span>
-                              <span className="block text-xs text-slateTeal font-medium">{selectedProject.geoMetadata.landmarks?.join(" • ")}</span>
-                            </div>
-                            <div className="col-span-2 sm:col-span-3">
-                              <span className="block text-[10px] font-bold text-slateTeal/80 uppercase tracking-wider">Service Coverage Areas</span>
-                              <span className="block text-xs text-slateTeal font-medium">{selectedProject.geoMetadata.coverageAreas?.join(", ")}</span>
+                          </div>
+
+                          {/* AI Search FAQ & Technical Answers */}
+                          <div className="bg-white p-6 sm:p-8 rounded-3xl border border-pebble shadow-sm space-y-4">
+                            <h5 className="font-extrabold text-xs sm:text-sm text-forest uppercase tracking-wider flex items-center">
+                              <i className="fas fa-robot text-sage mr-2"></i> LLM & AI Engine FAQ Directory
+                            </h5>
+                            <p className="text-[11px] text-slateTeal leading-relaxed">
+                              This semantic directory is optimized for Generative Engine crawling, providing clear definitions and Q&A references matching search intents:
+                            </p>
+                            <div className="space-y-3 pt-2">
+                              {selectedProject.geoFriendlyOptimization.faq?.map((item, idx) => (
+                                <div key={idx} className="border-b border-pebble pb-3 last:border-0 last:pb-0 text-left">
+                                  <h6 className="font-bold text-xs text-forest flex items-start">
+                                    <span className="text-sage font-extrabold mr-1.5">Q:</span>
+                                    <span>{item.question}</span>
+                                  </h6>
+                                  <p className="text-[11px] sm:text-xs text-slateTeal mt-1.5 leading-relaxed pl-4 border-l-2 border-sage/35">
+                                    {item.answer}
+                                  </p>
+                                </div>
+                              ))}
                             </div>
                           </div>
                         </div>
