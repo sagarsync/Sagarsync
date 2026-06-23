@@ -75,11 +75,11 @@
   }
   </script>
 
-  <!-- JSON-LD Structured Data: LocalBusiness -->
+  <!-- JSON-LD Structured Data: ProfessionalService (LocalBusiness subtype) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
     "name": "Sagar Sync",
     "image": "https://sagarsync.live/Sagar%20Sync.png",
     "url": "https://sagarsync.live",
@@ -100,7 +100,21 @@
       "longitude": 78.7378
     },
     "priceRange": "₹₹",
-    "servesCuisine": "",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "09:00",
+      "closes": "21:00"
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 23.8388,
+        "longitude": 78.7378
+      },
+      "geoRadius": "150000"
+    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Sagar Sync Services",
@@ -131,6 +145,96 @@
   }
   </script>
 
+  <!-- JSON-LD Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sagarsync.live/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://sagarsync.live/about"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Services",
+        "item": "https://sagarsync.live/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Portfolio",
+        "item": "https://sagarsync.live/portfolio"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Contact",
+        "item": "https://sagarsync.live/contact"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What services does Sagar Sync offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sagar Sync offers 10 service categories: Design & Branding, Websites & Digital Presence, Software & App Development, Coaching Institute Solutions, Shop & Retail Owner Solutions, Printing Services, Photography & Videography, Legal & Financial Services, Events & Function Management, and Construction & Trade Services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Sagar Sync located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sagar Sync is based in Makroniya, Sagar, Madhya Pradesh 470004, India. We primarily serve Sagar and nearby districts including Damoh, Chhatarpur, and Tikamgarh."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Sagar Sync pricing work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We follow an 'understand first, quote later' approach. Every quote is custom-tailored to your project scope. We provide a free rough layout, wireframe, or concept draft before asking for any payment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I contact Sagar Sync?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can reach us via phone at +91 8962685091 (Prathvi) or +91 8827050460 (Krishna), email at sagarsync.query@gmail.com, or submit a project brief through our Contact page at sagarsync.live/contact."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Sagar Sync provide free concept drafts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We provide a free rough layout, wireframe, or concept draft for your project before any payment is required. This lets you see our approach before committing."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- JSON-LD Structured Data: Service Bundles with Pricing -->
   <script type="application/ld+json">
   {
@@ -143,6 +247,11 @@
         "position": 1,
         "name": "Coaching Institute Scale-Up Pack",
         "description": "Student Web Portal, 5 edited short-form reels, GMB Profile Setup, and Hosting Deployment for coaching institutes.",
+        "image": "https://sagarsync.live/Sagar%20Sync.png",
+        "brand": {
+          "@type": "Brand",
+          "name": "Sagar Sync"
+        },
         "offers": {
           "@type": "Offer",
           "price": "19999",
@@ -156,6 +265,11 @@
         "position": 2,
         "name": "Real Estate & Contractor Elevation Bundle",
         "description": "3D Front Elevation with Revit modeling, HD walkthrough render, and Sales Landing System for builders and contractors.",
+        "image": "https://sagarsync.live/Sagar%20Sync.png",
+        "brand": {
+          "@type": "Brand",
+          "name": "Sagar Sync"
+        },
         "offers": {
           "@type": "Offer",
           "price": "16499",
@@ -169,6 +283,11 @@
         "position": 3,
         "name": "Local Business Kickstart Bundle",
         "description": "Clean One-Pager website, 30s marketing promo video, and Local SEO Booster for retail showrooms, clinics, and local startups.",
+        "image": "https://sagarsync.live/Sagar%20Sync.png",
+        "brand": {
+          "@type": "Brand",
+          "name": "Sagar Sync"
+        },
         "offers": {
           "@type": "Offer",
           "price": "11999",
