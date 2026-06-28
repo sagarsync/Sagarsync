@@ -42,11 +42,11 @@ export default function Header({ activeTab, onNavigate, mobileMenuOpen, onToggle
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <button
-              onClick={() => onNavigate('contact')}
+              onClick={() => window.open('https://utilityboxy.netlify.app', '_blank', 'noopener,noreferrer')}
               className="bg-forest hover:bg-forestDark active:scale-95 text-white px-5 py-2.5 rounded-xl font-bold shadow-md transition-all text-sm flex items-center space-x-2 cursor-pointer border border-sage/20"
             >
               <i className="far fa-comment text-xs"></i>
-              <span>Get In Touch</span>
+              <span>Tools</span>
             </button>
           </div>
 
@@ -77,10 +77,10 @@ export default function Header({ activeTab, onNavigate, mobileMenuOpen, onToggle
               </button>
             ))}
             <button
-              onClick={() => onNavigate('contact')}
+              onClick={() => window.open('https://utilityboxy.netlify.app', '_blank', 'noopener,noreferrer')}
               className="w-full bg-sage active:scale-95 text-forest font-bold py-4 mt-4 rounded-xl shadow-md transition-transform cursor-pointer"
             >
-              Get In Touch
+              Tools
             </button>
           </div>
         </div>
